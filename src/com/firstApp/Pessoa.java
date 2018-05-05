@@ -5,10 +5,9 @@ import java.util.Objects;
 public class Pessoa {
     protected String nome;
     protected int idade;
-    protected int cpf;
+    protected String cpf;
     protected String dataAniv;
-    protected Cliente.Endereço endereco;
-    private String teste;
+    protected Endereco endereco;
 
     public String getNome() {
         return nome;
@@ -26,11 +25,11 @@ public class Pessoa {
         this.idade = idade;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -42,12 +41,12 @@ public class Pessoa {
         this.dataAniv = dataAniv;
     }
 
-    public Cliente.Endereço getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String regiao,String estado,String cidade,String bairro, String rua,int num) {
-        this.endereco.setRegiao(regiao);
+    public void setEndereco(String cidade,String estado,String cidade,String bairro, String rua,int num) {
+        this.endereco.setCidade(cidade);
         this.endereco.setEstado(estado);
         this.endereco.setBairro(bairro);
         this.endereco.setRua(rua);

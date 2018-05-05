@@ -1,10 +1,10 @@
 package com.firstApp;
 
 public class Cliente extends Pessoa {
-//testando
+
     private int qtdFilmes;
-    private Filme filme;
-    private int credito;
+    private Catalogo catalogo;
+    private double credito;
 
     public Cliente(String nome, int idade, int cpf) {
         this.nome = nome;
@@ -28,63 +28,17 @@ public class Cliente extends Pessoa {
         this.filme = filme;
     }
 
-    public float getCredito() {
+    public double getCredito() {
         return credito;
     }
 
-    public void setCredito(int credito) {
+    public void setCredito(double credito) {
         this.credito = credito;
     }
     public void compraCredito(double dinheiro){
         this.credito += dinheiro*(dinheiro/4);
     }
-    public static class Endereço {
-       private String rua;
-       private String bairro;
-       private String estado;
-       private String regiao;
-       private int numero;
-
-       public String getRua() {
-           return rua;
-       }
-
-       public void setRua(String rua) {
-           this.rua = rua;
-       }
-
-       public String getBairro() {
-           return bairro;
-       }
-
-       public void setBairro(String bairro) {
-           this.bairro = bairro;
-       }
-
-       public String getEstado() {
-           return estado;
-       }
-
-       public void setEstado(String estado) {
-           this.estado = estado;
-       }
-
-       public String getRegiao() {
-           return regiao;
-       }
-
-       public void setRegiao(String regiao) {
-           this.regiao = regiao;
-       }
-
-       public int getNumero() {
-           return numero;
-       }
-
-       public void setNumero(int numero) {
-           this.numero = numero;
-       }
 
 
-   }
+
 }
