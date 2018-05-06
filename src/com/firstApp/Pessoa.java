@@ -2,7 +2,7 @@ package com.firstApp;
 
 import java.util.Objects;
 
-public static class Pessoa {
+public class Pessoa {
     protected String nome;
     protected int idade;
     protected String cpf;
