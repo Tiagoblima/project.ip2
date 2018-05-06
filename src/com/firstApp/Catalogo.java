@@ -1,6 +1,6 @@
 package com.firstApp;
 
-public class Catalogo {
+public static class Catalogo {
     private Filme[] filmes;
 
     public Catalogo(Filme[] filmes) {
@@ -14,4 +14,5 @@ public class Catalogo {
     public void setFilmes(Filme[] filmes) {
         this.filmes = filmes;
     }
+
 }
