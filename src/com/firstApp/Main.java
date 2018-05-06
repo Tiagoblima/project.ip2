@@ -6,5 +6,6 @@ public class Main {
 	// write your code here
         Cliente cliente = new Cliente("Tiago",18,1101010);
         System.out.println(cliente.toString());
+        System.out.println("Jesus me ama");
     }
 }
