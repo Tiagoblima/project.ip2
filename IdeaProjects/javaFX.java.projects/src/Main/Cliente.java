@@ -8,12 +8,10 @@ public class Cliente extends Pessoa {
     private Catalogo catalogo;
     private double credito;
     private Filme filme;
-    public Cliente(String nome, int idade,String cpf) {
-        this.nome = nome;
-        this.idade = idade;
-        this.cpf = cpf;
+    private String login;
+    private String senha;
 
-    }
+
     public int getQtdFilmes() {
         return qtdFilmes;
     }
