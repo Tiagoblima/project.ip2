@@ -3,7 +3,8 @@ package Interface;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-public class Controller extends Dados {
+
+public class Controller {
 
     public TextField loginField;
     public Button btnsingUp;
