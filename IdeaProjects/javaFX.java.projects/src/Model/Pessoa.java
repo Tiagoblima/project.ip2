@@ -1,4 +1,4 @@
-package com.firstApp;
+package Model;
 
 import java.util.Objects;
 
@@ -45,7 +45,7 @@ public class Pessoa {
         return endereco;
     }
 
-    public void setEndereco(String cidade,String estado,String cidade,String bairro, String rua,int num) {
+    public void setEndereco(String estado,String cidade,String bairro, String rua,int num) {
         this.endereco.setCidade(cidade);
         this.endereco.setEstado(estado);
         this.endereco.setBairro(bairro);

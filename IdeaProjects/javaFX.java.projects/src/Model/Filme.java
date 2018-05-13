@@ -1,4 +1,6 @@
-package com.firstApp;
+package Model;
+
+import Interface.Main;
 
 public class Filme {
 
