@@ -2,12 +2,24 @@ package Model;
 
 import java.util.Objects;
 
-public class Pessoa {
+public abstract class Pessoa {
     protected String nome;
     protected int idade;
     protected String cpf;
     protected String dataAniv;
     protected Endereco endereco;
+    protected String login;
+    protected String senha;
+
+    public Pessoa(String nome, int idade, String cpf, String dataAniv, Endereco endereco, String login, String senha) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cpf = cpf;
+        this.dataAniv = dataAniv;
+        this.endereco = endereco;
+        this.login = login;
+        this.senha = senha;
+    }
 
     public String getNome() {
         return nome;
@@ -53,18 +65,24 @@ public class Pessoa {
         this.endereco.setNumero(num);
     }
 
+
+//EQUALS, HASHCODE E TOSTRING
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pessoa)) return false;
         Pessoa pessoa = (Pessoa) o;
-        return getCpf() == pessoa.getCpf() &&
-                Objects.equals(getNome(), pessoa.getNome());
+        return getIdade() == pessoa.getIdade() &&
+                Objects.equals(getNome(), pessoa.getNome()) &&
+                Objects.equals(getCpf(), pessoa.getCpf()) &&
+                Objects.equals(getDataAniv(), pessoa.getDataAniv()) &&
+                Objects.equals(getEndereco(), pessoa.getEndereco());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNome(), getCpf());
+
+        return Objects.hash(getNome(), getIdade(), getCpf(), getDataAniv(), getEndereco());
     }
 
     @Override

@@ -1,16 +1,18 @@
 package Model;
 
-
 import java.lang.*;
-public class Cliente extends Pessoa {
+
+public abstract class Cliente extends Pessoa {
 
     private int qtdFilmes;
-    private Catalogo catalogo;
     private double credito;
-    private Filme filme;
-    private String login;
-    private String senha;
 
+    public Cliente(int qtdFilmes, double credito, String nome, int idade, String cpf, String dataAniv, Endereco endereco, String login, String senha) {
+        super(nome,idade, cpf,dataAniv, endereco, login, senha);
+        this.qtdFilmes = qtdFilmes;
+        this.credito = credito;
+
+    }
 
     public int getQtdFilmes() {
         return qtdFilmes;
@@ -20,14 +22,6 @@ public class Cliente extends Pessoa {
         this.qtdFilmes = qtdFilmes;
     }
 
-    public Filme getFilme() {
-        return filme;
-    }
-
-    public void setFilme(Filme filme) {
-        this.filme = filme;
-    }
-
     public double getCredito() {
         return credito;
     }
@@ -35,6 +29,7 @@ public class Cliente extends Pessoa {
     public void setCredito(double credito) {
         this.credito = credito;
     }
+
     public void compraCredito(double dinheiro){
         this.credito += dinheiro*(dinheiro/4);
     }

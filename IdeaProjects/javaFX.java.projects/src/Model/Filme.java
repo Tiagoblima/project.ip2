@@ -2,6 +2,7 @@ package Model;
 
 import Interface.Main;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Filme {
@@ -58,6 +59,12 @@ public class Filme {
 
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
+    }
+
+    public static ArrayList <Filme> getFilmes (Filme filme){
+        ArrayList<Filme> filmes = new ArrayList<>();
+
+        return filmes;
     }
 
     @Override

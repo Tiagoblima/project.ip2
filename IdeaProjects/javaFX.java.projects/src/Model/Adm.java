@@ -1,16 +1,9 @@
 package Model;
 
 public class Adm extends Pessoa {
-    private String login;
-    private String senha;
-    private Cliente[] clientes;
-    Catalogo catalogo;
 
-    public Adm(String login, String senha, Cliente[] clientes, Catalogo catalogo) {
-
-        this.login = login;
-        this.senha = senha;
-        this.clientes = clientes;
-        this.catalogo = catalogo;
+    public Adm(Catalogo catalogo, String nome, int idade, String cpf, String dataAniv, Endereco endereco, String login, String senha) {
+        super( nome, idade, cpf,dataAniv, endereco, login, senha);
     }
+
 }
