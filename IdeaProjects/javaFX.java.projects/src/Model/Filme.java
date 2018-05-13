@@ -61,7 +61,27 @@ public class Filme {
         this.sinopse = sinopse;
     }
 
-    public static ArrayList <Filme> getFilmes (Filme filme){
+    public boolean adicionaFilme(Filme filme){
+        //TODO FINALIZAR IMPLEMENTAÇÃO DO CADASTRO DE FILMES
+        getFilmes().add(filme);
+
+        return true; // retorno provisório
+    }
+    public boolean removeFilme(Filme filme){
+        //TODO FINALIZAR IMPLEMENTAÇÃO DA REMOÇÃO DE FILMES
+        getFilmes().remove(filme);
+
+        return true; // retorno provisório
+    }
+    public boolean atualizaFilme(Filme a, Filme a2){
+        //TODO FINALIZAR IMPLEMENTAÇÃO DA ATUALIZAÇÃO DE FILMES
+        getFilmes().remove(a);
+        getFilmes().add(a2);
+
+        return true; //retorno provisório
+    }
+
+    public static ArrayList <Filme> getFilmes (){
         ArrayList<Filme> filmes = new ArrayList<>();
 
         return filmes;

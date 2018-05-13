@@ -6,4 +6,6 @@ public class Adm extends Pessoa {
         super( nome, idade, cpf,dataAniv, endereco, login, senha);
     }
 
+
+
 }
