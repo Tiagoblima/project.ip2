@@ -1,0 +1,32 @@
+
+.Label{
+    -fx-alignment: center;
+    -fx-background-color: ivory;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 20pt;
+    -fx-font-weight: bolder;
+
+}
+#labelAction{
+
+    -fx-text-fill: cornflowerblue;
+}
+#labelAdvent{
+
+    -fx-text-fill: darkgreen;
+
+}
+#labelComedy{
+    -fx-text-fill: yellow;
+}
+#labelDrama{
+    -fx-text-fill: darkred;
+}
+#labelFamily{
+
+    -fx-text-fill: purple;
+}
+#labelNacional{
+
+    -fx-text-fill: green;
+}

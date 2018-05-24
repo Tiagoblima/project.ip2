@@ -12,7 +12,7 @@ public class indexController {
     public TextField loginField;
     public Button btnsingUp;
     public PasswordField passwordField;
-
+    public Label label;
 
 
     public void login(ActionEvent actionEvent) {
@@ -20,7 +20,6 @@ public class indexController {
     }
 
     public void cadastrar(ActionEvent actionEvent) {
-
             Main.changeScreen(Main.scenes.Form);
     }
 

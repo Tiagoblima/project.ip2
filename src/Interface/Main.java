@@ -30,6 +30,7 @@ public class Main extends Application {
         Parent index = FXMLLoader.load(getClass().getResource("Index.fxml"));
         Index = new Scene(index,600,450);
 
+        Index.getStylesheets().add("@background.css");
 
         Parent form = FXMLLoader.load(getClass().getResource("Form.fxml"));
         Form = new Scene(form,600,450);
