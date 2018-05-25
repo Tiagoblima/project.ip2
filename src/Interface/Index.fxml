@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" stylesheets="CSS/index.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.indexController">
+<GridPane alignment="center" hgap="10" stylesheets="@CSS/index.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.indexController">
    <columnConstraints>
       <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
       <ColumnConstraints maxWidth="600.0" minWidth="600.0" prefWidth="600.0" />
@@ -55,10 +55,10 @@
              <Button fx:id="btnsingUp" layoutX="313.0" layoutY="142.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastra-se" />
 
 
-            <GridPane layoutX="290.0" layoutY="225.0" prefHeight="201.0" prefWidth="298.0" style="-fx-background-color: white;" stylesheets="@CSS/index.css">
+            <GridPane layoutX="290.0" layoutY="225.0" prefHeight="201.0" prefWidth="298.0" style="-fx-background-color: gray;" stylesheets="@CSS/index.css">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="139.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="159.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
