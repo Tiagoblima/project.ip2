@@ -1,7 +1,8 @@
-package Interface;
+package Interface.Controllers;
 
 
 
+import Interface.Main;
 import javafx.event.ActionEvent;
 
 import javafx.scene.control.*;

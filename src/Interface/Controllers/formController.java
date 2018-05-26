@@ -1,4 +1,4 @@
-package Interface;
+package Interface.Controllers;
 
 public class formController {
 }

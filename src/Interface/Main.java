@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.text.Normalizer;
-
 
 public class Main extends Application {
 
@@ -30,9 +28,8 @@ public class Main extends Application {
         Parent index = FXMLLoader.load(getClass().getResource("Index.fxml"));
         Index = new Scene(index,600,450);
 
-        Index.getStylesheets().add("@background.css");
 
-        Parent form = FXMLLoader.load(getClass().getResource("Form.fxml"));
+        Parent form = FXMLLoader.load(getClass().getResource("FXML/Form.fxml"));
         Form = new Scene(form,600,450);
         primaryStage.setTitle("EasyFilms");
 
