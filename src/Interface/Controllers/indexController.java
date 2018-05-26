@@ -4,16 +4,15 @@ package Interface.Controllers;
 
 import Interface.Main;
 import javafx.event.ActionEvent;
-
 import javafx.scene.control.*;
 
 
 public class indexController {
 
     public TextField loginField;
-    public Button btnsingUp;
+    public Button btnCadastro;
     public PasswordField passwordField;
-    public Label label;
+
 
 
     public void login(ActionEvent actionEvent) {
