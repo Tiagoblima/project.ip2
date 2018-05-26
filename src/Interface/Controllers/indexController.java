@@ -5,6 +5,14 @@ package Interface.Controllers;
 import Interface.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
+import sun.reflect.CallerSensitive;
+
+import javax.swing.text.html.ImageView;
 
 
 public class indexController {
@@ -12,11 +20,12 @@ public class indexController {
     public TextField loginField;
     public Button btnCadastro;
     public PasswordField passwordField;
-
-
+    public javafx.scene.image.ImageView ImageView;
+    public  Image image = new Image("file:@../CSS/img/action.pane.index.jpg");
 
     public void login(ActionEvent actionEvent) {
-        loginField.getText();
+        String login = loginField.getText();
+        String senha = passwordField.getText();
     }
 
     public void cadastrar(ActionEvent actionEvent) {
@@ -24,4 +33,9 @@ public class indexController {
     }
 
 
+    public void changeImg(MouseEvent mouseEvent) {
+
+        ImageView.setImage(this.image);
+        ImageView.setVisible(true);
+    }
 }

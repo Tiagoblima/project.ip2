@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.TilePane?>
 
@@ -51,8 +51,8 @@
                 <Label styleClass="label" text="Senha: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Button fx:id="btnLogin" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <Button fx:id="btnCadastro" text="Cadastre-se" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#cadastrar"/>
+                <Button fx:id="btnLogin" onAction="#login" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Button fx:id="btnCadastro" onAction="#cadastrar" text="Cadastre-se" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
             </GridPane>
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -66,13 +66,13 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
 
-                <Label styleClass="Label" text="Ação" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label onMouseReleased="#changeImg" styleClass="Label" text="Ação" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <Label styleClass="Label" text="Aventura" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <Label styleClass="Label" text="Nacionais" GridPane.columnIndex="0" GridPane.rowIndex="2" />
 
-                <Label styleClass="Label" text="Drama" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label styleClass="Label" text="Drama" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                 <Label styleClass="Label" text="Comedia" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Label styleClass="Label"  fx:id="spLabel"  text="Ficção Científica" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="spLabel" styleClass="Label" text="Ficção Científica" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
 
 
@@ -86,7 +86,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <Pane fx:id="img_pane" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+            <ImageView fx:id="ImageView" fitHeight="157.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../CSS/img/action.pane.index.jpg" />
+               </image></ImageView>
+
+
          </children>
       </GridPane>
    </children>
