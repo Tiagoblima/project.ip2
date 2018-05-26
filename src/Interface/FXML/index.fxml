@@ -41,8 +41,8 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
 
                 <Label styleClass="label" text="Login: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -51,7 +51,7 @@
                 <Label styleClass="label" text="Senha: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Button fx:id="btnLogin" onAction="#login" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Button fx:id="btnLogin" onAction="#login" prefHeight="25.0" prefWidth="69.0" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                 <Button fx:id="btnCadastro" onAction="#cadastrar" text="Cadastre-se" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
             </GridPane>
@@ -86,10 +86,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <ImageView fx:id="ImageView" fitHeight="157.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@../CSS/img/action.pane.index.jpg" />
-               </image></ImageView>
+            <ImageView fx:id="ImageView" fitHeight="157.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2"/>
+
 
 
          </children>

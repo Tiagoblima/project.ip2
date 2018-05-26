@@ -21,7 +21,12 @@ public class indexController {
     public Button btnCadastro;
     public PasswordField passwordField;
     public javafx.scene.image.ImageView ImageView;
-    public  Image image = new Image("file:@../CSS/img/action.pane.index.jpg");
+
+    public  Image image;
+
+    public indexController() {
+        image = new Image(indexController.class.getResourceAsStream("../CSS/img/action.pane.index.jpg"));
+    }
 
     public void login(ActionEvent actionEvent) {
         String login = loginField.getText();
