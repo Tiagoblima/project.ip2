@@ -3,19 +3,13 @@ package Model;
 import java.util.Date;
 import java.util.Objects;
 
-public abstract class Pessoa {
+public class Pessoa {
     protected String nome;
     protected String email;
     protected Date dataAniv;
     protected String login;
     protected String senha;
 
-    public Pessoa(String nome, Date dataAniv, String login, String senha) {
-        this.nome = nome;
-        this.dataAniv = dataAniv;
-        this.login = login;
-        this.senha = senha;
-    }
 
     public String getNome() {
         return nome;
@@ -24,8 +18,6 @@ public abstract class Pessoa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-
 
     public Date getDataAniv() {
         return dataAniv;

@@ -1,6 +1,6 @@
 package Model;
 import java.util.*;
-public class ClientePremium extends Cliente {
+/*public class ClientePremium extends Cliente {
 
 
 
@@ -11,3 +11,4 @@ public class ClientePremium extends Cliente {
 
 
 }
+*/

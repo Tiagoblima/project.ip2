@@ -4,9 +4,15 @@ import java.util.Date;
 
 public class Adm extends Pessoa {
 
-    public Adm(Catalogo catalogo, String nome, int idade, String cpf, Date dataAniv, Endereco endereco, String login, String senha) {
-        super(nome,dataAniv,login,senha);
-        
+    private String codigoDeAcesso;
+
+    public Adm(Catalogo catalogo, String nome, Date dataAniv, String login, String senha,String codigoDeAcesso) {
+
+        this.nome = nome;
+        this.dataAniv = dataAniv;
+        this.login = login;
+        this.senha = senha;
+        this.codigoDeAcesso = codigoDeAcesso;
     }
 
 
