@@ -2,14 +2,15 @@ package Model;
 
 import java.lang.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public abstract class Cliente extends Pessoa {
 
     private int qtdFilmes;
     private double credito;
 
-    public Cliente(int qtdFilmes, double credito, String nome, int idade, String cpf, String dataAniv, Endereco endereco, String login, String senha) {
-        super(nome,idade, cpf,dataAniv, endereco, login, senha);
+    public Cliente(int qtdFilmes, double credito, String nome, Date dataAniv, String login, String senha) {
+        super(nome,dataAniv, login, senha);
         this.qtdFilmes = qtdFilmes;
         this.credito = credito;
 
@@ -35,10 +36,11 @@ public abstract class Cliente extends Pessoa {
         this.credito += dinheiro*(dinheiro/4);
     }
 
+    //Eu não entendi porque você implemntou os métodos aqui se a classe é abstrata
+
     public boolean cadastraCliente(Cliente cliente){
         //TODO TERMINAR DE IMPLEMENTAR METODO DE CADASTRAR CLIENTE
         getClientes().add(cliente);
-
         return true; //retorno provisório
     }
     public boolean removeCliente(Cliente cliente){
@@ -57,7 +59,6 @@ public abstract class Cliente extends Pessoa {
     }
     public static ArrayList<Cliente> getClientes(){
         ArrayList<Cliente> clientes = new ArrayList<>();
-
         return clientes;
     }
 
