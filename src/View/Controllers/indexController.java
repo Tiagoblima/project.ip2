@@ -1,18 +1,18 @@
-package Interface.Controllers;
+package View.Controllers;
 
 
 
-import Interface.Main;
+import Controller.ClienteComumController;
+import Model.ClienteComum;
+import View.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
-import sun.reflect.CallerSensitive;
 
-import javax.swing.text.html.ImageView;
+import static View.Scenes.*;
 
 
 public class indexController {
@@ -21,6 +21,8 @@ public class indexController {
     public Button btnCadastro;
     public PasswordField passwordField;
     public javafx.scene.image.ImageView ImageView;
+    public ClienteComumController controllerCliente = new ClienteComumController();
+
 
     public  Image image;
 
@@ -34,7 +36,7 @@ public class indexController {
     }
 
     public void cadastrar(ActionEvent actionEvent) {
-            Main.changeScreen(Main.scenes.Form);
+            Main.changeScreen(Form);
     }
 
 

@@ -42,8 +42,10 @@
 .Label:hover{
     -fx-text-fill: orange;
 }
-.Label #img_pane:hover{
+#erroLabel{
 
+    -fx-text-fill: red;
+     -fx-font-size: 12pt;
 }
 #img_pane{
     -fx-background-image: url(img/action.pane.index.jpg) no-repeat;

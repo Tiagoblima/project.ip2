@@ -1,10 +1,12 @@
-package Interface;
+package View;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import static View.Scenes.*;
 
 
 public class Main extends Application {
@@ -14,10 +16,7 @@ public class Main extends Application {
         private static Scene Index;
         private static Scene Form;
 
-       public enum scenes{
-            Index,
-            Form,
-        }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -38,7 +37,7 @@ public class Main extends Application {
 
     }
 
-    public  static void changeScreen(scenes name){
+    public  static void changeScreen(Scenes name){
 
         switch (name){
             case Index:

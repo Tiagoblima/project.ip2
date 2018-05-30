@@ -1,11 +1,9 @@
-package Model;
+package Model.Interface;
 
 import java.util.Date;
 
 public interface Cliente {
 
-
-    public abstract void Cliente(int qtdFilmes, double credito, String nome, Date dataAniv, String login, String senha);
 
     public abstract void setLimiteDeCredito();
     public abstract void setLimiteDeFilmes();
@@ -21,5 +19,11 @@ public interface Cliente {
     public abstract void setCredito(double credito);
 
     public abstract void compraCredito(double dinheiro);
+
+    public abstract String getEmail();
+    public abstract String getLogin();
+    public abstract String getNome();
+    public abstract Date getDataAniv();
+
 
 }

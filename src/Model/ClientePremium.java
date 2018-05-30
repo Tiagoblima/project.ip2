@@ -1,14 +1,72 @@
 package Model;
+import Model.Interface.Cliente;
+
 import java.util.*;
-/*public class ClientePremium extends Cliente {
+public class ClientePremium extends Pessoa implements Cliente {
 
 
+    //TODO Pensar nas vantagens de ser um Cliente Premium
 
-    public ClientePremium(int qtdFilmes, double credito, String nome, Date dataAniv, String login, String senha) {
-        super(qtdFilmes, credito, nome, dataAniv, login, senha);
+
+    @Override
+    public void setLimiteDeCredito() {
+
     }
-//TODO Pensar nas vantagens de ser um Cliente Premium
+
+    @Override
+    public void setLimiteDeFilmes() {
+
+    }
+
+    @Override
+    public void setLimiteDeTempo() {
+
+    }
+
+    @Override
+    public int getQtdFilmes() {
+        return 0;
+    }
+
+    @Override
+    public void setQtdFilmes(int qtdFilmes) {
+
+    }
+
+    @Override
+    public double getCredito() {
+        return 0;
+    }
+
+    @Override
+    public void setCredito(double credito) {
+
+    }
+
+    @Override
+    public void compraCredito(double dinheiro) {
+
+    }
+
+    @Override
+    public String getEmail() {
+        return this.email;
+    }
+
+    @Override
+    public String getLogin() {
+        return this.login;
+    }
+
+    @Override
+    public String getNome() {
+        return this.nome;
+    }
+
+    @Override
+    public Date getDataAniv() {
+        return this.dataAniv;
+    }
 
 
 }
-*/

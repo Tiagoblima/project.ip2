@@ -1,7 +1,5 @@
 package Model;
 
-import Interface.Main;
-
 public class Endereco {
     private String rua;
     private String bairro;
