@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static View.Scenes.*;
-
 
 public class Main extends Application {
 
@@ -24,11 +22,11 @@ public class Main extends Application {
 
         stage = primaryStage;
 
-        Parent index = FXMLLoader.load(getClass().getResource("FXML/index.fxml"));
+        Parent index = FXMLLoader.load(getClass().getResource("Index/index.fxml"));
         Index = new Scene(index,600,450);
 
 
-        Parent form = FXMLLoader.load(getClass().getResource("FXML/form.fxml"));
+        Parent form = FXMLLoader.load(getClass().getResource("Form/form.fxml"));
         Form = new Scene(form,600,450);
         primaryStage.setTitle("EasyFilms");
 

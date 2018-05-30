@@ -1,4 +1,4 @@
-package View.Controllers;
+package View.Form;
 
 import Controller.ClienteComumController;
 import Model.ClienteComum;

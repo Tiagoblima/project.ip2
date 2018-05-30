@@ -13,7 +13,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/form.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controllers.formController">
+<?import javafx.scene.control.ToggleButton?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@form.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Form.formController">
    <children>
       <GridPane alignment="TOP_CENTER" prefHeight="400" prefWidth="600">
         <columnConstraints>
@@ -96,11 +97,10 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
 
-                <Button fx:id="btnCancelar"  text="Cancelar" GridPane.columnIndex="1" />
-                 <Button fx:id="btnConfirmar" onAction="#ConfirmaCliente" text="Confirmar" GridPane.columnIndex="0" />
-                 <Button fx:id="btnLogin" onAction="#toIndex" prefHeight="25.0" prefWidth="69.0" text="Voltar" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                 <Button fx:id="btnCadastro" onAction="#toIndex" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                 <Button fx:id="btnVoltar" onAction="#toIndex" prefHeight="25.0" prefWidth="69.0" text="Voltar" GridPane.columnIndex="0"/>
+                 <Button fx:id="btnConfirmar" onAction="#ConfirmaCliente" text="Confirmar" GridPane.columnIndex="1" />
 
+                <ToggleButton text="Cliente Premium" GridPane.rowIndex="1"/>
             </GridPane>
 
          </children>

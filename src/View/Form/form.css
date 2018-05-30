@@ -48,6 +48,6 @@
      -fx-font-size: 12pt;
 }
 #img_pane{
-    -fx-background-image: url(img/action.pane.index.jpg) no-repeat;
+    -fx-background-image: url(../Index/img/action.pane.index.jpg) no-repeat;
     -fx-background-size: 300px 200px;
 }

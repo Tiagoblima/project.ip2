@@ -1,9 +1,8 @@
-package View.Controllers;
+package View.Index;
 
 
 
 import Controller.ClienteComumController;
-import Model.ClienteComum;
 import View.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -27,7 +26,7 @@ public class indexController {
     public  Image image;
 
     public indexController() {
-        image = new Image(indexController.class.getResourceAsStream("../CSS/img/action.pane.index.jpg"));
+        image = new Image(indexController.class.getResourceAsStream("img/action.pane.index.jpg"));
     }
 
     public void login(ActionEvent actionEvent) {
