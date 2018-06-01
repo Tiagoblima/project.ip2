@@ -16,16 +16,12 @@ public class ClienteComumController {
 
 
     public void setCliente(Cliente cliente){
-        CCHashMap.clear();
        this.cliente = cliente;
-
    }
 
 
    public void cadastrarCliente() throws Exception
    {
-
-
        if(CCHashMap.containsKey(this.cliente.getLogin())){
            throw new Exception();
        }
