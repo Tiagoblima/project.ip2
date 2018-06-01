@@ -22,8 +22,9 @@ public interface Cliente {
 
     public abstract String getEmail();
     public abstract String getLogin();
+    public abstract String getSenha();
     public abstract String getNome();
-    public abstract Date getDataAniv();
+    public abstract String getDataAniv();
 
 
 }

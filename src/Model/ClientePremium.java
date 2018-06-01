@@ -64,7 +64,7 @@ public class ClientePremium extends Pessoa implements Cliente {
     }
 
     @Override
-    public Date getDataAniv() {
+    public String getDataAniv() {
         return this.dataAniv;
     }
 

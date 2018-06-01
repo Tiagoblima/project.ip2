@@ -42,9 +42,9 @@
 .Label:hover{
     -fx-text-fill: orange;
 }
-#erroLabel{
+#lblMsg{
 
-    -fx-text-fill: red;
+    -fx-text-fill: #ff2e00;
      -fx-font-size: 12pt;
 }
 #img_pane{

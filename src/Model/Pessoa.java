@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Pessoa {
     protected String nome;
     protected String email;
-    protected Date dataAniv;
+    protected String dataAniv;
     protected String login;
     protected String senha;
 
@@ -19,11 +19,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataAniv() {
+    public String getDataAniv() {
         return dataAniv;
     }
 
-    public void setDataAniv(Date dataAniv) {
+    public void setDataAniv(String dataAniv) {
         this.dataAniv = dataAniv;
     }
 

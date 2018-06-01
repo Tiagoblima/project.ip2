@@ -6,7 +6,12 @@ import Model.Interface.Cliente;
 import View.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+
+import javax.xml.crypto.Data;
+
 import static View.Scenes.Index;
+
+import java.text.*;
 import java.util.Date;
 
 public class formController {
@@ -18,55 +23,77 @@ public class formController {
     public PasswordField confPasswordField;
     public RadioButton rbtPremium;
     public DatePicker DatePick;
-    public Label erroLabel;
     public CheckBox agree;
+    public Label lblcadastro;
+    public Label lblMsg;
+
     public Cliente cliente;
     public ClienteComumController controllerClienteComum = new ClienteComumController();
 
 
-    public void setCliente(){
-
-        String[] info = new String[5];
-
-        info[0] = nomeField.getText();
-        info[1] =  emailField.getText();
-        info[2] = loginField.getText();
-        info[3] = passwordField.getText();
-        info[4] = confPasswordField.getText();
-        Date date = (Date) DatePick.getUserData();
-
-
-        if(info[3]!=info[4]){
-            erroLabel.setText("As senha digitadas não conferem");
-        }
-
-        for (String el:info) {
-            if((el == null) || (date == null)){
-                erroLabel.setText("Erro: Falta informações");
-            }
-        }
-        cliente = new ClienteComum(info[0],info[1],date,info[2],info[3],0,0);
-    }
-
 
     public void ConfirmaCliente(ActionEvent actionEvent) {
 
-        setCliente();
-        Date date = (Date) DatePick.getUserData();
-        if (!rbtPremium.isSelected())
-            if (this.agree.isSelected()) {
+        String nome = this.nomeField.getText();
+        String email = this.emailField.getText();
+        String dataAniv = this.DatePick.getEditor().getText();
+        String login = this.loginField.getText();
+        String senha = this.confPasswordField.getText();
 
-                controllerClienteComum.setCliente(this.cliente);
-                boolean cadastro = controllerClienteComum.cadastrarCliente();
-                if (cadastro) {
-                    erroLabel.setText("Cliente já cadastrado");
-                }
-                erroLabel.setText("Cliente cadastrado com sucesso");
-            }
+        String msg = null;
+        boolean exception = false;
+
+         if(!rbtPremium.isSelected()){
+
+             if (this.agree.isSelected()){
+
+                 try{
+
+                     cliente = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
+                     controllerClienteComum.setCliente(this.cliente);
+
+                 }catch (Exception e){
+                     msg = "Uma ou mais informações estão ausentes.";
+                     exception = true;
+                 }
+
+                 try{
+                     controllerClienteComum.cadastrarCliente();
+                 }catch (Exception e){
+                     if(!exception) {
+                         msg = "Cliente já cadastrado";
+                     }
+                 }
+
+             }else {
+                 msg = "Você deve concordar com os nossos termos";
+             }
+
+             lblMsg.setText(msg);
+
+        }
+
 
 
 
     }
 
-    public void toIndex(ActionEvent actionEvent) { Main.changeScreen(Index); }
+    public  void clearFields(){
+        this.nomeField.clear();
+        this.emailField.clear();
+        this.loginField.clear();
+        this.passwordField.clear();
+        this.confPasswordField.clear();
+        this.DatePick.getEditor().clear();
+        this.lblMsg.setText("");
+
+    }
+    public void toIndex(ActionEvent actionEvent) {
+
+
+        clearFields();
+        Main.changeScreen(Index);
+
+
+    }
 }

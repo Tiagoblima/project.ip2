@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
+import View.Form.formController;
+
 
 import static View.Scenes.*;
 
@@ -35,7 +37,8 @@ public class indexController {
     }
 
     public void cadastrar(ActionEvent actionEvent) {
-            Main.changeScreen(Form);
+
+        Main.changeScreen(Form);
     }
 
 
