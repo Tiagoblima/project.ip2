@@ -100,3 +100,5 @@ public class Filme {
                 "Sinopse: /n" + sinopse;
     }
 }
+
+
