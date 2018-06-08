@@ -32,7 +32,7 @@ public class Repositorio <T> implements Serializable{
             this.oos = new ObjectOutputStream(this.fout);
 
             this.oos.writeObject(this.object);
-
+            this.ois.close();
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não Encontrado");
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class Repositorio <T> implements Serializable{
             this.ois = new ObjectInputStream(fInput);
 
             return (T) this.ois.readObject();
-
+            this.ois.close();
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não Encontrado");
             e.printStackTrace();
