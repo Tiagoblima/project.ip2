@@ -1,8 +1,9 @@
 package Model.Interface;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public interface Cliente {
+public interface Cliente extends Serializable {
 
 
     public abstract void setLimiteDeCredito();

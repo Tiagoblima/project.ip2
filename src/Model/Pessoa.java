@@ -1,9 +1,10 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Serializable {
     protected String nome;
     protected String email;
     protected String dataAniv;
@@ -66,7 +67,6 @@ public class Pessoa {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(getLogin(), getSenha());
     }
 

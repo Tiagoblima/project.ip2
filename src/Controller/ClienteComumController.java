@@ -2,43 +2,62 @@ package Controller;
 
 import Model.ClienteComum;
 import Model.Interface.Cliente;
+import Repositorio.*;
 
 import java.util.HashMap;
 
 public class ClienteComumController {
 
 
+    private HashMap<String,ClienteComum> CCHashMap = new HashMap<>(); //Cliente comum HashMap
+    private ClienteComum cliente;
+    private Repositorio<HashMap<String,ClienteComum>> repositorio = new Repositorio<HashMap<String, ClienteComum>>();
 
 
-    private HashMap<String,Cliente> CCHashMap = new HashMap<>(); //Cliente comum HashMap
-
-    private Cliente cliente;
 
 
-    public void setCliente(Cliente cliente){
+    public ClienteComumController(){
+        this.CCHashMap = this.repositorio.ler("src\\Repositorio\\files\\hashMapClienteC.txt");
+    }
+    public void setCliente(ClienteComum cliente){
        this.cliente = cliente;
    }
 
 
+
+
    public void cadastrarCliente() throws Exception
    {
+
        if(CCHashMap.containsKey(this.cliente.getLogin())){
+
            throw new Exception();
        }
-       CCHashMap.put(this.cliente.getLogin(),this.cliente);
 
+       CCHashMap.put(this.cliente.getLogin(),this.cliente);
+       this.repositorio.setObject(this.CCHashMap);
+       this.repositorio.salvar("src\\Repositorio\\files\\hashMapClienteC.txt");
    }
 
-   public boolean login(String login, String senha) {
+   public void login(String login, String senha)throws Exception
+   {
 
-       if (CCHashMap.containsKey(login)) {
-           this.cliente = CCHashMap.get(login);
-           if (cliente.getLogin() == senha) {
-               return true;
-           }
+       CCHashMap.toString();
+       if (!CCHashMap.containsKey(login)) {
+           throw new Exception();
+       }
+       this.cliente = CCHashMap.get(login);
+       if (!(cliente.getSenha() == senha)) {
+           throw new Exception();
        }
 
-       return false;
    }
 
+    public HashMap<String, ClienteComum> getCCHashMap() {
+        return CCHashMap;
+    }
+
+    public void setCCHashMap(HashMap<String, ClienteComum> CCHashMap) {
+        this.CCHashMap = CCHashMap;
+    }
 }

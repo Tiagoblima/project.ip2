@@ -93,5 +93,6 @@ public class ClienteComum extends Pessoa implements Cliente {
         this.credito = dinheiro;
     }
 
+
     //TODO Pensar nas desvantagens de ser um Cliente Comum
 }
