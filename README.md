@@ -1,4 +1,2 @@
 # EasyLend
-
-Acess token: 2d1a425e9d723e42e4f01acd5036967a427637f7
-Invite link: https://github.com/Tiagoblima/project.ip2/invitations
+Projeto disciplina IP2 UFRPE
