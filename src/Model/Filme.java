@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Filme {
-
+//teste commit
     private String titulo;
     private GeneroFilme genero;
     private int duracaoHora;
