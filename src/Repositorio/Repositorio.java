@@ -32,7 +32,7 @@ public class Repositorio <T> implements Serializable{
             this.oos = new ObjectOutputStream(this.fout);
 
             this.oos.writeObject(this.object);
-            this.ois.close();
+            this.oos.close();
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não Encontrado");
             e.printStackTrace();
