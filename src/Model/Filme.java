@@ -6,17 +6,19 @@ import java.util.Objects;
 public class Filme {
 
     private String titulo;
+    private GeneroFilme genero;
     private int duracaoHora;
     private int duracaoMinuto;
     private int anoLanc;
     private String sinopse;
 
-    public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse) {
+    public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero) {
         this.titulo = titulo;
         this.duracaoHora = duracaoHora;     //SERÁ PRECISO TRATAR ESSA ENTRADA, POIS ELA NÃ PODERÁ SER MAIOR QUE 23
         this.duracaoMinuto = duracaoMinuto; //SERÁ PRECISO TRATAR ESSA ENTRADA, POIS ELA NÃ PODERÁ SER MAIOR QUE 59
         this.anoLanc = anoLanc;
         this.sinopse = sinopse;
+        this.genero = genero;
     }
 
     public String getTitulo() {
@@ -59,30 +61,12 @@ public class Filme {
         this.sinopse = sinopse;
     }
 
-    public boolean adicionaFilme(Filme filme){
-        //TODO FINALIZAR IMPLEMENTAÇÃO DO CADASTRO DE FILMES
-        getFilmes().add(filme);
-
-        return true; // retorno provisório
-    }
-    public boolean removeFilme(Filme filme){
-        //TODO FINALIZAR IMPLEMENTAÇÃO DA REMOÇÃO DE FILMES
-        getFilmes().remove(filme);
-
-        return true; // retorno provisório
-    }
-    public boolean atualizaFilme(Filme a, Filme a2){
-        //TODO FINALIZAR IMPLEMENTAÇÃO DA ATUALIZAÇÃO DE FILMES
-        getFilmes().remove(a);
-        getFilmes().add(a2);
-
-        return true; //retorno provisório
+    public GeneroFilme getGenero() {
+        return genero;
     }
 
-    public static ArrayList <Filme> getFilmes (){
-        ArrayList<Filme> filmes = new ArrayList<>();
-
-        return filmes;
+    public void setGenero(GeneroFilme genero) {
+        this.genero = genero;
     }
 
     @Override
