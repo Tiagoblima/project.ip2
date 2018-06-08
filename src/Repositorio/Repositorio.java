@@ -54,8 +54,9 @@ public class Repositorio <T> implements Serializable{
             this.fInput = new FileInputStream(filePath);
             this.ois = new ObjectInputStream(fInput);
 
-            return (T) this.ois.readObject();
+            T object =  (T) this.ois.readObject();
             this.ois.close();
+            return object;
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não Encontrado");
             e.printStackTrace();
