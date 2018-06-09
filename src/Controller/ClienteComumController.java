@@ -42,12 +42,14 @@ public class ClienteComumController {
    public void login(String login, String senha)throws Exception
    {
 
-       CCHashMap.toString();
+
+
        if (!CCHashMap.containsKey(login)) {
            throw new Exception();
        }
+
        this.cliente = CCHashMap.get(login);
-       if (!(cliente.getSenha() == senha)) {
+       if (!(this.cliente.getSenha().equals(senha))) {
            throw new Exception();
        }
 

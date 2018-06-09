@@ -31,14 +31,10 @@ public class indexController {
     public void toLogin(ActionEvent actionEvent) {
 
 
-
-        System.out.println(this.controllerCliente.getCCHashMap().toString());
         String msg = "Acesso liberado";
         String login = loginField.getText();
         String senha = passwordField.getText();
 
-        System.out.println(login);
-        System.out.println(senha);
         try{
 
             controllerCliente.login(login, senha);
