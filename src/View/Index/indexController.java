@@ -16,13 +16,15 @@ public class indexController {
 
     public TextField loginField;
     public Button btnCadastro;
-    public PasswordField passwordField;
+    public Button btnEntrar;
+    public TextField passField;
     public javafx.scene.image.ImageView ImageView;
     public Label lblMsg;
     public ClienteComumController controllerCliente = new ClienteComumController();
 
 
     public  Image image;
+
 
     public indexController() {
         image = new Image(indexController.class.getResourceAsStream("img/action.pane.index.jpg"));
@@ -32,20 +34,28 @@ public class indexController {
 
 
         String msg = "Acesso liberado";
+
+
         String login = loginField.getText();
-        String senha = passwordField.getText();
+        String senha = passField.getText();
 
-        try{
+        if(login.isEmpty() || senha.isEmpty()){
+            msg = "Um ou mais campos\n não estão preenchidos";
+        }else{
+            try{
 
-            controllerCliente.login(login, senha);
-        }catch (Exception e){
-            msg = "Login ou senha incorretos";
+                controllerCliente.login(login, senha);
+            }catch (Exception e){
+                msg = "Login ou senha incorretos";
+            }
         }
+
+
 
         lblMsg.setText(msg);
     }
 
-    public void cadastrar(ActionEvent actionEvent) {
+    public void toForm(ActionEvent actionEvent) {
 
         Main.changeScreen(Form);
     }

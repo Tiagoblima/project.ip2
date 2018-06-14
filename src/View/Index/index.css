@@ -22,7 +22,7 @@
     -fx-font-family: "Consolas";
 }
 .label{
-    -fx-text-fill: orange;
+    -fx-text-fill: #0045ff;
     -fx-font-family: "Comic Sans MS";
     -fx-font-size: 14pt;
 
@@ -39,7 +39,7 @@
     -fx-padding: 0px;
 }
 .Label:hover{
-    -fx-text-fill: orange;
+    -fx-text-fill: #e00038;
 }
 .Label #img_pane:hover{
 
