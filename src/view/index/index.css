@@ -1,29 +1,28 @@
 
 .background{
-    -fx-background-image: url("img/form.background-img.jpg") no-repeat;
+    -fx-background-image: url("img/index.background-img.jpg") no-repeat;
     -fx-background-size: 600px 450px;
 }
 #title{
 
-    position: relative;
-    -fx-background-position: bottom;
+    position: absolute;
+    -fx-background-position: center;
     -fx-padding: 0;
-    -fx-text-fill: #ff7500;
+    -fx-text-fill: orange;
     -fx-font-size: 24pt;
     -fx-font-family: "Comic Sans MS";
-    -fx-end-margin: 0;
 }
 #subTitle{
 
     position: absolute;
     -fx-background-position: center;
-    -fx-padding: 0;
-    -fx-text-fill: #e3600a;
-    -fx-font-size: 14pt;
+    -fx-padding: 4;
+    -fx-text-fill: orange;
+    -fx-font-size: 20pt;
     -fx-font-family: "Consolas";
 }
 .label{
-    -fx-text-fill: #e3600a;
+    -fx-text-fill: #0045ff;
     -fx-font-family: "Comic Sans MS";
     -fx-font-size: 14pt;
 
@@ -40,14 +39,11 @@
     -fx-padding: 0px;
 }
 .Label:hover{
-    -fx-text-fill: orange;
+    -fx-text-fill: #e00038;
 }
-#lblMsg{
+.Label:hover#ImageView{
 
-    -fx-text-fill: #ff2e00;
-     -fx-font-size: 12pt;
-}
-#img_pane{
-    -fx-background-image: url(../Index/img/action.pane.index.jpg) no-repeat;
+    fx-image: url(img/action.pane.index.jpg) no-repeat;
     -fx-background-size: 300px 200px;
 }
+

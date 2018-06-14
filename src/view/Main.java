@@ -1,11 +1,10 @@
-package View;
+package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import View.Form.formController;
 
 public class Main extends Application {
 
@@ -13,7 +12,7 @@ public class Main extends Application {
         public static Stage stage;
         private static Scene Index;
         private static Scene Form;
-
+        private static Scene Home;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -22,11 +21,14 @@ public class Main extends Application {
 
         stage = primaryStage;
 
-        Parent index = FXMLLoader.load(getClass().getResource("Index/index.fxml"));
+        Parent index = FXMLLoader.load(getClass().getResource("index/index.fxml"));
         Index = new Scene(index,600,450);
 
 
-        Parent form = FXMLLoader.load(getClass().getResource("Form/form.fxml"));
+        Parent home = FXMLLoader.load(getClass().getResource("home/home.fxml"));
+        Home = new Scene(home,600,450);
+
+        Parent form = FXMLLoader.load(getClass().getResource("home/home.fxml"));
         Form = new Scene(form,600,450);
         primaryStage.setTitle("EasyFilms");
 
@@ -46,6 +48,8 @@ public class Main extends Application {
             case Form:
                 stage.setScene(Form);
                 break;
+            case Home:
+                stage.setScene(Home);
         }
 
     }

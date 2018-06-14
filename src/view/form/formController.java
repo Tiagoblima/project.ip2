@@ -1,12 +1,12 @@
-package View.Form;
+package view.form;
 
 import Controller.ClienteComumController;
 import Model.ClienteComum;
-import View.Main;
+import view.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-import static View.Scenes.Index;
+import static view.Scenes.Index;
 
 public class formController {
 

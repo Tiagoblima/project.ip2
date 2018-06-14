@@ -1,28 +1,29 @@
 
 .background{
-    -fx-background-image: url("img/index.background-img.jpg") no-repeat;
+    -fx-background-image: url("img/form.background-img.jpg") no-repeat;
     -fx-background-size: 600px 450px;
 }
 #title{
 
-    position: absolute;
-    -fx-background-position: center;
+    position: relative;
+    -fx-background-position: bottom;
     -fx-padding: 0;
-    -fx-text-fill: orange;
+    -fx-text-fill: #ff7500;
     -fx-font-size: 24pt;
     -fx-font-family: "Comic Sans MS";
+    -fx-end-margin: 0;
 }
 #subTitle{
 
     position: absolute;
     -fx-background-position: center;
-    -fx-padding: 4;
-    -fx-text-fill: orange;
-    -fx-font-size: 20pt;
+    -fx-padding: 0;
+    -fx-text-fill: #e3600a;
+    -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
 }
 .label{
-    -fx-text-fill: #0045ff;
+    -fx-text-fill: #e3600a;
     -fx-font-family: "Comic Sans MS";
     -fx-font-size: 14pt;
 
@@ -39,12 +40,14 @@
     -fx-padding: 0px;
 }
 .Label:hover{
-    -fx-text-fill: #e00038;
+    -fx-text-fill: orange;
 }
-.Label #img_pane:hover{
+#lblMsg{
 
+    -fx-text-fill: #ff2e00;
+     -fx-font-size: 12pt;
 }
 #img_pane{
-    -fx-background-image: url(img/action.pane.index.jpg) no-repeat;
+    -fx-background-image: url(../index/img/action.pane.index.jpg) no-repeat;
     -fx-background-size: 300px 200px;
 }
