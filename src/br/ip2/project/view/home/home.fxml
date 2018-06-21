@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@home.css" fx:controller="br.ip2.project.view.home.homeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.homeController">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
@@ -23,7 +23,7 @@
           <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <GridPane prefHeight="40" prefWidth="600" styleClass="background" fx:id="gridePane">
+            <GridPane fx:id="menuBar" prefHeight="40" prefWidth="600" styleClass="background">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,9 +34,9 @@
               </rowConstraints>
                <children>
 
-                   <Button mnemonicParsing="false" text="Home" styleClass="button" GridPane.columnIndex="0" GridPane.halignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Meu Perfil" styleClass="button" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Galeria de Filmes" styleClass="button" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                   <Button mnemonicParsing="false" styleClass="button" text="Home" GridPane.columnIndex="0" GridPane.halignment="CENTER" />
+                  <Button mnemonicParsing="false" styleClass="button" text="Meu Perfil" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <Button mnemonicParsing="false" styleClass="button" text="Galeria de Filmes" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
 
                </children>
             </GridPane>

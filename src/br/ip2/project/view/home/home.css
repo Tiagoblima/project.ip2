@@ -24,7 +24,9 @@
     -fx-background-color: white;
 }
 
-.background#gridePane{
-
-    -fx-background-color: #c3ffe7;
+.background#menuBar{
+    -fx-background-image: url(img/menuGride.background-image.jpg);
+}
+.background{
+    -fx-background-image: url(img/anchorPane.background-image.jpg);
 }

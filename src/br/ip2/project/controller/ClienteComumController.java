@@ -16,7 +16,7 @@ public class ClienteComumController {
 
 
     public ClienteComumController(){
-        this.CCHashMap = this.repositorio.ler("src\\br.ip2.project.repositorio\\files\\hashMapClienteC.txt");
+        this.CCHashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapClienteC.txt");
     }
     public void setCliente(ClienteComum cliente){
        this.cliente = cliente;
@@ -35,7 +35,7 @@ public class ClienteComumController {
 
        CCHashMap.put(this.cliente.getLogin(),this.cliente);
        this.repositorio.setObject(this.CCHashMap);
-       this.repositorio.salvar("src\\br.ip2.project.repositorio\\files\\hashMapClienteC.txt");
+       this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapClienteC.txt");
    }
 
    public void login(String login, String senha)throws Exception

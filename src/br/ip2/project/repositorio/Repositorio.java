@@ -48,14 +48,31 @@ public class Repositorio <T> implements Serializable{
         try {
 
             this.fInput = new FileInputStream(filePath);
+
+            if(this.fInput==null){
+
+                try{
+                    File file = new File(filePath);
+                    file.createNewFile();
+                    ler(filePath);
+                }catch (Exception exc){
+                    exc.printStackTrace();
+                }
+            }
+
             this.ois = new ObjectInputStream(fInput);
 
             T object =  (T) this.ois.readObject();
             this.ois.close();
             return object;
+
         } catch (FileNotFoundException e) {
-            System.out.println("Arquivo não Encontrado");
-            e.printStackTrace();
+
+            System.out.println("Arquivo não Encontrado\nCriando novo arquivo...");
+
+
+
+
         }catch (EOFException  e){
             System.out.println("problema na leitura do arquivo");
             e.printStackTrace();

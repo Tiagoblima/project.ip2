@@ -28,7 +28,7 @@ public class Main extends Application {
         Parent home = FXMLLoader.load(getClass().getResource("home/home.fxml"));
         Home = new Scene(home,600,450);
 
-        Parent form = FXMLLoader.load(getClass().getResource("home/home.fxml"));
+        Parent form = FXMLLoader.load(getClass().getResource("form/form.fxml"));
         Form = new Scene(form,600,450);
         primaryStage.setTitle("EasyFilms");
 
