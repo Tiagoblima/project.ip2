@@ -1,15 +1,14 @@
-package view.index;
+package br.ip2.project.view.index;
 
-import Controller.ClienteComumController;
-import view.Main;
+import br.ip2.project.controller.ClienteComumController;
+import br.ip2.project.view.Main;
+import br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
-
-import static view.Scenes.*;
 
 
 public class indexController {
@@ -62,12 +61,12 @@ public class indexController {
 
     public void toForm(ActionEvent actionEvent) {
 
-        Main.changeScreen(Form);
+        Main.changeScreen(Scenes.Form);
     }
 
     public void toHome(ActionEvent actionEvent){
 
-        Main.changeScreen(Home);
+        Main.changeScreen(Scenes.Home);
 
     }
     public void changeImg(MouseEvent mouseEvent) {

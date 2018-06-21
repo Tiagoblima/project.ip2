@@ -1,12 +1,11 @@
-package view.form;
+package br.ip2.project.view.form;
 
-import Controller.ClienteComumController;
-import Model.ClienteComum;
-import view.Main;
+import br.ip2.project.controller.ClienteComumController;
+import br.ip2.project.model.ClienteComum;
+import br.ip2.project.view.Main;
+import br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-
-import static view.Scenes.Index;
 
 public class formController {
 
@@ -93,7 +92,7 @@ public class formController {
 
 
         clearFields();
-        Main.changeScreen(Index);
+        Main.changeScreen(Scenes.Index);
 
 
     }

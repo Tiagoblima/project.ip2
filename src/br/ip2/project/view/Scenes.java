@@ -1,4 +1,4 @@
-package view;
+package br.ip2.project.view;
 
 public enum  Scenes {
 

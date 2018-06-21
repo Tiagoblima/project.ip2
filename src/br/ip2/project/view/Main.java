@@ -1,4 +1,4 @@
-package view;
+package br.ip2.project.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +32,7 @@ public class Main extends Application {
         Form = new Scene(form,600,450);
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Index);
+        primaryStage.setScene(Home);
         primaryStage.show();
 
     }

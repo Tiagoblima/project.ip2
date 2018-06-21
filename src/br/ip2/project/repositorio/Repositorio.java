@@ -1,7 +1,6 @@
-package Repositorio;
+package br.ip2.project.repositorio;
 
 import java.io.*;
-import java.util.HashMap;
 
 public class Repositorio <T> implements Serializable{
 

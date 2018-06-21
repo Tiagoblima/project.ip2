@@ -22,7 +22,7 @@
     -fx-font-family: "Consolas";
 }
 .label{
-    -fx-text-fill: #0045ff;
+    -fx-text-fill: orange;
     -fx-font-family: "Comic Sans MS";
     -fx-font-size: 14pt;
 
