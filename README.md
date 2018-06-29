@@ -15,7 +15,7 @@ Versão jdk1.8.0_152 ou superior
   <p>  java.oi.*</p>
   <p>  Java.fxapplication.*</p>
   <p>  java.scene.*</p>
-### Adicionais
+  Adicionais <strong>
  <p>Scene builder</p>
  <p> Suporte fxml</p>
   <p>CSS</p>
