@@ -13,7 +13,7 @@ Versão jdk1.8.0_152 ou superior
   java.Collection.*
   java.oi.*
   Java.fxapplication.*
-  java.scene.stage
+  java.scene.*
 ### Adicionais:
   Scene builder
   Suporte fxml
