@@ -8,13 +8,13 @@ com a criação de login e senha para cada usuário.
 ## Versão e dependencias
 Versão jdk1.8.0_152 ou superior
 
-###Bibliotecas usadas
+### Bibliotecas usadas
   Java.util.*
   java.Collection.*
   java.oi.*
   Java.fxapplication.*
   java.scene.stage
-###Adicionais:
+### Adicionais:
   Scene builder
   Suporte fxml
   CSS
