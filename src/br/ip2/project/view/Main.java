@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -25,12 +28,26 @@ public class Main extends Application {
         Index = new Scene(index,600,450);
 
 
+
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+        webEngine.load("https://www.imdb.com/");
+        VBox root = new VBox();
+
+        root.getChildren().addAll(webView);
+
         Parent home = FXMLLoader.load(getClass().getResource("home/home.fxml"));
         Home = new Scene(home,600,450);
+
+
+
 
         Parent form = FXMLLoader.load(getClass().getResource("form/form.fxml"));
         Form = new Scene(form,600,450);
         primaryStage.setTitle("EasyFilms");
+
+
+
 
         primaryStage.setScene(Home);
         primaryStage.show();
@@ -53,6 +70,7 @@ public class Main extends Application {
         }
 
     }
+
 
 
 
