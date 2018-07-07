@@ -10,49 +10,50 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.homeController">
    <children>
       <MenuBar prefHeight="35.0" prefWidth="614.0" styleClass="menu-bar">
         <menus>
-          <Menu mnemonicParsing="false" text="Perfil" styleClass="menu">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Perfil">
             <items>
-                <MenuItem mnemonicParsing="false" text="Vizualizar" styleClass="menu-item" />
-                <MenuItem mnemonicParsing="false" text="Editar" styleClass="menu-item"/>
-                <MenuItem mnemonicParsing="false" text="Sair" styleClass="menu-item" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Vizualizar" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Editar" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Minha Galeira de Filmes" styleClass="menu">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Minha Galeira de Filmes">
             <items>
-              <MenuItem mnemonicParsing="false" text="Vizualizar" styleClass="menu-item"/>
-                <MenuItem mnemonicParsing="false" text="Adicionar Filme/Remover Filme" styleClass="menu-item"/>
-                <MenuItem mnemonicParsing="false" text="Compartilhar" styleClass="menu-item"/>
+              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Vizualizar" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Adicionar Filme/Remover Filme" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Novidades" styleClass="menu">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Novidades">
             <items>
-              <MenuItem mnemonicParsing="false" text="Lançamentos" styleClass="menu-item"/>
+              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Lançamentos" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
       <TilePane layoutX="8.0" layoutY="45.0" prefHeight="56.0" prefWidth="271.0" />
-      <GridPane layoutX="9.0" layoutY="122.0" prefHeight="275.0" prefWidth="345.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="177.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="168.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Pane fx:id="action" prefHeight="200.0" prefWidth="200.0" styleClass="background-pane" GridPane.columnIndex="0" GridPane.rowIndex="0">
-               <children>
-                   <Label alignment="BOTTOM_CENTER" layoutX="64.0" layoutY="20.0" prefHeight="56.0" prefWidth="96.0" styleClass="label-pane" text="Ação" />
-               </children></Pane>
-         </children>
-      </GridPane>
+       <GridPane layoutX="9.0" layoutY="122.0" prefHeight="275.0" prefWidth="345.0">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="177.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="168.0"/>
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+           </rowConstraints>
+           <Pane fx:id="action" prefHeight="200.0" prefWidth="200.0" styleClass="background-pane"
+                 GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <Label alignment="BOTTOM_CENTER" layoutX="64.0" layoutY="20.0" prefHeight="56.0" prefWidth="96.0"
+                      styleClass="label-pane" text="Ação"/>
+           </Pane>
+       </GridPane>
+      <WebView layoutX="371.0" layoutY="132.0" prefHeight="200.0" prefWidth="241.0" fx:id="web"/>
    </children>
 </AnchorPane>

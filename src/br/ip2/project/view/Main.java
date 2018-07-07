@@ -27,20 +27,8 @@ public class Main extends Application {
         Parent index = FXMLLoader.load(getClass().getResource("index/index.fxml"));
         Index = new Scene(index,600,450);
 
-
-
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
-        webEngine.load("https://www.imdb.com/");
-        VBox root = new VBox();
-
-        root.getChildren().addAll(webView);
-
         Parent home = FXMLLoader.load(getClass().getResource("home/home.fxml"));
         Home = new Scene(home,600,450);
-
-
-
 
         Parent form = FXMLLoader.load(getClass().getResource("form/form.fxml"));
         Form = new Scene(form,600,450);
