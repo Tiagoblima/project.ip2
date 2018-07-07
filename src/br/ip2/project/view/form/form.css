@@ -1,6 +1,6 @@
 
 .background{
-    -fx-background-image: url("img/form.background-img.jpg") no-repeat;
+    -fx-background-image: url("../img/form.background-img.jpg") no-repeat;
     -fx-background-size: 600px 450px;
 }
 #title{
@@ -48,6 +48,6 @@
      -fx-font-size: 12pt;
 }
 #img_pane{
-    -fx-background-image: url(../index/img/action.pane.index.jpg) no-repeat;
+    -fx-background-image: url(../img/action.pane.index.jpg) no-repeat;
     -fx-background-size: 300px 200px;
 }

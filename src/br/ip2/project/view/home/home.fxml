@@ -13,25 +13,25 @@
 
 <AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.homeController">
    <children>
-      <MenuBar prefHeight="35.0" prefWidth="614.0">
+      <MenuBar prefHeight="35.0" prefWidth="614.0" styleClass="menu-bar">
         <menus>
-          <Menu mnemonicParsing="false" text="Perfil">
+          <Menu mnemonicParsing="false" text="Perfil" styleClass="menu">
             <items>
-                <MenuItem mnemonicParsing="false" text="Vizualizar" />
-                <MenuItem mnemonicParsing="false" text="Editar" />
-                <MenuItem mnemonicParsing="false" text="Sair" />
+                <MenuItem mnemonicParsing="false" text="Vizualizar" styleClass="menu-item" />
+                <MenuItem mnemonicParsing="false" text="Editar" styleClass="menu-item"/>
+                <MenuItem mnemonicParsing="false" text="Sair" styleClass="menu-item" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Minha Galeira de Filmes">
+          <Menu mnemonicParsing="false" text="Minha Galeira de Filmes" styleClass="menu">
             <items>
-              <MenuItem mnemonicParsing="false" text="Vizualizar" />
-                <MenuItem mnemonicParsing="false" text="Adicionar Filme/Remover Filme" />
-                <MenuItem mnemonicParsing="false" text="Compartilhar" />
+              <MenuItem mnemonicParsing="false" text="Vizualizar" styleClass="menu-item"/>
+                <MenuItem mnemonicParsing="false" text="Adicionar Filme/Remover Filme" styleClass="menu-item"/>
+                <MenuItem mnemonicParsing="false" text="Compartilhar" styleClass="menu-item"/>
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Novidades">
+          <Menu mnemonicParsing="false" text="Novidades" styleClass="menu">
             <items>
-              <MenuItem mnemonicParsing="false" text="Lançamentos" />
+              <MenuItem mnemonicParsing="false" text="Lançamentos" styleClass="menu-item"/>
             </items>
           </Menu>
         </menus>

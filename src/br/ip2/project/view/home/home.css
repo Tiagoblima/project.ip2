@@ -25,17 +25,17 @@
 }
 
 .background#menuBar{
-    -fx-background-image: url(img/menuGride.background-image.jpg);
+    -fx-background-image: url(../img/menuGride.background-image.jpg);
 }
 .background{
-    -fx-background-image: url(img/anchorPane.background-image.jpg);
+    -fx-background-image: url(../img/anchorPane.background-image.jpg);
 }
 #paneText{
     -fx-text-fill: green;
     -fx-font-size: 12pt;
 }
 #divPanel{
-    -fx-background-image: url("img/divPanel.jpg");
+    -fx-background-image: url("../img/divPanel.jpg");
 }
 
 
@@ -55,15 +55,22 @@
 }
 .label-pane:hover{
     -fx-opacity: 1;
-    
+
 }
 .background-pane#action{
-    -fx-background-image: url(img/action.pane.index.jpg);
+    -fx-background-image: url(../img/action.pane.index.jpg);
     -fx-background-repeat: no-repeat;
 }
 
-.background-pane {
+.menu:hover{
+    -fx-background-color: #cccccc;
+}
+.menu-item:hover{
+    -fx-background-color: #cccccc;
+}
+.menu-bar {
+
 }
 
-.label-pane {
+.menu-item {
 }

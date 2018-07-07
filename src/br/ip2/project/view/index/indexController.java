@@ -26,7 +26,7 @@ public class indexController {
 
 
     public indexController() {
-        image = new Image(indexController.class.getResourceAsStream("img/action.pane.index.jpg"));
+        image = new Image(indexController.class.getResourceAsStream("../img/action.pane.index.jpg"));
     }
 
     public void toLogin(ActionEvent actionEvent) {
