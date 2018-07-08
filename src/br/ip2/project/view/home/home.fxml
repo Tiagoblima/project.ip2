@@ -18,14 +18,19 @@
         <menus>
           <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
             <items>
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Perfil" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Perfil" onAction="#toPerfil" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Adicionar Filme" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Remover Filme" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
                 <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" styleClass="menu" text="Minha Galeira de Filmes">
+          <Menu mnemonicParsing="false" styleClass="menu" text="Galeira de Filmes">
             <items>
-              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Vizualizar" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Adicionar Filme/Remover Filme" />
+              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Visitar Estante" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Comprar" />
+                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Remover Filme" />
                 <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
             </items>
           </Menu>

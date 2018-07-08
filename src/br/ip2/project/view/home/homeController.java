@@ -1,6 +1,7 @@
 package br.ip2.project.view.home;
 
 import br.ip2.project.view.index.indexController;
+import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -10,7 +11,8 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 import java.awt.event.MouseEvent;
-
+import br.ip2.project.view.Main;
+import br.ip2.project.view.Scenes;
 public class homeController {
 
     public Pane action;
@@ -32,11 +34,8 @@ public class homeController {
         this.vbox.setVisible(true);
     }
 
-    public void Webview(MouseEvent mouseEvent){
 
-
-
+    public void toPerfil(ActionEvent actionEvent) {
+        Main.changeScreen(Scenes.Perfil);
     }
-
-
 }

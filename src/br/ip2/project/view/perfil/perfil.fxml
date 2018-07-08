@@ -24,7 +24,7 @@
 
           <Pane layoutX="14.0" layoutY="14.0" prefHeight="201.0" prefWidth="246.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <children>
-               <Circle fill="DODGERBLUE" layoutX="106.0" layoutY="104.0" radius="83.0" stroke="BLACK" strokeType="INSIDE" />
+               <Circle fx:id="circle" fill="DODGERBLUE" layoutX="106.0" layoutY="104.0" opacity="0.85" radius="83.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle-background" />
             </children></Pane>
 
          <GridPane prefHeight="112.0" prefWidth="344.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
