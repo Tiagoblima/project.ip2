@@ -16,6 +16,7 @@ public class Main extends Application {
         private static Scene Index;
         private static Scene Form;
         private static Scene Home;
+        private static Scene Perfil;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -32,10 +33,10 @@ public class Main extends Application {
 
         Parent form = FXMLLoader.load(getClass().getResource("form/form.fxml"));
         Form = new Scene(form,600,450);
+
+        Parent perfil = FXMLLoader.load(getClass().getResource("perfil/perfil.fxml"));
+        Perfil = new Scene(perfil,600,450);
         primaryStage.setTitle("EasyFilms");
-
-
-
 
         primaryStage.setScene(Home);
         primaryStage.show();
@@ -55,6 +56,9 @@ public class Main extends Application {
                 break;
             case Home:
                 stage.setScene(Home);
+                break;
+            case Perfil:
+                stage.setScene(Perfil);
         }
 
     }

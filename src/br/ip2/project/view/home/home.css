@@ -1,8 +1,7 @@
 .label{
-    -fx-text-fill: #0045ff;
+    -fx-text-fill: #17b2ff;
     -fx-font-family: "Comic Sans MS";
     -fx-font-size: 14pt;
-
 }
 .Label{
 
@@ -40,7 +39,7 @@
 
 
 .background-pane{
-    -fx-background-size: 200px 150px;
+    -fx-background-size: 150px 150px;
     -fx-opacity: 1;
     -fx-background-repeat: no-repeat;
 }

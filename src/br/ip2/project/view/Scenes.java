@@ -5,4 +5,5 @@ public enum  Scenes {
     Index,
     Form,
     Home,
+    Perfil,
 }
