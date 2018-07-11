@@ -35,7 +35,7 @@ public class Main extends Application {
         Perfil = new Scene(perfil,600,450);
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Home);
+        primaryStage.setScene(Index);
         primaryStage.show();
 
     }

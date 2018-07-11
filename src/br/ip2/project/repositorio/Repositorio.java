@@ -34,11 +34,9 @@ public class Repositorio <T> implements Serializable{
             e.printStackTrace();
         }catch (EOFException  e){
 
-            System.out.println("problema na leitura do arquivo");
+            System.out.println("problema na escrita do arquivo");
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        }catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -48,17 +46,6 @@ public class Repositorio <T> implements Serializable{
         try {
 
             this.fInput = new FileInputStream(filePath);
-
-            if(this.fInput==null){
-
-                try{
-                    File file = new File(filePath);
-                    file.createNewFile();
-                    ler(filePath);
-                }catch (Exception exc){
-                    exc.printStackTrace();
-                }
-            }
 
             this.ois = new ObjectInputStream(fInput);
 
