@@ -4,7 +4,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
-public class perfilController {
+public class Controller {
 
     public Circle circle;
 
@@ -12,10 +12,5 @@ public class perfilController {
     public Label dataNasc;
     public Label nome;
 
-    perfilController(){
-
-
-
-    }
 
 }

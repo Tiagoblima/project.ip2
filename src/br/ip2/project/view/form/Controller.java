@@ -9,7 +9,7 @@ import br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class formController {
+public class Controller {
 
     public TextField nomeField;
     public TextField emailField;

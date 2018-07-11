@@ -11,7 +11,7 @@ import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 
 
-public class indexController {
+public class Controller {
 
     public TextField loginField;
     public Button btnCadastro;
@@ -25,8 +25,8 @@ public class indexController {
     public  Image image;
 
 
-    public indexController() {
-        image = new Image(indexController.class.getResourceAsStream("../img/action.pane.index.jpg"));
+    public Controller() {
+        image = new Image(Controller.class.getResourceAsStream("../img/action.pane.index.jpg"));
     }
 
     public void toLogin(ActionEvent actionEvent) {

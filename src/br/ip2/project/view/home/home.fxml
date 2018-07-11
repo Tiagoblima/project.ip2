@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.homeController">
+<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.Controller">
    <children>
       <MenuBar prefHeight="35.0" prefWidth="614.0" styleClass="menu-bar">
         <menus>

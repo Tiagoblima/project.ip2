@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.scene.control.PasswordField?>
-<AnchorPane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@index.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.index.indexController">
+<AnchorPane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@index.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.index.Controller">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
