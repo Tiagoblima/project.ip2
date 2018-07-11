@@ -41,16 +41,16 @@
                <Label text="Nome: " />
                <Label text="Data de Nascimento: " GridPane.rowIndex="1" />
                <Label text="Tipo de Cliente: " GridPane.rowIndex="2" />
-               <Label text="Label" GridPane.columnIndex="1" />
-               <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-               <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <Label fx:id="nome" text="Label" GridPane.columnIndex="1" />
+               <Label fx:id="dataNasc" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Label fx:id="tipoCliente" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
          </GridPane>
          <SplitPane dividerPositions="0.3" orientation="VERTICAL" prefHeight="200.0" prefWidth="592.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
            <items>
              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="87.0" prefWidth="590.0">
                   <children>
-                     <Label layoutX="48.0" layoutY="22.0" text="Label" />
+                     <Label layoutX="48.0" layoutY="22.0" text="Favoritos" />
                   </children>
                </AnchorPane>
              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />

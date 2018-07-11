@@ -20,7 +20,7 @@ public class Pessoa implements Serializable {
     }
 
     public String getDataAniv() {
-        return dataAniv;
+        return this.dataAniv;
     }
 
     public void setDataAniv(String dataAniv) {

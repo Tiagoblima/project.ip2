@@ -1,7 +1,9 @@
 package br.ip2.project.model;
-import br.ip2.project.model.Interface.Cliente;
 
-public class ClientePremium extends Pessoa implements Cliente {
+public class ClientePremium extends Cliente {
+    public ClientePremium(String nome, String email, String dataAniv, String login, String senha, int qtdFilmes, double credito) throws Exception {
+        super(nome, email, dataAniv, login, senha, qtdFilmes, credito);
+    }
 
 
     //TODO Pensar nas vantagens de ser um Cliente Premium

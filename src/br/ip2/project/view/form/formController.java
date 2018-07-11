@@ -1,7 +1,9 @@
 package br.ip2.project.view.form;
 
 import br.ip2.project.controller.ClienteComumController;
+import br.ip2.project.controller.ClientePremiumController;
 import br.ip2.project.model.ClienteComum;
+import br.ip2.project.model.ClientePremium;
 import br.ip2.project.view.Main;
 import br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
@@ -19,8 +21,10 @@ public class formController {
     public CheckBox agree;
     public Label lblMsg;
 
-    public ClienteComum cliente;
-    public ClienteComumController controllerClienteComum = new ClienteComumController();
+    private ClienteComum clienteComum;
+    private ClientePremium clientePremium;
+    private ClientePremiumController clientePremiumController;
+    private ClienteComumController controllerClienteComum = new ClienteComumController();
 
 
 
@@ -41,8 +45,8 @@ public class formController {
 
                  try{
 
-                     cliente = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
-                     controllerClienteComum.setCliente(this.cliente);
+                     this.clienteComum = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
+                     controllerClienteComum.setCliente(this.clienteComum);
 
                  }catch (Exception e){
                      msg = "Uma ou mais informações estão ausentes.";
@@ -70,14 +74,48 @@ public class formController {
 
              lblMsg.setText(msg);
 
-        }
+        }else{
+
+             if (this.agree.isSelected()){
+
+                 try{
+
+                     this.clienteComum = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
+                     this.controllerClienteComum.setCliente(this.clienteComum);
+
+                 }catch (Exception e){
+                     msg = "Uma ou mais informações estão ausentes.";
+                     exception = false;
+                 }
+
+
+                 try{
+
+                     this.controllerClienteComum.cadastrarCliente();
+
+                     System.out.println(controllerClienteComum.getCCHashMap().toString());
+                     msg = "Cliente cadastrado com sucesso";
+
+                 }catch (Exception e){
+
+                     if (exception){
+                         msg = "Cliente já cadastrado";
+                     }
+                 }
+
+             }else {
+                 msg = "Você deve concordar com os nossos termos";
+             }
+
+             lblMsg.setText(msg);
+         }
 
 
 
 
     }
 
-    public  void clearFields(){
+    private void clearFields(){
         this.nomeField.clear();
         this.emailField.clear();
         this.loginField.clear();
