@@ -1,7 +1,6 @@
 package br.ip2.project.view.form;
 
-import br.ip2.project.controller.ClienteComumController;
-import br.ip2.project.controller.ClientePremiumController;
+import br.ip2.project.controller.ClienteController;
 import br.ip2.project.model.ClienteComum;
 import br.ip2.project.model.ClientePremium;
 import br.ip2.project.view.Main;
@@ -24,7 +23,7 @@ public class formController {
     private ClienteComum clienteComum;
     private ClientePremium clientePremium;
     private ClientePremiumController clientePremiumController;
-    private ClienteComumController controllerClienteComum = new ClienteComumController();
+    private ClienteController controllerClienteComum = new ClienteController();
 
 
 

@@ -1,6 +1,6 @@
 package br.ip2.project.view.index;
 
-import br.ip2.project.controller.ClienteComumController;
+import br.ip2.project.controller.ClienteController;
 import br.ip2.project.view.Main;
 import br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
@@ -19,7 +19,7 @@ public class indexController {
     public PasswordField passField;
     public javafx.scene.image.ImageView ImageView;
     public Label lblMsg;
-    public ClienteComumController controllerCliente = new ClienteComumController();
+    public ClienteController controllerCliente = new ClienteController();
 
 
     public  Image image;

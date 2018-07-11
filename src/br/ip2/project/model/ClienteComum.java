@@ -8,6 +8,9 @@ public class ClienteComum extends Cliente {
     }
 
     @Override
+    public void setTipoCliente() { this.tipoCliente = "Comum"; }
+
+    @Override
     public void setLimiteDeCredito() {
 
     }
