@@ -1,6 +1,7 @@
 package br.ip2.project.view.form;
 
 import br.ip2.project.controller.ClienteController;
+import br.ip2.project.model.Cliente;
 import br.ip2.project.model.ClienteComum;
 import br.ip2.project.model.ClientePremium;
 import br.ip2.project.view.Main;
@@ -20,10 +21,9 @@ public class formController {
     public CheckBox agree;
     public Label lblMsg;
 
-    private ClienteComum clienteComum;
-    private ClientePremium clientePremium;
-    private ClientePremiumController clientePremiumController;
-    private ClienteController controllerClienteComum = new ClienteController();
+    private Cliente cliente;
+
+    private ClienteController clienteController = new ClienteController();
 
 
 
@@ -44,8 +44,7 @@ public class formController {
 
                  try{
 
-                     this.clienteComum = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
-                     controllerClienteComum.setCliente(this.clienteComum);
+                     this.cliente = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
 
                  }catch (Exception e){
                      msg = "Uma ou mais informações estão ausentes.";
@@ -55,9 +54,9 @@ public class formController {
 
                  try{
 
-                     controllerClienteComum.cadastrarCliente();
+                     clienteController.cadastrarCliente(this.cliente);
 
-                     System.out.println(controllerClienteComum.getCCHashMap().toString());
+                     System.out.println(clienteController.getCCHashMap().toString());
                      msg = "Cliente cadastrado com sucesso";
 
                  }catch (Exception e){
@@ -79,8 +78,8 @@ public class formController {
 
                  try{
 
-                     this.clienteComum = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
-                     this.controllerClienteComum.setCliente(this.clienteComum);
+                     this.cliente = new ClientePremium(nome,email,dataAniv,login,senha,0,0);
+
 
                  }catch (Exception e){
                      msg = "Uma ou mais informações estão ausentes.";
@@ -90,9 +89,9 @@ public class formController {
 
                  try{
 
-                     this.controllerClienteComum.cadastrarCliente();
+                     this.clienteController.cadastrarCliente(this.cliente);
 
-                     System.out.println(controllerClienteComum.getCCHashMap().toString());
+                     System.out.println(clienteController.getCCHashMap().toString());
                      msg = "Cliente cadastrado com sucesso";
 
                  }catch (Exception e){

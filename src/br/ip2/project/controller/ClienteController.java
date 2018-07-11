@@ -24,10 +24,10 @@ public class ClienteController {
        this.cliente = cliente;
    }
 
-   public void cadastrarCliente(Cliente tipoCliente) throws Exception
+   public void cadastrarCliente(Cliente cliente) throws Exception
    {
 
-       this.cliente = tipoCliente;
+       this.cliente = cliente;
 
        if(CHashMap.containsKey(this.cliente.getLogin())){
 

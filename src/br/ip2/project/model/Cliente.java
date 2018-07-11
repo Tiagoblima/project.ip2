@@ -35,7 +35,7 @@ public abstract class Cliente extends Pessoa{
     }
 
 
-    public abstract void setTipoCliente();
+    public abstract void mudarTipoCliente();
     public String getTipoCliente(){ return this.tipoCliente;}
     public String getEmail(){
         return this.email;
