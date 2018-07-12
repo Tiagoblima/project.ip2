@@ -34,9 +34,11 @@ public class Repositorio <T> implements Serializable{
             e.printStackTrace();
         }catch (EOFException  e){
 
-            System.out.println("problema na escrita do arquivo");
+            System.out.println("problema na leitura do arquivo");
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

@@ -1,35 +1,28 @@
 package br.ip2.project.view.home;
 
 import javafx.event.ActionEvent;
-import javafx.scene.image.Image;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-
 import br.ip2.project.view.Main;
 import br.ip2.project.view.Scenes;
+import javax.swing.text.Document;
+import org.w3c.dom.*;
+import com.sun.org.apache.xerces.internal.dom.DocumentImpl;
+
+import java.io.IOException;
+
 public class Controller {
 
-    public Pane action;
-    public Pane adventure;
-    public Pane drama;
-    public Pane funny;
-    public Pane family;
-    public Pane nacional;
-    public Image image;
-    public VBox vbox;
+
     public AnchorPane feedNoticias;
 
     public Controller() {
 
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
-        webEngine.load("https://www.imdb.com/");
-        this.vbox = new VBox();
-        this.vbox.getChildren().addAll(webView);
-        this.vbox.setVisible(true);
+
+
+
     }
 
 

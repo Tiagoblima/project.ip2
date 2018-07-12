@@ -4,6 +4,7 @@ import br.ip2.project.controller.ClienteController;
 import br.ip2.project.model.Cliente;
 import br.ip2.project.model.ClienteComum;
 import br.ip2.project.model.ClientePremium;
+import br.ip2.project.model.Endereco;
 import br.ip2.project.view.Main;
 import br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
@@ -22,7 +23,7 @@ public class Controller {
     public Label lblMsg;
 
     private Cliente cliente;
-
+    private Endereco endereco;
     private ClienteController clienteController = new ClienteController();
 
 
@@ -44,7 +45,7 @@ public class Controller {
 
                  try{
 
-                     this.cliente = new ClienteComum(nome,email,dataAniv,login,senha,0,0);
+                     this.cliente = new ClienteComum(nome,email,dataAniv,login,senha,this.endereco);
 
                  }catch (Exception e){
                      msg = "Uma ou mais informações estão ausentes.";
@@ -78,7 +79,7 @@ public class Controller {
 
                  try{
 
-                     this.cliente = new ClientePremium(nome,email,dataAniv,login,senha,0,0);
+                     this.cliente = new ClientePremium(nome,email,dataAniv,login,senha,this.endereco);
 
 
                  }catch (Exception e){
