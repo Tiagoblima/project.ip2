@@ -3,7 +3,7 @@ package br.ip2.project.model;
 import java.util.Objects;
 
 public class Filme {
-//teste commit
+
     private String titulo;
     private GeneroFilme genero;
     private int duracaoHora;
@@ -12,12 +12,23 @@ public class Filme {
     private String sinopse;
 
     public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero) {
+
         this.titulo = titulo;
         this.duracaoHora = duracaoHora;     //SERÁ PRECISO TRATAR ESSA ENTRADA, POIS ELA NÃ PODERÁ SER MAIOR QUE 23
         this.duracaoMinuto = duracaoMinuto; //SERÁ PRECISO TRATAR ESSA ENTRADA, POIS ELA NÃ PODERÁ SER MAIOR QUE 59
         this.anoLanc = anoLanc;
         this.sinopse = sinopse;
         this.genero = genero;
+    }
+    public void verificaHora(int hora) throws Exception{
+        if(hora>23 || hora<0){
+            throw new Exception();
+        }
+    }
+    public void verificaMinuto(int minuto) throws Exception{
+        if(minuto>59 || minuto<0){
+            throw new Exception();
+        }
     }
 
     public String getTitulo() {

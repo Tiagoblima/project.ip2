@@ -1,9 +1,13 @@
 package br.ip2.project.model;
 
 public class ClientePremium extends Cliente {
-    public ClientePremium(String nome, String email, String dataAniv, String login, String senha, int qtdFilmes, double credito) throws Exception {
-        super(nome, email, dataAniv, login, senha, qtdFilmes, credito);
+// O cliente Premium não terá nenhum tipo de veto quanto ao acesso ao número de filmes disponíveis,
+// nem precisará assistir à anuncios durante a exibição do filme.
+
+    public ClientePremium(String nome, String email, String dataAniv, String login, String senha, Endereco endereco) throws Exception {
+        super(nome, email, dataAniv, login, senha, endereco);
         super.tipoCliente = "Premium";
+        super.qtdFilmes = 0;
     }
 
     @Override
@@ -11,27 +15,6 @@ public class ClientePremium extends Cliente {
 
 
     //TODO Pensar nas vantagens de ser um Cliente Premium
-
-    @Override
-    public void setLimiteDeCredito() {
-
-    }
-
-    @Override
-    public void setLimiteDeFilmes() {
-
-    }
-
-    @Override
-    public void setLimiteDeTempo() {
-
-    }
-
-
-
-
-
-
 
 
 }

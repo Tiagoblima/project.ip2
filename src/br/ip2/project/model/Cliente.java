@@ -3,11 +3,11 @@ package br.ip2.project.model;
 public abstract class Cliente extends Pessoa{
 
     protected double credito;
-    protected int qtdFilmes;
+    protected int qtdFilmes; //LIMITADOR DE FILMES
     protected String tipoCliente;
 
 
-    public Cliente(String nome,String email ,String dataAniv, String login, String senha,int qtdFilmes, double credito)throws Exception {
+    public Cliente(String nome,String email ,String dataAniv, String login, String senha, Endereco endereco)throws Exception {
 
 
         verificarInput(nome);
@@ -21,9 +21,7 @@ public abstract class Cliente extends Pessoa{
         this.login = login;
         this.senha = senha;
         this.email = email;
-        this.qtdFilmes = qtdFilmes;
-        this.credito = credito;
-
+        this.endereco = endereco;
 
     }
 
@@ -59,8 +57,6 @@ public abstract class Cliente extends Pessoa{
     }
     public String getDataNasc() { return this.getDataAniv(); }
 
-    public abstract void setLimiteDeCredito();
-    public abstract void setLimiteDeFilmes();
-    public abstract void setLimiteDeTempo();
+
 
 }

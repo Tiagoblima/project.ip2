@@ -9,7 +9,7 @@ public class Pessoa implements Serializable {
     protected String dataAniv;
     protected String login;
     protected String senha;
-
+    protected Endereco endereco;
 
     public String getNome() {
         return nome;
@@ -50,6 +50,13 @@ public class Pessoa implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Endereco getEndereco(){
+        return endereco;
+    }
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
     }
 
 //EQUALS, HASHCODE E TOSTRING

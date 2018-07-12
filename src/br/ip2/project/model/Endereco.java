@@ -47,4 +47,12 @@ public class Endereco {
         this.numero = numero;
     }
 
+    @Override
+    public String toString() {
+        return  rua +
+                ", " + numero + ".\n "+ bairro +", "+
+                ". " + cidade +
+                ", " + estado +
+                ".";
+    }
 }

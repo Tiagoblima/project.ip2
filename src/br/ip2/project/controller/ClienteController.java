@@ -13,9 +13,6 @@ public class ClienteController {
     private Cliente cliente;
     private Repositorio<HashMap<String,Cliente>> repositorio = new Repositorio<>();
 
-
-
-
     public ClienteController(){
 
         this.CHashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
@@ -24,40 +21,40 @@ public class ClienteController {
        this.cliente = cliente;
    }
 
-   public void cadastrarCliente(Cliente cliente) throws Exception
-   {
+    public void cadastrarCliente(Cliente cliente) throws Exception
+    {
 
-       this.cliente = cliente;
+        this.cliente = cliente;
 
-       if(CHashMap.containsKey(this.cliente.getLogin())){
+        if(CHashMap.containsKey(this.cliente.getLogin())){
 
-           throw new Exception();
-       }
+               throw new Exception();
+        }
 
-       CHashMap.put(this.cliente.getLogin(),this.cliente);
-       this.repositorio.setObject(this.CHashMap);
-       this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
-   }
+        CHashMap.put(this.cliente.getLogin(),this.cliente);
+        this.repositorio.setObject(this.CHashMap);
+        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+    }
 
    public void login(String login, String senha)throws Exception
    {
 
-       if (!CHashMap.containsKey(login)) {
-           throw new Exception();
-       }
+        if (!CHashMap.containsKey(login)) {
+            throw new Exception();
+        }
 
-       this.cliente = CHashMap.get(login);
-       if (!(this.cliente.getSenha().equals(senha))) {
+        this.cliente = CHashMap.get(login);
+        if (!(this.cliente.getSenha().equals(senha))) {
            throw new Exception();
-       }
+        }
 
    }
 
-    public HashMap<String, Cliente> getCCHashMap() {
+   public HashMap<String, Cliente> getCCHashMap() {
         return CHashMap;
     }
 
-    public void setCCHashMap(HashMap<String, Cliente> CCHashMap) {
+   public void setCCHashMap(HashMap<String, Cliente> CCHashMap) {
         this.CHashMap = CCHashMap;
     }
 }
