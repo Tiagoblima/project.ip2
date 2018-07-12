@@ -29,32 +29,13 @@
 .background{
     -fx-background-image: url(../img/anchorPane.background-image.jpg);
 }
-#paneText{
-    -fx-text-fill: green;
-    -fx-font-size: 12pt;
-}
-#divPanel{
-    -fx-background-image: url("../img/divPanel.jpg");
-}
 
+.title {
 
-.background-pane{
-    -fx-background-size: 150px 150px;
-    -fx-opacity: 1;
-    -fx-background-repeat: no-repeat;
-}
-.background-pane:hover{
-    -fx-opacity: 1;
-}
-.label-pane{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Comic Sans MS";
     -fx-text-fill: white;
-    -fx-font-size: 40px;
-    -fx-alignment: center;
-    -fx-opacity: 0;
-}
-.label-pane:hover{
-    -fx-opacity: 1;
-
+    -fx-font-weight: bold;
 }
 .background-pane#action{
     -fx-background-image: url(../img/action.pane.index.jpg);

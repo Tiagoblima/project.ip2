@@ -2,6 +2,7 @@ package br.ip2.project.view.home;
 
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
@@ -19,6 +20,7 @@ public class Controller {
     public Pane nacional;
     public Image image;
     public VBox vbox;
+    public AnchorPane feedNoticias;
 
     public Controller() {
 
