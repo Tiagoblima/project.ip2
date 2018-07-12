@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -34,6 +37,9 @@ public class Main extends Application {
         Parent perfil = FXMLLoader.load(getClass().getResource("perfil/perfil.fxml"));
         Perfil = new Scene(perfil,600,450);
         primaryStage.setTitle("EasyFilms");
+
+
+
 
         primaryStage.setScene(Index);
         primaryStage.show();

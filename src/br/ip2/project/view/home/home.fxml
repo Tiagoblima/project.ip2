@@ -8,41 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.Controller">
-   <children>
-      <MenuBar prefHeight="35.0" prefWidth="638.0" styleClass="menu-bar">
-        <menus>
-          <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#toPerfil" styleClass="menu-item" text="Perfil" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Adicionar Filme" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Remover Filme" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" styleClass="menu" text="Galeira de Filmes">
-            <items>
-              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Visitar Estante" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Favoritos" />
-                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" styleClass="menu" text="Novidades">
-            <items>
-              <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Lançamentos" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Pane layoutX="14.0" layoutY="90.0" prefHeight="300.0" prefWidth="301.0" />
-      <ScrollPane layoutX="350.0" layoutY="90.0" prefHeight="300.0" prefWidth="250.0">
-        <content>
-          <AnchorPane fx:id="feedNoticias" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="250.0" />
-        </content>
-      </ScrollPane>
-      <Label layoutX="24.0" layoutY="54.0" styleClass="title" text="Para Você Hoje" />
-      <Label layoutX="342.0" layoutY="54.0" styleClass="title" text="Dos Seus Amigos" />
-   </children>
+<AnchorPane fx:id="main" prefHeight="450.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.Controller">
+    <MenuBar prefHeight="35.0" prefWidth="638.0" styleClass="menu-bar">
+        <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
+            <MenuItem mnemonicParsing="false" onAction="#toPerfil" styleClass="menu-item" text="Perfil" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Adicionar Filme" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Remover Filme" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" />
+        </Menu>
+        <Menu mnemonicParsing="false" styleClass="menu" text="Galeira de Filmes">
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Visitar Estante" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Favoritos" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
+        </Menu>
+        <Menu mnemonicParsing="false" styleClass="menu" text="Novidades">
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Lançamentos" />
+        </Menu>
+    </MenuBar>
+    <Pane layoutX="14.0" layoutY="90.0" prefHeight="300.0" prefWidth="301.0">
+      <children>
+          <Label fx:id="feedNoticias" layoutX="-7.0" layoutY="-81.0" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="250.0" onMouseReleased="#criar"/>
+      </children></Pane>
+    <ScrollPane fx:id="scroll" layoutX="350.0" layoutY="90.0" prefHeight="300.0" prefWidth="250.0">
+
+    </ScrollPane>
+    <Label layoutX="24.0" layoutY="54.0" styleClass="title" text="Para Você Hoje" />
+    <Label layoutX="342.0" layoutY="54.0" styleClass="title" text="Dos Seus Amigos" />
 </AnchorPane>
