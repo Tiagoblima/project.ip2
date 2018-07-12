@@ -4,11 +4,17 @@ import br.ip2.project.model.Filme;
 import br.ip2.project.model.GeneroFilme;
 
 public class FilmeController {
-    public static boolean salvarFilme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme generoFilme){
-        Filme filme;
-        filme = new Filme(titulo,duracaoHora,duracaoMinuto, anoLanc, sinopse, generoFilme);
+    public static void cadastrarFilme() throws Exception{
 
-        return true; //retorno temporário, só para não dar erro
+    }
+    public static void removerFilme() throws Exception{
 
+    }
+    public static void alterarFilme() throws Exception{
+
+    }
+    public static Filme procurarFilme(String title){
+
+        return null; //retorno temporário
     }
 }
