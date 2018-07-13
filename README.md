@@ -13,3 +13,4 @@ Versão jdk1.8.0_152 ou superior
 <p>1. Cadastro e Login</p>
 <p>2. Visualização de conteudo web</p>
 <p>3. Seleção de conteudo para lista de "favoritos"</p>
+<p>3. Compartilhamento de conteudo entre usuários</p>
