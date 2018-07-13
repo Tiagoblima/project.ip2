@@ -39,7 +39,7 @@
                 <Label styleClass="Label" text="Nome de Usuário: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <Label styleClass="Label" text="Filmes Disponiveis: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <Label styleClass="Label" text="Créditos: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <Label styleClass="Label" text="Mais sobre mim: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
 
                 <Label fx:id="lblNomeUsuario" styleClass="label" text="login" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                 <Label fx:id="lblFilmes" styleClass="Label" text="Qtd de Filmes" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -55,5 +55,6 @@
         </content>
       </ScrollPane>
       <Label layoutX="148.0" layoutY="200.0" text="Meus Favoritos" />
+      <Label fx:id="lblMsg" layoutX="350.0" layoutY="200.0" text="tipo cliente" />
    </children>
 </AnchorPane>

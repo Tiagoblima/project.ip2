@@ -22,6 +22,7 @@ public class Controller implements Initializable {
     public Label lblNomeUsuario;
     public Label lblCreditos;
     public Button btnMaisPerfil;
+    public Label lblMsg;
     private ClienteController cc;
     private HashMap<String, Cliente>  cHashMap;
     private Cliente cliente;
@@ -39,7 +40,9 @@ public class Controller implements Initializable {
         this.lblCreditos.setText(String.valueOf(this.cliente.getCredito()));
 
         if(this.cliente.getTipoCliente().equals("Comum")){
-
+            this.lblMsg.setText("Você ainda não é Premium");
+        }else{
+            this.lblMsg.setText("Você já é Premium");
         }
     }
 }
