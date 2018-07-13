@@ -15,7 +15,7 @@ public class ClienteController {
 
     public ClienteController(){
 
-        this.CHashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+       this.CHashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
     }
     public void setCliente(ClienteComum cliente){
        this.cliente = cliente;

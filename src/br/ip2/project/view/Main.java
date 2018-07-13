@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -36,7 +37,8 @@ public class Main extends Application {
         Form = new Scene(form,600,450);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("perfil/perfil.fxml"));
-        loader.setController(new br.ip2.project.view.perfil.Controller());
+        Label label = new Label("Meu nome");
+        loader.setController(new br.ip2.project.view.perfil.Controller("tiago"));
 
         Parent perfil = loader.load();
         Perfil = new Scene(perfil,600,450);
@@ -45,7 +47,7 @@ public class Main extends Application {
 
 
 
-        primaryStage.setScene(Home);
+        primaryStage.setScene(Form);
         primaryStage.show();
 
     }
