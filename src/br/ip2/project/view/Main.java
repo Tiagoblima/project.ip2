@@ -1,5 +1,6 @@
 package br.ip2.project.view;
 
+import br.ip2.project.view.index.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,19 +30,22 @@ public class Main extends Application {
         Index = new Scene(index,600,450);
 
         Parent home = FXMLLoader.load(getClass().getResource("home/home.fxml"));
-        Home = new Scene(home,600,450);
+        Home = new Scene(home,630,450);
 
         Parent form = FXMLLoader.load(getClass().getResource("form/form.fxml"));
         Form = new Scene(form,600,450);
 
-        Parent perfil = FXMLLoader.load(getClass().getResource("perfil/perfil.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("perfil/perfil.fxml"));
+        loader.setController(new br.ip2.project.view.perfil.Controller());
+
+        Parent perfil = loader.load();
         Perfil = new Scene(perfil,600,450);
         primaryStage.setTitle("EasyFilms");
 
 
 
 
-        primaryStage.setScene(Index);
+        primaryStage.setScene(Home);
         primaryStage.show();
 
     }

@@ -31,7 +31,6 @@
 }
 
 .title {
-
     -fx-font-size: 14pt;
     -fx-font-family: "Comic Sans MS";
     -fx-text-fill: white;
@@ -48,6 +47,31 @@
 .menu-item:hover{
     -fx-background-color: #cccccc;
 }
+
+#refresh{
+    -fx-background-image: url("../img/refresh.png");
+    -fx-background-size: 100px 50px;
+    -fx-border-color: white;
+    -fx-background-repeat: no-repeat;
+}
+#pnPost{
+    -fx-background-image: url("../img/post.jpg");
+    -fx-background-size: 200px 75px;
+    -fx-opacity: 1;
+    -fx-background-repeat: no-repeat;
+}
+#lblpost{
+    -fx-text-fill: #031498;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 12pt;
+    -fx-opacity: 0;
+    -fx-background-color: white;
+
+}
+#lblpost:hover{
+    -fx-opacity: 1;
+}
+.background-pane
 .menu-bar {
 
 }

@@ -23,9 +23,11 @@ import java.io.IOException;
 public class Controller {
 
 
-    public Label feedNoticias;
-    public AnchorPane main;
+    public AnchorPane feedNoticias;
     public ScrollPane scroll;
+    public Button refresh;
+    public Pane pnPost;
+    public Label lblpost;
 
     public Controller() {
 
@@ -34,7 +36,16 @@ public class Controller {
 
     public void criar(){
 
-        feedNoticias.setText("Olá");
+        Pane pane = new Pane();
+
+        pane.setStyle("-fx-background-color: gray");
+        pane.setLayoutX(25.0);
+
+        pane.setPrefHeight(75.0);
+        pane.setPrefWidth(200.0);
+        pane.getChildren().add(new Label("Olá"));
+
+        feedNoticias.getChildren().add(pane);
     }
     public void toPerfil(ActionEvent actionEvent) {
         Main.changeScreen(Scenes.Perfil);

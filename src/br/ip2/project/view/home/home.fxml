@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane fx:id="main" prefHeight="450.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.home.Controller">
-    <MenuBar prefHeight="35.0" prefWidth="638.0" styleClass="menu-bar">
+    <MenuBar layoutX="-6.0" layoutY="9.0" prefHeight="0.0" prefWidth="638.0" styleClass="menu-bar">
         <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
             <MenuItem mnemonicParsing="false" onAction="#toPerfil" styleClass="menu-item" text="Perfil" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
@@ -23,17 +24,25 @@
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Favoritos" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
         </Menu>
-        <Menu mnemonicParsing="false" styleClass="menu" text="Novidades">
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Lançamentos" />
+        <Menu mnemonicParsing="false" styleClass="menu" text="Amigos">
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Encontrar Amigos" />
         </Menu>
     </MenuBar>
-    <Pane layoutX="14.0" layoutY="90.0" prefHeight="300.0" prefWidth="301.0">
+    <Pane layoutX="14.0" layoutY="176.0" prefHeight="237.0" prefWidth="283.0">
       <children>
-          <Label fx:id="feedNoticias" layoutX="-7.0" layoutY="-81.0" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="250.0" onMouseReleased="#criar"/>
+          <Label layoutX="14.0" layoutY="14.0" styleClass="title" text="Para Você Hoje" />
       </children></Pane>
-    <ScrollPane fx:id="scroll" layoutX="350.0" layoutY="90.0" prefHeight="300.0" prefWidth="250.0">
+    <Label layoutX="377.0" layoutY="78.0" styleClass="title" text="Dos Seus Amigos" />
+   <ScrollPane layoutX="377.0" layoutY="119.0" prefHeight="300.0" prefWidth="250.0">
+     <content>
+       <AnchorPane fx:id="feedNoticias" minHeight="0.0" minWidth="0.0" prefHeight="300" prefWidth="250" />
+     </content>
+   </ScrollPane>
+   <Button fx:id="refresh" layoutX="-6.0" layoutY="44.0" onAction="#criar" prefHeight="47.0" prefWidth="74.0" />
+   <Pane fx:id="pnPost" layoutX="76.0" layoutY="54.0" prefHeight="75.0" prefWidth="283.0">
+      <children>
+          <Label fx:id="lblpost" layoutX="14.0" layoutY="14.0" text="Compartilhe com os Amigos" />
+      </children></Pane>
 
-    </ScrollPane>
-    <Label layoutX="24.0" layoutY="54.0" styleClass="title" text="Para Você Hoje" />
-    <Label layoutX="342.0" layoutY="54.0" styleClass="title" text="Dos Seus Amigos" />
+
 </AnchorPane>

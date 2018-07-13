@@ -24,11 +24,14 @@ public class Controller {
 
     private Cliente cliente;
     private Endereco endereco;
-    private ClienteController clienteController = new ClienteController();
+    private ClienteController clienteController;
 
 
 
     public void ConfirmaCliente(ActionEvent actionEvent) {
+
+
+        this.clienteController =  new ClienteController();
 
         String nome = this.nomeField.getText();
         String email = this.emailField.getText();

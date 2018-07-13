@@ -26,6 +26,7 @@ public class Controller {
 
 
     public Controller() {
+
         image = new Image(Controller.class.getResourceAsStream("../img/action.pane.index.jpg"));
     }
 
