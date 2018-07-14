@@ -25,16 +25,27 @@ public class Repositorio <T> implements Serializable{
 
             this.fout = new FileOutputStream(filePath);
 
-            this.oos = new ObjectOutputStream(this.fout);
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não Encontrado \n Criando arquivo");
+            File file = new File(filePath);
 
+            try {
+                file.createNewFile();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            e.printStackTrace();
+        }
+
+        try{
+
+            this.oos = new ObjectOutputStream(this.fout);
             this.oos.writeObject(this.object);
             this.oos.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Arquivo não Encontrado");
-            e.printStackTrace();
-        }catch (EOFException  e){
 
-            System.out.println("problema na leitura do arquivo");
+        } catch (EOFException  e){
+
+            System.out.println("problema na escrita do arquivo");
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,7 +54,7 @@ public class Repositorio <T> implements Serializable{
         }
     }
 
-    public T ler(String filePath){
+    public T ler(String filePath) throws Exception{
 
         try {
 
@@ -57,11 +68,8 @@ public class Repositorio <T> implements Serializable{
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("Arquivo não Encontrado\nCriando novo arquivo...");
-
-
-
-
+            System.out.println("Arquivo não Encontrado\nCriando novo HashMap arquivo...");
+            throw new Exception();
         }catch (EOFException  e){
             System.out.println("problema na leitura do arquivo");
             e.printStackTrace();

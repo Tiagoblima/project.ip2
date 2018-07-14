@@ -11,13 +11,16 @@ import java.util.HashMap;
 public class ClienteController {
 
 
-    private HashMap<String,Cliente> CHashMap; //Cliente HashMap
+    private HashMap<String,Cliente> CHashMap = new HashMap<>(); //Cliente HashMap
     private Cliente cliente;
     private Repositorio<HashMap<String,Cliente>> repositorio = new Repositorio<>();
 
     public ClienteController(){
-
-       this.CHashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+        try{
+            this.CHashMap = this.repositorio.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+        }catch (Exception e){
+            this.CHashMap = new HashMap<>();
+        }
     }
     public void setCliente(ClienteComum cliente){
        this.cliente = cliente;
@@ -35,7 +38,8 @@ public class ClienteController {
 
         CHashMap.put(this.cliente.getLogin(),this.cliente);
         this.repositorio.setObject(this.CHashMap);
-        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+        this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+
     }
 
    public void login(String login, String senha)throws Exception

@@ -53,17 +53,17 @@ public class PerfilController implements Initializable {
 
         this.cc = new ClienteController();
         this.cHashMap =   this.cc.getCCHashMap();
-        this.cliente = this.cHashMap.get("tiago");
+    //    this.cliente = this.cHashMap.get("tiagoblima");
 
-        this.lblNomeUsuario.setText(this.cliente.getLogin());
-        this.lblFilmes.setText(String.valueOf(this.cliente.getQtdFilmes()));
-        this.lblCreditos.setText(String.valueOf(this.cliente.getCredito()));
-
+//        this.lblNomeUsuario.setText(this.cliente.getLogin());
+  //      this.lblFilmes.setText(String.valueOf(this.cliente.getQtdFilmes()));
+    //    this.lblCreditos.setText(String.valueOf(this.cliente.getCredito()));
+/*
         if(this.cliente.getTipoCliente().equals("Comum")){
             this.lblMsg.setText("Você ainda não é Premium");
         }else{
             this.lblMsg.setText("Você já é Premium");
-        }
+        }*/
     }
 
     @FXML
