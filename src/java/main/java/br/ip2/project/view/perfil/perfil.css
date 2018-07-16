@@ -1,4 +1,9 @@
 
+
+.background{
+    background-color: #17b2ff;
+}
+
 .label{
     -fx-text-fill: #17b2ff;
     -fx-font-family: "Comic Sans MS";
@@ -10,7 +15,7 @@
     -fx-font-size: 12pt;
 }
 #avatar{
-    -fx-background-image: url("../img/avatar.png");
-    -fx-border-image-repeat: no-repeat;
+    -fx-background-image: url("../img/avatar.png") no-repeat;
+    -fx-border-image-repeat: none;
     -fx-background-size: 200px 200px;
 }

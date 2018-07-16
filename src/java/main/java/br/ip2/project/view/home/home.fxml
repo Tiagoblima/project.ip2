@@ -13,14 +13,13 @@
         <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
             <MenuItem mnemonicParsing="false" onAction="#toPerfil" styleClass="menu-item" text="Perfil" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Adicionar Filme" />
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Remover Filme" />
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" />
-        </Menu>
-        <Menu mnemonicParsing="false" styleClass="menu" text="Galeira de Filmes">
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Visitar Estante" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Favoritos" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar Perfil" />
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" onAction="#sair"/>
+        </Menu>
+        <Menu mnemonicParsing="false" styleClass="menu" text="Filmes">
+            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Visitar Estante" />
+
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar" />
         </Menu>
         <Menu mnemonicParsing="false" styleClass="menu" text="Amigos">

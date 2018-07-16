@@ -1,6 +1,7 @@
 package main.java.br.ip2.project.view.home;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -25,10 +26,13 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable{
 
 
+    @FXML
     public AnchorPane feedNoticias;
     public ScrollPane scroll;
     public Button refresh;
+    @FXML
     public Pane pnPost;
+    @FXML
     public Label lblpost;
 
     @Override
@@ -50,4 +54,7 @@ public class HomeController implements Initializable{
     }
 
 
+    public void sair(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

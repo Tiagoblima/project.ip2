@@ -1,5 +1,6 @@
 package main.java.br.ip2.project.view.index;
 
+import javafx.application.Application;
 import javafx.fxml.Initializable;
 import main.java.br.ip2.project.controller.ClienteController;
 import main.java.br.ip2.project.model.Cliente;
@@ -63,7 +64,6 @@ public class IndexController {
                 acess = false;
             }
         }
-
 
         if(acess){
             toHome(actionEvent);

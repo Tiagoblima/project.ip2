@@ -14,6 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import main.java.br.ip2.project.controller.ClienteController;
 import main.java.br.ip2.project.repositorio.Repositorio;
+import main.java.br.ip2.project.view.Main;
+import main.java.br.ip2.project.view.Scenes;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -75,56 +77,12 @@ public class PerfilController implements Initializable {
     lblErro.setText(msg);
     }
 
-    @FXML
-    void changeImg(MouseEvent event) {
-
+    public void toHome(ActionEvent actionEvent) {
+        Main.changeScreen(Scenes.Home);
     }
 
-    @FXML
-    void toForm(ActionEvent event) {
-
+    public void sair(ActionEvent actionEvent) {
+        System.exit(0);
     }
-
-    @FXML
-    void toLogin(ActionEvent event) {
-
-    }
-
-
 }
 
-
-
-/*package br.ip2.project.view.perfil;
-
-import br.ip2.ClienteController;
-import br.ip2.Cliente;
-import br.ip2.ClienteComum;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
-
-import java.net.URL;
-import java.util.HashMap;
-import java.util.ResourceBundle;
-
-public class IndexController implements Initializable {
-
-    @FXML
-    public Circle circle;
-
-
-
-
-
-
-    public IndexController(String login){
-
-       }
-
-
-}
-*/

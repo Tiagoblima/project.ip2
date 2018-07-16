@@ -40,7 +40,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Index);
+        primaryStage.setScene(Home);
         primaryStage.show();
 
     }
@@ -64,7 +64,6 @@ public class Main extends Application {
         }
 
     }
-
 
 
 
