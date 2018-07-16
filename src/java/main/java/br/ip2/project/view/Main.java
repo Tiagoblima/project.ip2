@@ -4,11 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.net.URL;
 
 public class Main extends Application {
 
@@ -23,16 +20,16 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
 
-        AnchorPane index = FXMLLoader.load(getClass().getResource("index/index.fxml"));
+        AnchorPane index = FXMLLoader.load(getClass().getResource("fxml/index.fxml"));
         Index = new Scene(index);
 
-       Parent home = FXMLLoader.load(getClass().getResource("home/home.fxml"));
+       Parent home = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
         Home = new Scene(home,630,450);
 
-        Parent form = FXMLLoader.load(getClass().getResource("form/form.fxml"));
+        Parent form = FXMLLoader.load(getClass().getResource("fxml/form.fxml"));
         Form = new Scene(form,600,450);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("perfil/perfil.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/perfil.fxml"));
 
 
         Parent perfil = loader.load();

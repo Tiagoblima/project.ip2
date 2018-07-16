@@ -1,4 +1,4 @@
-package main.java.br.ip2.project.view.form;
+package main.java.br.ip2.project.view.controllers;
 
 import javafx.fxml.FXML;
 import main.java.br.ip2.project.controller.*;

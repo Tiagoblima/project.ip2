@@ -1,4 +1,4 @@
-package main.java.br.ip2.project.view.home;
+package main.java.br.ip2.project.view.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

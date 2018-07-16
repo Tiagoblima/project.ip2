@@ -12,12 +12,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="658.0" styleClass="background" stylesheets="@perfil.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.perfil.PerfilController">
+<AnchorPane prefHeight="400.0" prefWidth="658.0" styleClass="background" stylesheets="@../css/perfil.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.controllers.PerfilController">
    <children>
        <MenuBar layoutX="-6.0" layoutY="9.0" prefHeight="0.0" prefWidth="638.0" styleClass="menu-bar">
            <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
                <MenuItem mnemonicParsing="false" onAction="#toHome" styleClass="menu-item" text="Home" />
-               <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Favoritos" />
                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar Perfil " />
                <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" onAction="#sair"/>

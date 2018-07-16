@@ -1,4 +1,4 @@
-package main.java.br.ip2.project.view.index;
+package main.java.br.ip2.project.view.controllers;
 
 import javafx.application.Application;
 import javafx.fxml.Initializable;

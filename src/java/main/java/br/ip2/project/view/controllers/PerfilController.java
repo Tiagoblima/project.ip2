@@ -1,4 +1,4 @@
-package main.java.br.ip2.project.view.perfil;
+package main.java.br.ip2.project.view.controllers;
 
 import javafx.scene.image.Image;
 import main.java.br.ip2.project.controller.ClienteController;

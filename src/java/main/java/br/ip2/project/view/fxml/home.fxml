@@ -8,11 +8,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="main" prefHeight="450.0" prefWidth="600" styleClass="background" stylesheets="@home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.home.HomeController">
+<AnchorPane fx:id="main" prefHeight="450.0" prefWidth="600" styleClass="background" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.controllers.HomeController">
     <MenuBar layoutX="-6.0" layoutY="9.0" prefHeight="0.0" prefWidth="638.0" styleClass="menu-bar">
         <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
             <MenuItem mnemonicParsing="false" onAction="#toPerfil" styleClass="menu-item" text="Perfil" />
-            <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Filmes" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Meus Favoritos" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Compartilhar Perfil" />
             <MenuItem mnemonicParsing="false" styleClass="menu-item" text="Sair" onAction="#sair"/>
