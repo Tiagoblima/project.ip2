@@ -1,33 +1,44 @@
 package main.java.br.ip2.project.view.form;
 
+import javafx.fxml.FXML;
 import main.java.br.ip2.project.controller.*;
 import main.java.br.ip2.project.model.*;
+import main.java.br.ip2.project.repositorio.Repositorio;
 import main.java.br.ip2.project.view.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import java.io.File;
+
 public class FormController {
 
+    @FXML
     public TextField nomeField;
+    @FXML
     public TextField emailField;
+    @FXML
     public TextField loginField;
+    @FXML
     public TextField passwordField;
+    @FXML
     public PasswordField confPasswordField;
+    @FXML
     public RadioButton rbtPremium;
+    @FXML
     public DatePicker DatePick;
+    @FXML
     public CheckBox agree;
+    @FXML
     public Label lblMsg;
 
     private Cliente cliente;
     private Endereco endereco;
-    private ClienteController clienteController;
-
 
 
     public void ConfirmaCliente(ActionEvent actionEvent) {
 
 
-        this.clienteController =  new ClienteController();
+        ClienteController clienteController = new ClienteController();
 
         String nome = this.nomeField.getText();
         String email = this.emailField.getText();
@@ -50,6 +61,7 @@ public class FormController {
                      msg = "Uma ou mais informações estão ausentes.";
                      exception = false;
                  }
+
 
 
                  try{
@@ -89,10 +101,11 @@ public class FormController {
 
                  try{
 
-                     this.clienteController.cadastrarCliente(this.cliente);
+                     clienteController.cadastrarCliente(this.cliente);
 
                      System.out.println(clienteController.getCCHashMap().toString());
                      msg = "Cliente cadastrado com sucesso";
+
 
                  }catch (Exception e){
 

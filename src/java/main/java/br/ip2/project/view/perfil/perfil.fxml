@@ -3,10 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="400.0" prefWidth="658.0" styleClass="background" stylesheets="@perfil.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.perfil.PerfilController">
@@ -46,7 +46,8 @@
                 <Label fx:id="lblCreditos" styleClass="label" text="Creditos disponiveis" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <Button fx:id="btnMaisPerfil" styleClass="Label" text="Mais do perfil" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             </GridPane>
-            <ImageView fitHeight="155.0" fitWidth="211.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane fx:id="avatar" prefHeight="146.0" prefWidth="201.0" />
+
          </children>
       </GridPane>
       <ScrollPane layoutX="120.0" layoutY="238.0" prefHeight="162.0" prefWidth="580.0">
@@ -56,5 +57,6 @@
       </ScrollPane>
       <Label layoutX="148.0" layoutY="200.0" text="Meus Favoritos" />
       <Label fx:id="lblMsg" layoutX="350.0" layoutY="200.0" text="tipo cliente" />
+      <Label fx:id="lblErro" layoutX="79.0" layoutY="149.0" prefHeight="51.0" prefWidth="405.0" />
    </children>
 </AnchorPane>

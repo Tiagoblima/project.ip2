@@ -1,6 +1,9 @@
 package main.java.br.ip2.project.view.index;
 
+import javafx.fxml.Initializable;
 import main.java.br.ip2.project.controller.ClienteController;
+import main.java.br.ip2.project.model.Cliente;
+import main.java.br.ip2.project.repositorio.Repositorio;
 import main.java.br.ip2.project.view.Main;
 import main.java.br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
@@ -14,6 +17,12 @@ import main.java.br.ip2.project.controller.ClienteController;
 import main.java.br.ip2.project.view.Main;
 import main.java.br.ip2.project.view.Scenes;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.ResourceBundle;
+
 
 public class IndexController {
 
@@ -25,16 +34,11 @@ public class IndexController {
     public javafx.scene.image.ImageView ImageView;
     @FXML
     public Label lblMsg;
-    public ClienteController controllerCliente = new ClienteController();
+    private ClienteController controllerCliente = new ClienteController();
 
 
     public  Image image;
 
-
-    public IndexController() {
-
-//        image = new Image(IndexController.class.getResourceAsStream("../img/action.pane.index.jpg"));
-    }
 
     public void toLogin(ActionEvent actionEvent) {
 
@@ -53,11 +57,13 @@ public class IndexController {
             try{
 
                 controllerCliente.login(login, senha);
+
             }catch (Exception e){
                 msg = "Login ou senha incorretos";
                 acess = false;
             }
         }
+
 
         if(acess){
             toHome(actionEvent);
@@ -81,4 +87,6 @@ public class IndexController {
         ImageView.setImage(this.image);
         ImageView.setVisible(true);
     }
+
+
 }

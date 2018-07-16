@@ -6,12 +6,14 @@ import main.java.br.ip2.project.repositorio.Repositorio;
 import main.java.br.ip2.project.model.ClienteComum;
 import main.java.br.ip2.project.repositorio.Repositorio;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class ClienteController {
 
 
-    private HashMap<String,Cliente> CHashMap = new HashMap<>(); //Cliente HashMap
+    private HashMap<String,Cliente> CHashMap; //Cliente HashMap
     private Cliente cliente;
     private Repositorio<HashMap<String,Cliente>> repositorio = new Repositorio<>();
 
@@ -24,6 +26,11 @@ public class ClienteController {
     }
     public void setCliente(ClienteComum cliente){
        this.cliente = cliente;
+   }
+
+   public Cliente getCliente(){
+
+         return this.CHashMap.get(this.cliente.getLogin());
    }
 
     public void cadastrarCliente(Cliente cliente) throws Exception
@@ -53,6 +60,9 @@ public class ClienteController {
         if (!(this.cliente.getSenha().equals(senha))) {
            throw new Exception();
         }
+        Repositorio<Cliente> clienteRepositorio = new Repositorio<>();
+        clienteRepositorio.setObject(this.cliente);
+       clienteRepositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
 
    }
 

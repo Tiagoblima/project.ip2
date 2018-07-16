@@ -4,3 +4,13 @@
     -fx-font-family: "Comic Sans MS";
     -fx-font-size: 14pt;
 }
+#lblErro{
+    -fx-text-fill: red;
+    -fx-font-family: "Rockwell Extra Bold";
+    -fx-font-size: 12pt;
+}
+#avatar{
+    -fx-background-image: url("../img/avatar.png");
+    -fx-border-image-repeat: no-repeat;
+    -fx-background-size: 200px 200px;
+}

@@ -1,5 +1,6 @@
 package main.java.br.ip2.project.view.perfil;
 
+import javafx.scene.image.Image;
 import main.java.br.ip2.project.controller.ClienteController;
 import main.java.br.ip2.project.model.Cliente;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import main.java.br.ip2.project.controller.ClienteController;
+import main.java.br.ip2.project.repositorio.Repositorio;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -33,37 +35,44 @@ public class PerfilController implements Initializable {
     public Label lblMsg;
 
     @FXML
-    public Button btnCadastro;
-
-    @FXML
-    public ImageView ImageView;
-
-    @FXML
     public Button btnMaisPerfil;
 
-    public Label tipoCliente;
+    @FXML
+    public Label lblErro;
+    @FXML
+    public ImageView profile_img;
 
-
-    private ClienteController cc;
-    private HashMap<String, Cliente> cHashMap;
     private Cliente cliente;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        this.cc = new ClienteController();
-        this.cHashMap =   this.cc.getCCHashMap();
-    //    this.cliente = this.cHashMap.get("tiagoblima");
 
-//        this.lblNomeUsuario.setText(this.cliente.getLogin());
-  //      this.lblFilmes.setText(String.valueOf(this.cliente.getQtdFilmes()));
-    //    this.lblCreditos.setText(String.valueOf(this.cliente.getCredito()));
-/*
+
+
+        String msg = null;
+        Repositorio<Cliente> bufCliente = new Repositorio<>();
+        try{
+            this.cliente = bufCliente.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
+        }catch (Exception e){
+           msg = "Desculpe\nNão conseguimos carregar seu perfil";
+        }
+
+    try {
+        this.lblNomeUsuario.setText(this.cliente.getLogin());
+        this.lblFilmes.setText(String.valueOf(this.cliente.getQtdFilmes()));
+        this.lblCreditos.setText(String.valueOf(this.cliente.getCredito()));
+
         if(this.cliente.getTipoCliente().equals("Comum")){
             this.lblMsg.setText("Você ainda não é Premium");
         }else{
             this.lblMsg.setText("Você já é Premium");
-        }*/
+        }
+    }catch ( Exception e){
+       msg = "Desculpe\nNão conseguimos mostrar seu perfil";
+    }
+
+    lblErro.setText(msg);
     }
 
     @FXML
