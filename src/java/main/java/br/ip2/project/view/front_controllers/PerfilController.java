@@ -1,24 +1,21 @@
-package main.java.br.ip2.project.view.controllers;
+package main.java.br.ip2.project.view.front_controllers;
 
-import javafx.scene.image.Image;
-import main.java.br.ip2.project.controller.ClienteController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.MenuBar;
+import javafx.scene.layout.AnchorPane;
 import main.java.br.ip2.project.model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import main.java.br.ip2.project.controller.ClienteController;
 import main.java.br.ip2.project.repositorio.Repositorio;
 import main.java.br.ip2.project.view.Main;
 import main.java.br.ip2.project.view.Scenes;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class PerfilController implements Initializable {
@@ -43,6 +40,7 @@ public class PerfilController implements Initializable {
     public Label lblErro;
     @FXML
     public ImageView profile_img;
+    public AnchorPane anchorPerfil;
 
     private Cliente cliente;
 
@@ -50,6 +48,13 @@ public class PerfilController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
 
+        MenuBar menuBar = null;
+        try {
+            menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
+            anchorPerfil.getChildren().add(menuBar);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         String msg = null;

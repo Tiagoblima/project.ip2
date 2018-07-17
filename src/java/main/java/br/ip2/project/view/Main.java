@@ -30,10 +30,10 @@ public class Main extends Application {
         AnchorPane form = FXMLLoader.load(getClass().getResource("fxml/form.fxml"));
         Form = new Scene(form,600,450);
 
-        AnchorPane perfil = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));;
+        AnchorPane perfil = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));
         Perfil = new Scene(perfil,600,450);
 
-        AnchorPane galeria = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));;
+        AnchorPane galeria = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));
         Perfil = new Scene(galeria,600,450);
 
         primaryStage.setTitle("EasyFilms");

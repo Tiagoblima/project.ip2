@@ -1,14 +1,11 @@
-package main.java.br.ip2.project.view.controllers;
+package main.java.br.ip2.project.view.front_controllers;
 
 import javafx.fxml.FXML;
 import main.java.br.ip2.project.controller.*;
 import main.java.br.ip2.project.model.*;
-import main.java.br.ip2.project.repositorio.Repositorio;
 import main.java.br.ip2.project.view.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-
-import java.io.File;
 
 public class FormController {
 

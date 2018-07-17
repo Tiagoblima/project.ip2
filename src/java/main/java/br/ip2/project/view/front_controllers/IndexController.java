@@ -1,10 +1,6 @@
-package main.java.br.ip2.project.view.controllers;
+package main.java.br.ip2.project.view.front_controllers;
 
-import javafx.application.Application;
-import javafx.fxml.Initializable;
 import main.java.br.ip2.project.controller.ClienteController;
-import main.java.br.ip2.project.model.Cliente;
-import main.java.br.ip2.project.repositorio.Repositorio;
 import main.java.br.ip2.project.view.Main;
 import main.java.br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;

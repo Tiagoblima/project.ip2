@@ -4,7 +4,7 @@
 
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/form.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.controllers.FormController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/form.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.FormController">
    <children>
       <GridPane alignment="TOP_CENTER" prefHeight="400" prefWidth="600">
         <columnConstraints>

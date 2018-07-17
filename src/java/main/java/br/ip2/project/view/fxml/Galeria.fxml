@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="main.java.br.ip2.project.view.controllers.GaleriaController"
+            fx:controller="main.java.br.ip2.project.view.front_controllers.GaleriaController"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
