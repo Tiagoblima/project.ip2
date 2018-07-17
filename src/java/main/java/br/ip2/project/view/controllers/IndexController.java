@@ -10,19 +10,9 @@ import main.java.br.ip2.project.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
-import main.java.br.ip2.project.controller.ClienteController;
-import main.java.br.ip2.project.view.Main;
-import main.java.br.ip2.project.view.Scenes;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.ResourceBundle;
 
 
 public class IndexController {

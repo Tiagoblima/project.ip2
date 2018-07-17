@@ -6,4 +6,5 @@ public enum  Scenes {
     Form,
     Home,
     Perfil,
+    Galeria,
 }

@@ -10,12 +10,13 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 
-        public static Stage stage;
+        private static Stage stage;
+        public static Stage popUp;
         private static Scene Index;
         private static Scene Form;
         private static Scene Home;
         private static Scene Perfil;
-
+        private static Scene Galeria;
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
@@ -23,17 +24,17 @@ public class Main extends Application {
         AnchorPane index = FXMLLoader.load(getClass().getResource("fxml/index.fxml"));
         Index = new Scene(index);
 
-       Parent home = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
+        AnchorPane home = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
         Home = new Scene(home,630,450);
 
-        Parent form = FXMLLoader.load(getClass().getResource("fxml/form.fxml"));
+        AnchorPane form = FXMLLoader.load(getClass().getResource("fxml/form.fxml"));
         Form = new Scene(form,600,450);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/perfil.fxml"));
-
-
-        Parent perfil = loader.load();
+        AnchorPane perfil = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));;
         Perfil = new Scene(perfil,600,450);
+
+        AnchorPane galeria = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));;
+        Perfil = new Scene(galeria,600,450);
 
         primaryStage.setTitle("EasyFilms");
 
@@ -58,6 +59,9 @@ public class Main extends Application {
                 break;
             case Perfil:
                 stage.setScene(Perfil);
+                break;
+            case Galeria:
+                stage.setScene(Galeria);
         }
 
     }
