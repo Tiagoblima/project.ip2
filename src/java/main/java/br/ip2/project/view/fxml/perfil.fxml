@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="658.0" fx:id="anchorPerfil" styleClass="background" stylesheets="@../css/perfil.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.PerfilController">
+<AnchorPane prefHeight="600" prefWidth="800" fx:id="anchorPerfil" styleClass="background" stylesheets="@../css/perfil.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.PerfilController">
    <children>
 
       <GridPane layoutX="69.0" layoutY="47.0" prefHeight="162.0" prefWidth="580.0">

@@ -24,7 +24,7 @@ public class GaleriaController implements Initializable {
         try {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
-            menuBar.setTranslateY(-575);
+            menuBar.setTranslateY(-565);
            anchorGaleria.getChildren().add(menuBar);
 
         } catch (IOException e) {
