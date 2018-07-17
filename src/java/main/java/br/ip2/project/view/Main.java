@@ -2,9 +2,9 @@ package main.java.br.ip2.project.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -25,20 +25,20 @@ public class Main extends Application {
         Index = new Scene(index);
 
         AnchorPane home = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
-        Home = new Scene(home,630,450);
+        Home = new Scene(home);
 
         AnchorPane form = FXMLLoader.load(getClass().getResource("fxml/form.fxml"));
-        Form = new Scene(form,600,450);
+        Form = new Scene(form);
 
         AnchorPane perfil = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));
-        Perfil = new Scene(perfil,600,450);
+        Perfil = new Scene(perfil);
 
-        AnchorPane galeria = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));
-        Perfil = new Scene(galeria,600,450);
+        VBox galeria = FXMLLoader.load(getClass().getResource("fxml/galeria.fxml"));
+        Galeria = new Scene(galeria);
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Home);
+        primaryStage.setScene(Galeria);
         primaryStage.show();
 
     }
@@ -62,6 +62,7 @@ public class Main extends Application {
                 break;
             case Galeria:
                 stage.setScene(Galeria);
+                break;
         }
 
     }

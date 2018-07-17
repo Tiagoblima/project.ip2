@@ -7,12 +7,11 @@ import main.java.br.ip2.project.view.Scenes;
 public class MenuController {
 
 
-    public void toHome(ActionEvent actionEvent) {
-        Main.changeScreen(Scenes.Home);
-    }
+    public void toHome(ActionEvent actionEvent) { Main.changeScreen(Scenes.Home); }
     public void toPerfil(ActionEvent actionEvent) {
         Main.changeScreen(Scenes.Perfil);
     }
+    public void toGaleria(ActionEvent actionEvent){ Main.changeScreen(Scenes.Galeria);}
     public void sair(ActionEvent actionEvent) {
         System.exit(0);
     }

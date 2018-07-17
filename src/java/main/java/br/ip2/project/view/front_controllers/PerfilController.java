@@ -40,6 +40,7 @@ public class PerfilController implements Initializable {
     public Label lblErro;
     @FXML
     public ImageView profile_img;
+    @FXML
     public AnchorPane anchorPerfil;
 
     private Cliente cliente;

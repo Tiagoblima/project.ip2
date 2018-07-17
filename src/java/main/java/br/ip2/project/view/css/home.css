@@ -12,16 +12,6 @@
     -fx-padding: 10px 20px 10px 20px;
 }
 
-.button{
-    -fx-font-size: 12pt;
-    -fx-font-family: "Comic Sans MS";
-    -fx-text-fill: #0162ff;
-    -fx-background-color: #c3c3c3;
-    -fx-border-style: none;
-}
-.button:hover{
-    -fx-background-color: white;
-}
 
 .background#menuBar{
     -fx-background-image: url(../img/menuGride.background-image.jpg);
@@ -42,19 +32,7 @@
     -fx-background-repeat: no-repeat;
 }
 
-.menu:hover{
-    -fx-background-color: #cccccc;
-}
-.menu-item:hover{
-    -fx-background-color: #cccccc;
-}
 
-#refresh{
-    -fx-background-image: url("../img/refresh.png");
-    -fx-background-size: 100px 50px;
-    -fx-border-color: white;
-    -fx-background-repeat: no-repeat;
-}
 #pnPost{
     -fx-background-image: url("../img/post.jpg");
     -fx-background-size: 200px 75px;
@@ -72,11 +50,5 @@
 #lblpost:hover{
     -fx-opacity: 1;
 }
-.background-pane
-.menu-bar {
 
-}
-
-.menu-item {
-}
 
