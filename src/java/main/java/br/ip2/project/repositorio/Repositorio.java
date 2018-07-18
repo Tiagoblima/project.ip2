@@ -1,6 +1,6 @@
 package main.java.br.ip2.project.repositorio;
 
-import weka.core.stopwords.Null;
+//import weka.core.stopwords.Null;
 
 import java.io.*;
 

@@ -4,12 +4,15 @@ import java.util.Objects;
 
 public class Filme {
 
+
     private String titulo;
     private GeneroFilme genero;
     private int duracaoHora;
     private int duracaoMinuto;
     private int anoLanc;
     private String sinopse;
+    private String urlMiniatura;
+    private String urlMidia;
 
     public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero) {
 
@@ -77,6 +80,22 @@ public class Filme {
 
     public void setGenero(GeneroFilme genero) {
         this.genero = genero;
+    }
+
+    public void setUrlMiniatura(String urlMiniatura){
+        this.urlMiniatura = urlMiniatura;
+    }
+
+    public String getUrlMiniatura(){
+        return this.urlMiniatura;
+    }
+
+    public void setUrlMidia(String urlMidia){
+        this.urlMidia = urlMidia;
+    }
+
+    public String getUrlMidia(){
+        return this.urlMidia;
     }
 
     @Override
