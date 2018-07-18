@@ -7,6 +7,8 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,6 +19,9 @@ public class GaleriaController implements Initializable {
     @FXML
     public VBox anchorGaleria;
 
+    @FXML
+    public AnchorPane content;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -24,9 +29,13 @@ public class GaleriaController implements Initializable {
         try {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
-            menuBar.setTranslateY(-565);
-           anchorGaleria.getChildren().add(menuBar);
+            menuBar.setTranslateY(-710);
+            anchorGaleria.getChildren().add(menuBar);
 
+            WebView webview = new WebView();
+            WebEngine engine = webview.getEngine();
+            engine.load("https://www.youtube.com/playlist?list=PLScC8g4bqD47P_atb4723dHASIg7xT-Ux");
+            content.getChildren().add(webview);
         } catch (IOException e) {
             e.printStackTrace();
         }

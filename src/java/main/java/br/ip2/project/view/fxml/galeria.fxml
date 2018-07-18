@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="anchorGaleria" prefHeight="600" prefWidth="800" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.GaleriaController">
+<VBox fx:id="anchorGaleria" prefHeight="784.0" prefWidth="1382.0" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.GaleriaController">
   <children>
-    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.33458646616541354" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane>
+        <AnchorPane prefHeight="782.0" prefWidth="200.0">
           <children>
-                  <GridPane layoutY="150.0" prefHeight="278.0" prefWidth="380.0">
+                  <GridPane layoutY="204.0" prefHeight="224.0" prefWidth="314.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -31,34 +31,34 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Pane fx:id="comedia" prefHeight="200.0" prefWidth="200.0" styleClass="pnGenero" GridPane.columnIndex="1">
+                        <Pane fx:id="comedia" prefHeight="100.0" prefWidth="100.0" styleClass="pnGenero" GridPane.columnIndex="1">
                            <children>
-                              <Label layoutX="24.0" layoutY="33.0" text="Comedia " />
+                              <Label layoutX="11.0" layoutY="33.0" text="Comedia " />
                            </children>
                         </Pane>
                         <Pane fx:id="acao" prefHeight="200.0" prefWidth="200.0" styleClass="pnGenero" GridPane.rowIndex="1">
                            <children>
-                              <Label layoutX="57.0" layoutY="33.0" text="Ação" />
+                              <Label layoutX="37.0" layoutY="33.0" text="Ação" />
                            </children>
                         </Pane>
                         <Pane fx:id="aventura" prefHeight="200.0" prefWidth="200.0" styleClass="pnGenero" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <Label layoutX="21.0" layoutY="33.0" text="Aventura" />
+                              <Label layoutX="8.0" layoutY="33.0" text="Aventura" />
                            </children>
                         </Pane>
                         <Pane fx:id="nacionais" prefHeight="200.0" prefWidth="200.0" styleClass="pnGenero" GridPane.rowIndex="2">
                            <children>
-                              <Label layoutX="40.0" layoutY="32.0" text="Nacionais" />
+                              <Label layoutX="14.0" layoutY="33.0" text="Nacionais" />
                            </children>
                         </Pane>
                         <Pane fx:id="familia" prefHeight="200.0" prefWidth="200.0" styleClass="pnGenero" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <Label layoutX="39.0" layoutY="32.0" text="Família" />
+                              <Label layoutX="20.0" layoutY="32.0" text="Família" />
                            </children>
                         </Pane>
                         <Pane fx:id="drama" prefHeight="200.0" prefWidth="200.0" style="-fx-border-radius: 25px;" styleClass="pnGenero">
                            <children>
-                              <Label layoutX="47.0" layoutY="33.0" text="Drama" />
+                              <Label layoutX="24.0" layoutY="33.0" text="Drama" />
                            </children>
                         </Pane>
                      </children>
@@ -71,39 +71,20 @@
                 <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
               </textFill>
             </Label>
+                  <TextField layoutX="14.0" layoutY="96.0" />
+                  <Button layoutX="178.0" layoutY="96.0" mnemonicParsing="false" text="Go" />
           </children>
         </AnchorPane>
         <ScrollPane prefHeight="564.0" prefWidth="348.0">
           <content>
-            <AnchorPane id="Content" fx:id="webViewer" minHeight="-1.0" minWidth="-1.0" prefHeight="556.0" prefWidth="303.0">
+            <AnchorPane id="Content" fx:id="content" minHeight="-1.0" minWidth="-1.0" prefHeight="780.0" prefWidth="650.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="48.0" style="&#10;" styleClass="Label" text="Visualize aqui" textAlignment="CENTER" textFill="$x2" wrapText="false" />
               </children>
             </AnchorPane>
           </content>
         </ScrollPane>
-        <AnchorPane prefHeight="551.0" prefWidth="299.0" style="-fx-border-radius: 25px; -fx-background-radius: 25px;">
-          <children>
-            <Label alignment="CENTER" font="$x1" layoutX="12.0" layoutY="57.0" style="&#10;" styleClass="Label" text="Compartilhe" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-          </children>
-        </AnchorPane>
       </items>
     </SplitPane>
-    <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="900.0" spacing="5.0" VBox.vgrow="NEVER">
-      <children>
-        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
-          <font>
-            <Font size="11.0" fx:id="x3" />
-          </font>
-          <textFill>
-            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
-          </textFill>
-        </Label>
-        <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
-      </children>
-      <padding>
-        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-      </padding>
-    </HBox>
   </children>
 </VBox>
