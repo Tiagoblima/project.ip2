@@ -13,11 +13,7 @@
 }
 
 
-.background#menuBar{
-    -fx-background-image: url(../img/menuGride.background-image.jpg);
-}
 .background{
-    -fx-background-image: url(../img/anchorPane.background-image.jpg);
     -fx-background-color: #17b2ff;
 }
 
@@ -50,5 +46,7 @@
 #lblpost:hover{
     -fx-opacity: 1;
 }
-
+.background-pane{
+    -fx-background-color: #85ffe6;
+}
 
