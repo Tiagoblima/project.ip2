@@ -6,11 +6,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
+import main.java.br.ip2.project.controller.*;
+import main.java.br.ip2.project.model.*;
 public class Main extends Application {
 
 
-        private static Stage stage;
+
+    private static Stage stage;
         public static Stage popUp;
         private static Scene Index;
         private static Scene Form;
@@ -42,13 +44,19 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
         primaryStage.show();
 
-        System.out.println(primaryStage.getWidth());
-        System.out.println(primaryStage.getHeight());
+        FilmeController filmeController = new FilmeController();
+
+        Filme filme =  filmeController.procurarFilme("A virada");
+        System.out.println(filme.toString());
+        System.out.println("Width: " + primaryStage.getWidth());
+        System.out.println("Height: " + primaryStage.getHeight());
     }
 
 
 
     public  static void changeScreen(Scenes name){
+
+
 
         switch (name){
             case Index:
@@ -67,7 +75,7 @@ public class Main extends Application {
                 stage.setScene(Galeria);
                 break;
         }
-
+        stage.setMaximized(true);
     }
 
 

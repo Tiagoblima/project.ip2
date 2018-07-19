@@ -4,7 +4,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 
-<MenuBar prefHeight="30.0" prefWidth="800" styleClass="menu-bar" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.MenuController">
+<MenuBar prefHeight="30.0" prefWidth="1382.0" styleClass="menu-bar" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.MenuController">
         <Menu mnemonicParsing="false" styleClass="menu" text="Eu">
             <MenuItem mnemonicParsing="false" onAction="#toHome" styleClass="menu-item" text="Home" />
             <MenuItem mnemonicParsing="false" onAction="#toPerfil" styleClass="menu-item" text="Perfil" />

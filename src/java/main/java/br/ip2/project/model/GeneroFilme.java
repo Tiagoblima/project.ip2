@@ -1,7 +1,7 @@
 package main.java.br.ip2.project.model;
 
 public enum GeneroFilme {
-    TERROR, COMEDIA, ACAO, AVENTURA, ROMANCE, COMEDIA_ROMANTICA, INVALIDO;
+    TERROR, COMEDIA, ACAO, AVENTURA, ROMANCE, COMEDIA_ROMANTICA, INVALIDO, DRAMA;
 
     private String nome;
 

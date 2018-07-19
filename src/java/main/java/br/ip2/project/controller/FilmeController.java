@@ -4,6 +4,8 @@ import main.java.br.ip2.project.model.Filme;
 import main.java.br.ip2.project.model.GeneroFilme;
 import main.java.br.ip2.project.repositorio.Repositorio;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class FilmeController {
@@ -16,9 +18,9 @@ public class FilmeController {
 
     public FilmeController(){
         try{
-            this.fHashmap = this.repositorio.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilme.txt");
+            fHashmap = this.repositorio.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilme.txt");
         }catch (Exception e){
-            this.fHashmap = new HashMap<>();
+            fHashmap = new HashMap<>();
         }
     }
 
@@ -27,7 +29,7 @@ public class FilmeController {
     }
 
     public Filme getFilme(){
-        return this.fHashmap.get(this.filme.hashCode());
+        return fHashmap.get(this.filme.hashCode());
     }
 
 
@@ -37,7 +39,7 @@ public class FilmeController {
             throw new Exception();
         }
         fHashmap.put(this.filme.hashCode(),f);
-        this.repositorio.setObject(this.fHashmap);
+        this.repositorio.setObject(fHashmap);
         this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
     public void removerFilme(Filme f) throws Exception{
@@ -47,7 +49,7 @@ public class FilmeController {
         } else {
             throw new Exception();
         }
-        this.repositorio.setObject(this.fHashmap);
+        this.repositorio.setObject(fHashmap);
         this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
     public void alterarFilme(Filme f, Filme novoF) throws Exception{
@@ -59,11 +61,19 @@ public class FilmeController {
         }else{
             throw new Exception();
         }
-        this.repositorio.setObject(this.fHashmap);
+        this.repositorio.setObject(fHashmap);
         this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
     public Filme procurarFilme(String title){
 // resolver o problema do hashmap na busca pelo titulo do filme
-        return null; //retorno temporário
+
+        Collection<Filme> filmes =  fHashmap.values();
+
+        findHashmap = new HashMap<>();
+        for (Filme filme: filmes) {
+            findHashmap.put(filme.getTitulo(),filme);
+        }
+
+        return findHashmap.get(title); //retorno temporário
     }
 }

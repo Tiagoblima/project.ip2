@@ -29,13 +29,14 @@ public class GaleriaController implements Initializable {
         try {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
-            menuBar.setTranslateY(-710);
+            menuBar.setTranslateY(-740);
             anchorGaleria.getChildren().add(menuBar);
 
             WebView webview = new WebView();
             WebEngine engine = webview.getEngine();
             engine.load("https://www.youtube.com/playlist?list=PLScC8g4bqD47P_atb4723dHASIg7xT-Ux");
             content.getChildren().add(webview);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
