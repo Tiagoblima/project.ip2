@@ -59,9 +59,9 @@
                   </Pane>
           </children>
         </AnchorPane>
-        <ScrollPane prefHeight="564.0" prefWidth="348.0">
+        <ScrollPane prefHeight="820.0" prefWidth="1000.0">
           <content>
-            <AnchorPane id="Content" fx:id="content" minHeight="-1.0" minWidth="-1.0" prefHeight="706.0" prefWidth="859.0">
+            <AnchorPane id="Content" fx:id="content" minHeight="-1.0" minWidth="-1.0" prefHeight="820.0" prefWidth="1000.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="48.0" style="&#10;" styleClass="Label" text="Visualize aqui" textAlignment="CENTER" textFill="$x2" wrapText="false" />
               </children>

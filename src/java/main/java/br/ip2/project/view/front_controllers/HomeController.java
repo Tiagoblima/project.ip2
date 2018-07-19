@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import main.java.br.ip2.project.view.*;
 
 import javafx.scene.layout.Pane;
@@ -42,14 +44,13 @@ public class HomeController implements Initializable{
             e.printStackTrace();
         }
 
-        pane.setStyle("-fx-background-color: gray");
-        pane.setLayoutX(25.0);
 
-        pane.setPrefHeight(75.0);
-        pane.setPrefWidth(200.0);
-        pane.getChildren().add(new Label("Olá"));
-
-        feedNoticias.getChildren().add(pane);
+        WebView webview = new WebView();
+        WebEngine engine = webview.getEngine();
+        engine.load("https://www.imdb.com/news/top?ref_=nv_nw_tp");
+        webview.setPrefHeight(600);
+        webview.setPrefWidth(700);
+        feedNoticias.getChildren().add(webview);
 
     }
 

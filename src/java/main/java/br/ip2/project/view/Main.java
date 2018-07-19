@@ -6,21 +6,26 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main.java.br.ip2.project.controller.*;
 import main.java.br.ip2.project.model.*;
 public class Main extends Application {
 
 
 
-    private static Stage stage;
+        private static Stage stage;
         public static Stage popUp;
+
         private static Scene Index;
         private static Scene Form;
         private static Scene Home;
         private static Scene Perfil;
         private static Scene Galeria;
+
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+         final Cliente cliente;
+
         stage = primaryStage;
 
         AnchorPane index = FXMLLoader.load(getClass().getResource("fxml/index.fxml"));
@@ -44,19 +49,19 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
         primaryStage.show();
 
-        FilmeController filmeController = new FilmeController();
-
-        Filme filme =  filmeController.procurarFilme("A virada");
-        System.out.println(filme.toString());
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
     }
 
 
 
+    public static void filmes(){
+
+
+
+    }
+
     public  static void changeScreen(Scenes name){
-
-
 
         switch (name){
             case Index:
