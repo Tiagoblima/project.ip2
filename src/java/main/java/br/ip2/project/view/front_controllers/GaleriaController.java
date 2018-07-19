@@ -22,9 +22,12 @@ public class GaleriaController implements Initializable {
 
     @FXML
     public AnchorPane content;
+
     @FXML
-    public Pane pn1;
-    @FXML
+    public Pane drama;
+
+   private AnchorPane telaFilmes;
+
 
 
     @Override
@@ -37,10 +40,7 @@ public class GaleriaController implements Initializable {
             menuBar.setTranslateY(-740);
             anchorGaleria.getChildren().add(menuBar);
 
-           AnchorPane telaFilmes = FXMLLoader.load(getClass().getResource("../fxml/telaFilmes.fxml"));
-
-
-            content.getChildren().add(telaFilmes);
+            this.telaFilmes = FXMLLoader.load(getClass().getResource("../fxml/telaFilmes.fxml"));
 
 
         } catch (IOException e) {
@@ -49,6 +49,9 @@ public class GaleriaController implements Initializable {
 
     }
 
+    public void toDrama(){
 
+      this.content.getChildren().add(this.telaFilmes);
+    }
 
 }

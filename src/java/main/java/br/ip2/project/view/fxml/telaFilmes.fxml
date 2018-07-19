@@ -6,12 +6,12 @@
 
 <AnchorPane fx:id="telafilmes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.br.ip2.project.view.front_controllers.telaFilmesController">
    <children>
-      <Pane fx:id="pn1" layoutX="52.0" layoutY="128.0" prefHeight="312.0" prefWidth="228.0" style="-fx-background-color: blue;" />
-      <Pane layoutX="354.0" layoutY="128.0" prefHeight="312.0" prefWidth="228.0" style="-fx-background-color: blue;" />
-      <Pane layoutX="648.0" layoutY="128.0" prefHeight="312.0" prefWidth="228.0" style="-fx-background-color: blue;" />
-      <Pane layoutX="52.0" layoutY="448.0" prefHeight="312.0" prefWidth="228.0" style="-fx-background-color: blue;" />
-      <Pane layoutX="354.0" layoutY="456.0" prefHeight="312.0" prefWidth="228.0" style="-fx-background-color: blue;" />
-      <Pane layoutX="655.0" layoutY="456.0" prefHeight="312.0" prefWidth="228.0" style="-fx-background-color: blue;" />
+      <Pane fx:id="pn1" layoutX="52.0" layoutY="128.0" prefHeight="312.0" prefWidth="228.0" />
+      <Pane fx:id="pn2" layoutX="354.0" layoutY="128.0" prefHeight="312.0" prefWidth="228.0"  />
+      <Pane fx:id="pn3" layoutX="648.0" layoutY="128.0" prefHeight="312.0" prefWidth="228.0"  />
+      <Pane fx:id="pn4" layoutX="52.0" layoutY="448.0" prefHeight="312.0" prefWidth="228.0"  />
+      <Pane fx:id="pn5" layoutX="354.0" layoutY="456.0" prefHeight="312.0" prefWidth="228.0" />
+      <Pane fx:id="pn6" layoutX="655.0" layoutY="456.0" prefHeight="312.0" prefWidth="228.0"  />
       <Label layoutX="91.0" layoutY="39.0" prefHeight="61.0" prefWidth="241.0" styleClass="Label" text="Aqui estão os filmes" />
    </children>
 </AnchorPane>

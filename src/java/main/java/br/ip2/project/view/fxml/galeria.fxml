@@ -47,7 +47,7 @@
                         <Label layoutX="44.0" layoutY="33.0" text="Ação" />
                      </children>
                   </Pane>
-                  <Pane fx:id="drama" layoutX="254.0" layoutY="276.0" prefHeight="82.0" prefWidth="164.0" style="-fx-border-radius: 25px;" styleClass="pnGenero">
+                  <Pane fx:id="drama" layoutX="254.0" layoutY="276.0" prefHeight="82.0" prefWidth="164.0" style="-fx-border-radius: 25px;" styleClass="pnGenero" onMouseReleased="#toDrama">
                      <children>
                         <Label layoutX="34.0" layoutY="29.0" text="Drama" />
                      </children>
