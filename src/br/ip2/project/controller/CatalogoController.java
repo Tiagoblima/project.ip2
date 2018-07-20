@@ -17,7 +17,6 @@ public class CatalogoController {
     private HashMap<Integer,Filme> fullHashMap;
 
 
-
     public CatalogoController(HashMap<Integer, Filme> origin){
 
         this.fullHashMap = origin;
