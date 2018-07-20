@@ -1,7 +1,9 @@
 package br.ip2.project.view;
 
+import br.ip2.project.controller.FilmeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -26,7 +28,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-         final Cliente cliente;
+         final Cliente cliente = null;
 
         stage = primaryStage;
 
@@ -40,7 +42,11 @@ public class Main extends Application {
         Form = new Scene(form);
 
         AnchorPane perfil = FXMLLoader.load(getClass().getResource("fxml/perfil.fxml"));
+
+
+
         Perfil = new Scene(perfil);
+
 
         VBox galeria = FXMLLoader.load(getClass().getResource("fxml/galeria.fxml"));
         Galeria = new Scene(galeria);
@@ -53,13 +59,35 @@ public class Main extends Application {
 
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
+        filme1();
     }
 
 
 
-    public static void filmes(){
+    public static void filme1(){
 
+        FilmeController filmeController = new FilmeController();
 
+        String nome = "O Resgate do Soldado Ryan";
+        String sinopse = "Ao desembarcar na Normandia, no dia 6 de junho de 1944, o Capitão Miller" +
+                         "\n recebe a missão de comandar um grupo do Segundo Batalhão para o resgate do soldado James Ryan," +
+                         "\n o caçula de quatro irmãos, dentre os quais três morreram em combate. Por ordens do chefe George C. " +
+                         "\n Marshall, eles precisam procurar o soldado e garantir o seu retorno, com vida, para casa";
+
+        Filme filme = new Filme(nome,2,50,1998,sinopse,GeneroFilme.ACAO);
+
+        String url = "https://is2-ssl.mzstatic.com/image/thumb/Video/v4/9b/06/40/9b0640cf-d981-911a-e1f2-c82929fcb59e/source/1200x630bb.jpg";
+        filme.setUrlMiniatura(url);
+        url = "https://www.youtube.com/watch?v=RYID71hYHzg";
+        filme.setUrlMiniatura(url);
+
+        try {
+            filmeController.cadastrarFilme(filme);
+        } catch (Exception e) {
+
+            System.out.println("O filme não pode ser cadastrado!\n");
+            e.printStackTrace();
+        }
 
     }
 

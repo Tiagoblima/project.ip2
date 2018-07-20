@@ -1,8 +1,9 @@
 package br.ip2.project.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Filme {
+public class Filme implements Serializable {
 
 
     private String titulo;

@@ -1,15 +1,13 @@
 package br.ip2.project.view.front_controllers;
 
 import br.ip2.project.repositorio.Repositorio;
-import javafx.event.ActionEvent;
+import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -56,10 +54,11 @@ public class PerfilController implements Initializable {
         }
 
 
+
         String msg = null;
         Repositorio<Cliente> bufCliente = new Repositorio<>();
         try{
-            this.cliente = bufCliente.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
+            this.cliente = bufCliente.ler("src\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
         }catch (Exception e){
            msg = "Desculpe\nNão conseguimos carregar seu perfil";
         }

@@ -6,6 +6,7 @@ package br.ip2.project.controller;
 import br.ip2.project.model.*;
 import br.ip2.project.repositorio.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -19,7 +20,7 @@ public class FilmeController {
 
     public FilmeController(){
         try{
-            fHashmap = this.repositorio.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilme.txt");
+            fHashmap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilme.txt");
         }catch (Exception e){
             fHashmap = new HashMap<>();
         }
@@ -41,7 +42,7 @@ public class FilmeController {
         }
         fHashmap.put(this.filme.hashCode(),f);
         this.repositorio.setObject(fHashmap);
-        this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
     public void removerFilme(Filme f) throws Exception{
         this.filme = f;
@@ -51,7 +52,7 @@ public class FilmeController {
             throw new Exception();
         }
         this.repositorio.setObject(fHashmap);
-        this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
     public void alterarFilme(Filme f, Filme novoF) throws Exception{
         this.filme = f;
@@ -63,8 +64,36 @@ public class FilmeController {
             throw new Exception();
         }
         this.repositorio.setObject(fHashmap);
-        this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
+
+    //A ideia aqui é seperar os filmes por gênero
+    //Talvez esse método seja transferido para o catálogo
+    public ArrayList<Filme> getArrayFilme(GeneroFilme genero){
+
+        Collection<Filme> filmes =  fHashmap.values();
+        ArrayList<Filme> filmesArray = new ArrayList<>();
+
+        for (Filme filme: filmes) {
+
+            switch (filme.getGenero()){
+
+                case ACAO:{
+
+
+                }
+
+
+
+            }
+
+
+        }
+
+        return null;
+    }
+
+
     public Filme procurarFilme(String title){
 // resolver o problema do hashmap na busca pelo titulo do filme
 

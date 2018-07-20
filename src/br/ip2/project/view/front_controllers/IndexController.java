@@ -52,6 +52,7 @@ public class IndexController {
 
         if(acess){
             toHome(actionEvent);
+
         }
 
         lblMsg.setText(msg);

@@ -17,7 +17,7 @@ public class ClienteController {
 
     public ClienteController(){
         try{
-            this.CHashMap = this.repositorio.ler("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+            this.CHashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
         }catch (Exception e){
             this.CHashMap = new HashMap<>();
         }
@@ -43,7 +43,7 @@ public class ClienteController {
 
         CHashMap.put(this.cliente.getLogin(),this.cliente);
         this.repositorio.setObject(this.CHashMap);
-        this.repositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
 
     }
 
@@ -60,7 +60,7 @@ public class ClienteController {
         }
         Repositorio<Cliente> clienteRepositorio = new Repositorio<>();
         clienteRepositorio.setObject(this.cliente);
-       clienteRepositorio.salvar("src\\java\\main\\java\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
+       clienteRepositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
 
    }
 

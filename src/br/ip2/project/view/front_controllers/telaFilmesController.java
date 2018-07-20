@@ -1,5 +1,6 @@
 package br.ip2.project.view.front_controllers;
 
+import br.ip2.project.controller.FilmeController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.Pane;
@@ -29,9 +30,14 @@ public class telaFilmesController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         WebView webview = new WebView();
         WebEngine engine = webview.getEngine();
+
+        FilmeController fControl = new FilmeController();
+
         engine.load("http://t2.gstatic.com/images?q=tbn:ANd9GcR0lDhR_dXAKTm9wysp3nWu6kP0V5skJBVbCNC_Q8urAWcr4iF_");
-        webview.setPrefHeight(200);
-        webview.setPrefWidth(250);
+        webview.setPrefHeight(300);
+        webview.setPrefWidth(200);
         this.pn1.getChildren().add(webview);
+
+
     }
 }
