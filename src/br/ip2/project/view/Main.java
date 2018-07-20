@@ -68,13 +68,10 @@ public class Main extends Application {
 
         FilmeController filmeController = new FilmeController();
 
-        String nome = "O Resgate do Soldado Ryan";
-        String sinopse = "Ao desembarcar na Normandia, no dia 6 de junho de 1944, o Capitão Miller" +
-                         "\n recebe a missão de comandar um grupo do Segundo Batalhão para o resgate do soldado James Ryan," +
-                         "\n o caçula de quatro irmãos, dentre os quais três morreram em combate. Por ordens do chefe George C. " +
-                         "\n Marshall, eles precisam procurar o soldado e garantir o seu retorno, com vida, para casa";
+        String nome = null;
+        String sinopse = null;
 
-        Filme filme = new Filme(nome,2,50,1998,sinopse,GeneroFilme.ACAO);
+      /*  Filme filme = new Filme(nome,2,50,1998,sinopse,GeneroFilme.ACAO);
 
         String url = "https://is2-ssl.mzstatic.com/image/thumb/Video/v4/9b/06/40/9b0640cf-d981-911a-e1f2-c82929fcb59e/source/1200x630bb.jpg";
         filme.setUrlMiniatura(url);
@@ -89,6 +86,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
+*/
     }
 
     public  static void changeScreen(Scenes name){
