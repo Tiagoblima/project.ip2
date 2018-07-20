@@ -1,4 +1,4 @@
-package main.java.br.ip2.project.view;
+package java.main.br.ip2.project.view;
 
 public enum  Scenes {
 

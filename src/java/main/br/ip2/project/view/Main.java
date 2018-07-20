@@ -1,4 +1,4 @@
-package main.java.br.ip2.project.view;
+package java.main.br.ip2.project.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main.java.br.ip2.project.model.*;
+
+
 public class Main extends Application {
 
 
@@ -24,7 +25,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-         final Cliente cliente;
+         final main.java.br.ip2.project.model.Cliente cliente;
 
         stage = primaryStage;
 
