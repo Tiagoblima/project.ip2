@@ -12,8 +12,6 @@ import java.util.HashMap;
 
 public class FilmeController {
 
-
-    //Eu alterei para não estatico para poder retornar o hashMap
     private HashMap<Integer, Filme> fHashmap;
     private static HashMap<String, Filme> findHashmap;
     private Filme filme;

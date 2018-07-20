@@ -1,7 +1,7 @@
 package br.ip2.project.model;
 
 public enum GeneroFilme {
-    TERROR, COMEDIA, ACAO, AVENTURA, ROMANCE, COMEDIA_ROMANTICA, INVALIDO, DRAMA, FAMILIA,NACIONAIS,;
+    TERROR, COMEDIA, ACAO, AVENTURA, ROMANCE, INVALIDO, DRAMA, FAMILIA, NACIONAIS,;
 
     private String nome;
 
@@ -35,15 +35,19 @@ public enum GeneroFilme {
                 System.out.println("Romance");
                 g.setNome("Romance");
                 break;
-
-            case COMEDIA_ROMANTICA:
-                System.out.println("Comédia Romantica");
-                g.setNome("Comédia Romantica");
-                break;
-
             case INVALIDO:
                 System.out.println("Gênero Inválido");
                 g.setNome("Gênero Inválido");
+                break;
+
+            case FAMILIA:
+                System.out.println("Família");
+                g.setNome("Família");
+                break;
+
+            case NACIONAIS:
+                System.out.println("Nacional");
+                g.setNome("Nacional");
                 break;
 
             default:

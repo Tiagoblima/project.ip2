@@ -18,8 +18,8 @@ public class Filme implements Serializable {
     public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero) {
 
         this.titulo = titulo;
-        this.duracaoHora = duracaoHora;     //SERÁ PRECISO TRATAR ESSA ENTRADA, POIS ELA NÃ PODERÁ SER MAIOR QUE 23
-        this.duracaoMinuto = duracaoMinuto; //SERÁ PRECISO TRATAR ESSA ENTRADA, POIS ELA NÃ PODERÁ SER MAIOR QUE 59
+        this.duracaoHora = duracaoHora;
+        this.duracaoMinuto = duracaoMinuto; 
         this.anoLanc = anoLanc;
         this.sinopse = sinopse;
         this.genero = genero;
