@@ -2,6 +2,7 @@ package br.ip2.project.view.front_controllers;
 
 
 
+import br.ip2.project.model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -22,10 +23,13 @@ public class IndexController {
     public Label lblMsg;
     private ClienteController controllerCliente = new ClienteController();
 
-
+    private Cliente cliente;
     public  Image image;
 
+    public IndexController(){
 
+
+    }
     public void toLogin(ActionEvent actionEvent) {
 
 
@@ -51,6 +55,8 @@ public class IndexController {
         }
 
         if(acess){
+
+            this.cliente = controllerCliente.getCliente();
             toHome(actionEvent);
 
         }

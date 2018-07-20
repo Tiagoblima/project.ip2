@@ -3,13 +3,10 @@ package br.ip2.project.view.front_controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,6 +25,7 @@ public class GaleriaController implements Initializable {
 
    private AnchorPane telaFilmes;
 
+   private TelaFilmesController telaController;
 
 
     @Override
@@ -37,21 +35,23 @@ public class GaleriaController implements Initializable {
         try {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
-            menuBar.setTranslateY(-740);
+          //  menuBar.setTranslateY(-700);
             anchorGaleria.getChildren().add(menuBar);
 
             this.telaFilmes = FXMLLoader.load(getClass().getResource("../fxml/telaFilmes.fxml"));
 
 
+
         } catch (IOException e) {
             e.printStackTrace();
+        }catch (NullPointerException n){
+            System.out.println("Não achado");
         }
 
     }
 
     public void toDrama(){
-
-      this.content.getChildren().add(this.telaFilmes);
+        this.content.getChildren().add(this.telaFilmes);
     }
 
 }
