@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/form.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.front_controllers.FormController">
+   <children>
+      <GridPane alignment="TOP_CENTER" prefHeight="400" prefWidth="600">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="387.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="213.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+
+            <GridPane prefHeight="188.0" prefWidth="388.0" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+
+              <Label styleClass="label" text="Nome: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="nomeField" styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label styleClass="label" text="Data de Aniversário: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <DatePicker fx:id="DatePick" prefHeight="25.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+              <Label styleClass="label" text="Email: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="emailField" styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+              <Label styleClass="label" text="Crie um login: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="loginField" styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label styleClass="label" text="Crie uma senha: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <PasswordField fx:id="passwordField" styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <Label styleClass="label" text="Confirme a senha: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <PasswordField fx:id="confPasswordField" styleClass="field" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+
+            </GridPane>
+
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                   <Label fx:id="title" layoutY="10.0" text="Bem vindo ao Cadastro" />
+                   <Label fx:id="subTitle" layoutY="40.0" prefHeight="40.0" prefWidth="412.0" text="Preencha o Formulario abaixo" />
+                   <Label fx:id="lblMsg" layoutY="70" />
+
+               </children>
+            </Pane>
+            <GridPane prefHeight="38.0" prefWidth="418.0" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="204.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton fx:id="rbtPremium" text="Cliente Premium" GridPane.columnIndex="1" />
+                   <CheckBox fx:id="agree" text="Concordo com os termos" GridPane.columnIndex="0" />
+               </children>
+            </GridPane>
+
+             <GridPane prefHeight="63.0" prefWidth="370.0" GridPane.rowIndex="3">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+
+                 <Button fx:id="btnVoltar" onAction="#toIndex" prefHeight="25.0" prefWidth="69.0" text="Voltar" GridPane.columnIndex="0"/>
+                 <Button fx:id="btnConfirmar" onAction="#ConfirmaCliente" text="Confirmar" GridPane.columnIndex="1" />
+            </GridPane>
+
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
