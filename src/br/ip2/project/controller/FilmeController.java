@@ -12,7 +12,9 @@ import java.util.HashMap;
 
 public class FilmeController {
 
-    private static HashMap<Integer, Filme> fHashmap;
+
+    //Eu alterei para não estatico para poder retornar o hashMap
+    private HashMap<Integer, Filme> fHashmap;
     private static HashMap<String, Filme> findHashmap;
     private Filme filme;
     private Repositorio<HashMap<Integer, Filme>> repositorio = new Repositorio<>();
@@ -67,35 +69,22 @@ public class FilmeController {
         this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
 
-    //A ideia aqui é seperar os filmes por gênero
-    //Talvez esse método seja transferido para o catálogo
-    public ArrayList<Filme> getArrayFilme(GeneroFilme genero){
-
-        Collection<Filme> filmes =  fHashmap.values();
-        ArrayList<Filme> filmesArray = new ArrayList<>();
-
-        for (Filme filme: filmes) {
-
-            switch (filme.getGenero()){
-
-                case ACAO:{
-
-
-                }
-
-
-
-            }
-
-
-        }
-
-        return null;
+    public HashMap<Integer, Filme> getfHashmap() {
+        return this.fHashmap;
+    }
+    public void setfHashmap(HashMap<Integer, Filme> fHashmap) {
+        this.fHashmap = fHashmap;
+    }
+    public static void setFindHashmap(HashMap<String, Filme> findHashmap) {
+        FilmeController.findHashmap = findHashmap;
+    }
+    public void setRepositorio(Repositorio<HashMap<Integer, Filme>> repositorio) {
+        this.repositorio = repositorio;
     }
 
 
+
     public Filme procurarFilme(String title){
-// resolver o problema do hashmap na busca pelo titulo do filme
 
         Collection<Filme> filmes =  fHashmap.values();
 
@@ -104,6 +93,6 @@ public class FilmeController {
             findHashmap.put(filme.getTitulo(),filme);
         }
 
-        return findHashmap.get(title); //retorno temporário
+        return findHashmap.get(title);
     }
 }
