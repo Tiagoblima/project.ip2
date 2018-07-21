@@ -7,10 +7,10 @@
 
 <VBox fx:id="anchorGaleria" prefHeight="784.0" prefWidth="1382.0" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.front_controllers.GaleriaController">
   <children>
-    <SplitPane dividerPositions="0.33458646616541354" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
         <AnchorPane prefHeight="782.0" prefWidth="487.0" />
-        <ScrollPane prefHeight="820.0" prefWidth="1000.0">
+        <ScrollPane prefHeight="782.0" prefWidth="954.0">
           <content>
             <AnchorPane id="Content" fx:id="content" minHeight="-1.0" minWidth="-1.0" prefHeight="820.0" prefWidth="1000.0" />
           </content>

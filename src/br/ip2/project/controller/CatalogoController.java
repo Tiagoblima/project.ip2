@@ -13,14 +13,14 @@ import static br.ip2.project.model.GeneroFilme.*;
 public class CatalogoController {
 
 
-    private static CatalogoController controller;
+    private static CatalogoController controller = new CatalogoController();;
     private final HashMap<GeneroFilme, ArrayList<Filme>> catalogo = new HashMap<>();
     private final HashMap<Integer, Filme> fullHashMap = new HashMap<Integer, Filme>();;
-    private final GeneroFilme genero;
 
 
 
-    private CatalogoController(GeneroFilme generoFilme){
+
+    private CatalogoController(){
 
 
         Repositorio<HashMap<Integer, Filme>> repositorio = new Repositorio<>();
@@ -34,7 +34,6 @@ public class CatalogoController {
 
         fullHashMap.putAll(hashMap);
 
-        genero = generoFilme;
         gerarCatalogo();
 
     }
@@ -44,10 +43,7 @@ public class CatalogoController {
         return controller;
     }
 
-    public static CatalogoController getInstance(GeneroFilme generoFilme){
-         controller = new CatalogoController(generoFilme);
-         return controller;
-    }
+
     private void gerarCatalogo(){
 
 
@@ -99,8 +95,4 @@ public class CatalogoController {
        return this.catalogo.get(genero);
     }
 
-
-    public GeneroFilme getGenero() {
-        return genero;
-    }
 }
