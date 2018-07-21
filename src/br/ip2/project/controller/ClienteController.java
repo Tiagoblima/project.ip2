@@ -38,15 +38,15 @@ public class ClienteController {
         return cliente;
     }
 
-    public void cadastrarCliente(Cliente cliente) throws Exception
+    public void cadastrarCliente(Cliente novoCliente) throws Exception
     {
 
-
-        if(CHashMap.containsKey(cliente.getLogin())){
+        if(CHashMap.containsKey(novoCliente.getLogin())){
 
                throw new Exception();
         }
 
+        cliente = novoCliente;
         CHashMap.put(cliente.getLogin(), cliente);
         this.repositorio.salvar(CHashMap,"src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
 

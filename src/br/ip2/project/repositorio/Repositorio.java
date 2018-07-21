@@ -30,18 +30,18 @@ public class Repositorio <T> {
 
         }catch (FileNotFoundException e){
 
+            System.out.println("Arquivo não encontrado\nCriando novo arquivo em " + filePath);
             try{
                 File file = new File(filePath);
                 boolean b = file.createNewFile();
-
                 boolean b1 = file.setWritable(true);
             }catch (Exception f){
-                System.out.println("O arquivo não pode ser criado");
+                System.out.println("O arquivo não pode ser criado em " + filePath);
             }
 
         }catch (EOFException  e){
 
-            System.out.println("problema na escrita do arquivo");
+            System.out.println("problema na escrita do arquivo em " + filePath);
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ public class Repositorio <T> {
             System.out.println("Arquivo não Encontrado em " + filePath);
             throw new Exception();
         }catch (EOFException  e){
-            System.out.println("problema na leitura do arquivo");
+            System.out.println("problema na leitura do arquivo em " + filePath);
              e.printStackTrace();
         } catch (IOException e) {
              e.printStackTrace();
