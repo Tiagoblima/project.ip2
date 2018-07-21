@@ -33,7 +33,6 @@
 
 
 .label{
-
     -fx-text-fill: white;
     -fx-font-family: "Cooper Black";
     -fx-font-size: 12pt;
@@ -43,7 +42,7 @@
 
 .Label{
 
-    -fx-text-fill: #e2e2e2;
+    -fx-text-fill: #00e2df;
     -fx-font-family: "Arial Narrow";
     -fx-font-size: 12pt;
     -fx-padding: 2px 2px 1px 2px;

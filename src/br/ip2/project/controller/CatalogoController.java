@@ -14,6 +14,7 @@ public class CatalogoController {
 
 
     private static CatalogoController controller = new CatalogoController();;
+
     private final HashMap<GeneroFilme, ArrayList<Filme>> catalogo = new HashMap<>();
     private final HashMap<Integer, Filme> fullHashMap = new HashMap<Integer, Filme>();;
 

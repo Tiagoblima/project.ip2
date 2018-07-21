@@ -4,7 +4,7 @@ package br.ip2.project.repositorio;
 
 import java.io.*;
 
-public class Repositorio <T> implements Serializable{
+public class Repositorio <T> {
 
 
     private T object;
@@ -13,6 +13,43 @@ public class Repositorio <T> implements Serializable{
         this.object = object;
     }
 
+
+
+
+    public void salvar(T object, String filePath){
+
+        try{
+
+            FileOutputStream  fout  =  new FileOutputStream(filePath);
+
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(object);
+            oos.close();
+            fout.close();
+
+        }catch (FileNotFoundException e){
+
+            try{
+                File file = new File(filePath);
+                boolean b = file.createNewFile();
+
+                boolean b1 = file.setWritable(true);
+            }catch (Exception f){
+                System.out.println("O arquivo não pode ser criado");
+            }
+
+        }catch (EOFException  e){
+
+            System.out.println("problema na escrita do arquivo");
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
 
     public void salvar(String filePath){
 
@@ -51,13 +88,14 @@ public class Repositorio <T> implements Serializable{
 
     public T ler(String filePath) throws Exception{
 
+        T object = null;
         try {
 
             FileInputStream fInput = new FileInputStream(filePath);
 
             ObjectInputStream ois = new ObjectInputStream(fInput);
 
-            T object =  (T) ois.readObject();
+             object =  (T) ois.readObject();
             ois.close();
             fInput.close();
             return object;
@@ -75,7 +113,7 @@ public class Repositorio <T> implements Serializable{
             e.printStackTrace();
         }
 
-        return null;
+        return object;
     }
 
 }
