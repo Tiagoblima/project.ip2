@@ -1,5 +1,6 @@
 package br.ip2.project.view.front_controllers;
 
+import br.ip2.project.controller.ClienteController;
 import br.ip2.project.repositorio.Repositorio;
 import javafx.event.*;
 import javafx.fxml.FXML;
@@ -39,8 +40,6 @@ public class PerfilController implements Initializable {
     @FXML
     public AnchorPane anchorPerfil;
 
-    private Cliente cliente;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -56,19 +55,16 @@ public class PerfilController implements Initializable {
 
 
         String msg = null;
-        Repositorio<Cliente> bufCliente = new Repositorio<>();
-        try{
-            this.cliente = bufCliente.ler("src\\br\\ip2\\project\\repositorio\\files\\Bufcliente.txt");
-        }catch (Exception e){
-           msg = "Desculpe\nNão conseguimos carregar seu perfil";
-        }
 
-    try {
-        this.lblNomeUsuario.setText(this.cliente.getLogin());
-        this.lblFilmes.setText(String.valueOf(this.cliente.getQtdFilmes()));
-        this.lblCreditos.setText(String.valueOf(this.cliente.getCredito()));
+        ClienteController clienteController = ClienteController.getInstance();
+        Cliente cliente = clienteController.getCliente();
 
-        if(this.cliente.getTipoCliente().equals("Comum")){
+        try {
+        this.lblNomeUsuario.setText(cliente.getLogin());
+        this.lblFilmes.setText(String.valueOf(cliente.getQtdFilmes()));
+        this.lblCreditos.setText(String.valueOf(cliente.getCredito()));
+
+        if(cliente.getTipoCliente().equals("Comum")){
             this.lblMsg.setText("Você ainda não é Premium");
         }else{
             this.lblMsg.setText("Você já é Premium");

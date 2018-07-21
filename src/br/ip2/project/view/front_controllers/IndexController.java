@@ -21,7 +21,7 @@ public class IndexController {
     public javafx.scene.image.ImageView ImageView;
     @FXML
     public Label lblMsg;
-    private ClienteController controllerCliente = new ClienteController();
+
 
     private Cliente cliente;
     public  Image image;
@@ -46,7 +46,9 @@ public class IndexController {
         }else{
             try{
 
-                controllerCliente.login(login, senha);
+             ClienteController clienteController =  ClienteController.getInstance();
+
+             clienteController.login(login,senha);
 
             }catch (Exception e){
                 msg = "Login ou senha incorretos";

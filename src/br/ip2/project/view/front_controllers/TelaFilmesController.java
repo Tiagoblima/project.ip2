@@ -39,9 +39,11 @@ public class TelaFilmesController implements Initializable{
 
 
         FilmeController filmeController = new FilmeController();
-        CatalogoController catalogoController = new CatalogoController(filmeController.getfHashmap());
+
+        CatalogoController Catalogocontroller = CatalogoController.getInstance();
+
         this.generoFilme =  GeneroFilme.ACAO;
-        ArrayList<Filme> arrayFilme = catalogoController.getArrayFilmes(this.generoFilme);
+        ArrayList<Filme> arrayFilme = Catalogocontroller.getArrayFilmes(this.generoFilme);
 
         ArrayList<Pane> panes = new ArrayList<>();
         panes.add(pn1);

@@ -13,22 +13,46 @@ import static br.ip2.project.model.GeneroFilme.*;
 public class CatalogoController {
 
 
-    private HashMap<GeneroFilme, ArrayList<Filme>> catalogo;
-    private HashMap<Integer,Filme> fullHashMap;
+    private static CatalogoController controller;
+    private final HashMap<GeneroFilme, ArrayList<Filme>> catalogo = new HashMap<>();
+    private final HashMap<Integer, Filme> fullHashMap = new HashMap<Integer, Filme>();;
+    private final GeneroFilme genero;
 
 
-    public CatalogoController(HashMap<Integer, Filme> origin){
 
-        this.fullHashMap = origin;
+    private CatalogoController(GeneroFilme generoFilme){
+
+
+        Repositorio<HashMap<Integer, Filme>> repositorio = new Repositorio<>();
+
+        HashMap<Integer, Filme> hashMap;
+        try{
+            hashMap = repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+        }catch (Exception e){
+            hashMap = new HashMap<>();
+        }
+
+        fullHashMap.putAll(hashMap);
+
+        genero = generoFilme;
         gerarCatalogo();
 
     }
 
+
+    public static CatalogoController getInstance(){
+        return controller;
+    }
+
+    public static CatalogoController getInstance(GeneroFilme generoFilme){
+         controller = new CatalogoController(generoFilme);
+         return controller;
+    }
     private void gerarCatalogo(){
 
 
-        Collection<Filme> filmes =  this.fullHashMap.values();
-        this.catalogo = new HashMap<>();
+        Collection<Filme> filmes =  fullHashMap.values();
+
 
         ArrayList<Filme> arrayDrama = new ArrayList<>();
         ArrayList<Filme> arrayAcao = new ArrayList<>();
@@ -68,21 +92,15 @@ public class CatalogoController {
         return this.catalogo;
     }
 
-    public void setCatalogo(HashMap<GeneroFilme, ArrayList<Filme>> catalogo) {
-        this.catalogo = catalogo;
-    }
-
     public HashMap<Integer, Filme> getFullHashMap() {
         return fullHashMap;
     }
-
-    public void setFullHashMap(HashMap<Integer, Filme> fullHashMap) {
-        this.fullHashMap = fullHashMap;
-    }
-
     public ArrayList<Filme> getArrayFilmes(GeneroFilme genero){
        return this.catalogo.get(genero);
     }
 
 
+    public GeneroFilme getGenero() {
+        return genero;
+    }
 }
