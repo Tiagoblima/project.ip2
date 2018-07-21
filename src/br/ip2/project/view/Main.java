@@ -53,7 +53,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Galeria);
+        primaryStage.setScene(Home);
         primaryStage.setMaximized(true);
         primaryStage.show();
 

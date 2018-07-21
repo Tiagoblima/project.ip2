@@ -12,85 +12,82 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="anchorGaleria" prefHeight="784.0" prefWidth="1382.0" stylesheets="@../css/front_end.css"
-      xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="br.ip2.project.view.front_controllers.GaleriaController">
+<VBox fx:id="anchorGaleria" prefHeight="784.0" prefWidth="1382.0" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.project.view.front_controllers.GaleriaController">
   <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
     <items>
-      <AnchorPane fx:id="toWeb" prefHeight="780.0" prefWidth="480.0">
+      <AnchorPane fx:id="pnDetalhes" prefHeight="780.0" prefWidth="480.0">
         <children>
-          <Label layoutX="20.0" layoutY="42.0" styleClass="Label" text="Detalhes do Filme"/>
+          <Label layoutX="14.0" layoutY="40.0" styleClass="Label" text="Detalhes do Filme" />
+               <Label layoutX="14.0" layoutY="124.0" style="-fx-text-fill: blue;" text="Sinopse" />
+               <Pane layoutX="-1.0" layoutY="156.0" prefHeight="220.0" prefWidth="350.0">
+                  <children>
+                     <Label fx:id="lblSinopse" layoutX="30.0" layoutY="35.0" text="Label" />
+                  </children>
+               </Pane>
+               <Label layoutX="14.0" layoutY="380.0" style="-fx-text-fill: blue;" text="Duração :" />
+               <Label fx:id="lblHoras" layoutX="113.0" layoutY="380.0" style="-fx-text-fill: cyan;" text="Horas" />
+               <Label fx:id="lblMinutos" layoutX="182.0" layoutY="380.0" style="-fx-text-fill: cyan;" text="Minutos" />
+               <Pane layoutY="500.0" prefHeight="225.0" prefWidth="350.0" style="-fx-background-color: blue;" />
+               <Label layoutX="14.0" layoutY="464.0" style="-fx-text-fill: blue;" text="Trailler" />
+               <Label fx:id="lblTitulo" layoutX="14.0" layoutY="90.0" style="-fx-text-fill: cyan;" text="Titulo" />
+               <Label layoutX="18.0" layoutY="426.0" style="-fx-text-fill: blue;" text="Gênero :" />
+               <Label fx:id="lblGenero" layoutX="109.0" layoutY="426.0" style="-fx-text-fill: cyan;" text="genero" />
         </children>
       </AnchorPane>
       <ScrollPane prefHeight="782.0" prefWidth="954.0">
         <content>
-          <AnchorPane fx:id="telaFilmes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                      minWidth="-Infinity" prefHeight="811.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/10.0.1"
-                      xmlns:fx="http://javafx.com/fxml/1">
+          <AnchorPane fx:id="telaFilmes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="811.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-              <Pane fx:id="pn1" layoutX="100.0" layoutY="200.0" prefHeight="300.0" prefWidth="200.0"
-                    style="-fx-background-color: blue;">
+              <Pane fx:id="pn1" layoutX="100.0" layoutY="200.0" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: blue;">
                 <effect>
-                  <Blend opacity="0.64"/>
+                  <Blend opacity="0.64" />
                 </effect>
               </Pane>
-              <Label alignment="CENTER" layoutX="14.0" layoutY="58.0" minWidth="60.0" prefWidth="-1.0" style="&#10;"
-                     styleClass="Label" text="Pesquise aqui" textAlignment="CENTER" wrapText="false">
+              <Label alignment="CENTER" layoutX="14.0" layoutY="58.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" styleClass="Label" text="Pesquise aqui" textAlignment="CENTER" wrapText="false">
                 <font>
-                  <Font size="18.0" fx:id="x1"/>
+                  <Font size="18.0" fx:id="x1" />
                 </font>
                 <textFill>
-                  <Color blue="0.624" green="0.624" red="0.624" fx:id="x2"/>
+                  <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                 </textFill>
               </Label>
-              <TextField layoutX="14.0" layoutY="96.0"/>
-              <Button layoutX="178.0" layoutY="96.0" mnemonicParsing="false" text="Go"/>
-              <Pane fx:id="comedia" layoutX="460.0" layoutY="70.0" onMouseReleased="#toComedia" prefHeight="50.0"
-                    prefWidth="100.0" styleClass="pnGenero">
+              <TextField layoutX="14.0" layoutY="96.0" />
+              <Button layoutX="178.0" layoutY="96.0" mnemonicParsing="false" text="Go" />
+              <Pane fx:id="comedia" layoutX="460.0" layoutY="70.0" onMouseReleased="#toComedia" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
                 <children>
-                  <Label layoutX="15.0" layoutY="20.0" text="Comedia "/>
+                  <Label layoutX="15.0" layoutY="20.0" text="Comedia " />
                 </children>
               </Pane>
-              <Pane fx:id="aventura" layoutX="760.0" layoutY="70.0" onMouseReleased="#toAventura" prefHeight="50.0"
-                    prefWidth="100.0" styleClass="pnGenero">
+              <Pane fx:id="aventura" layoutX="760.0" layoutY="70.0" onMouseReleased="#toAventura" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
                 <children>
-                  <Label layoutX="15.0" layoutY="20.0" text="Aventura"/>
+                  <Label layoutX="15.0" layoutY="20.0" text="Aventura" />
                 </children>
               </Pane>
-              <Pane fx:id="familia" layoutX="560.0" layoutY="70.0" onMouseReleased="#toFamilia" prefHeight="50.0"
-                    prefWidth="100.0" styleClass="pnGenero">
+              <Pane fx:id="familia" layoutX="560.0" layoutY="70.0" onMouseReleased="#toFamilia" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
                 <children>
-                  <Label layoutX="25.0" layoutY="20.0" text="Família"/>
+                  <Label layoutX="25.0" layoutY="20.0" text="Família" />
                 </children>
               </Pane>
-              <Pane fx:id="acao" layoutX="660.0" layoutY="70.0" onMouseReleased="#toAcao" prefHeight="50.0"
-                    prefWidth="100.0" styleClass="pnGenero">
+              <Pane fx:id="acao" layoutX="660.0" layoutY="70.0" onMouseReleased="#toAcao" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
                 <children>
-                  <Label layoutX="30.0" layoutY="20.0" text="Ação"/>
+                  <Label layoutX="30.0" layoutY="20.0" text="Ação" />
                 </children>
               </Pane>
-              <Pane fx:id="drama" layoutX="360.0" layoutY="70.0" onMouseReleased="#toDrama" prefHeight="50.0"
-                    prefWidth="100.0" style="-fx-border-radius: 25px;" styleClass="pnGenero">
+              <Pane fx:id="drama" layoutX="360.0" layoutY="70.0" onMouseReleased="#toDrama" prefHeight="50.0" prefWidth="100.0" style="-fx-border-radius: 25px;" styleClass="pnGenero">
                 <children>
-                  <Label layoutX="25.0" layoutY="20.0" text="Drama"/>
+                  <Label layoutX="25.0" layoutY="20.0" text="Drama" />
                 </children>
               </Pane>
-              <Pane fx:id="nacionais" layoutX="260.0" layoutY="70.0" prefHeight="50.0" prefWidth="100.0"
-                    styleClass="pnGenero">
+              <Pane fx:id="nacionais" layoutX="260.0" layoutY="70.0" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
                 <children>
-                  <Label layoutX="15.0" layoutY="20.0" text="Nacionais"/>
+                  <Label layoutX="15.0" layoutY="20.0" text="Nacionais" />
                 </children>
               </Pane>
-              <Pane fx:id="pn11" layoutX="400.0" layoutY="200.0" prefHeight="300.0" prefWidth="200.0"
-                    style="-fx-background-color: blue;"/>
-              <Pane fx:id="pn111" layoutX="700.0" layoutY="200.0" prefHeight="300.0" prefWidth="200.0"
-                    style="-fx-background-color: blue;"/>
-              <Pane fx:id="pn12" layoutX="110.0" layoutY="600.0" prefHeight="300.0" prefWidth="200.0"
-                    style="-fx-background-color: blue;"/>
-              <Pane fx:id="pn112" layoutX="410.0" layoutY="600.0" prefHeight="300.0" prefWidth="200.0"
-                    style="-fx-background-color: blue;"/>
-              <Pane fx:id="pn1111" layoutX="710.0" layoutY="600.0" prefHeight="300.0" prefWidth="200.0"
-                    style="-fx-background-color: blue;"/>
+              <Pane fx:id="pn11" layoutX="400.0" layoutY="200.0" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+              <Pane fx:id="pn111" layoutX="700.0" layoutY="200.0" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+              <Pane fx:id="pn12" layoutX="110.0" layoutY="600.0" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+              <Pane fx:id="pn112" layoutX="410.0" layoutY="600.0" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+              <Pane fx:id="pn1111" layoutX="710.0" layoutY="600.0" prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: blue;" />
             </children>
           </AnchorPane>
         </content>

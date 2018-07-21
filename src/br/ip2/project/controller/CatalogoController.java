@@ -24,7 +24,7 @@ public class CatalogoController {
     private CatalogoController(){
 
 
-        Repositorio<HashMap<Integer, Filme>> repositorio = new Repositorio<>();
+        Repositorio<HashMap<Integer, Filme>> repositorio = Repositorio.getInstance();
 
         HashMap<Integer, Filme> hashMap;
         try{

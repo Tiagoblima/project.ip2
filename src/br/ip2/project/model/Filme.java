@@ -13,7 +13,8 @@ public class Filme implements Serializable {
     private int anoLanc;
     private String sinopse;
     private String urlMiniatura;
-    private String urlMidia;
+    private String urlFilme;
+    private String urlTrailler;
 
     public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero) {
 
@@ -91,12 +92,12 @@ public class Filme implements Serializable {
         return this.urlMiniatura;
     }
 
-    public void setUrlMidia(String urlMidia){
-        this.urlMidia = urlMidia;
+    public void setUrlFilme(String urlMidia){
+        this.urlFilme = urlMidia;
     }
 
-    public String getUrlMidia(){
-        return this.urlMidia;
+    public String getUrlFilme(){
+        return this.urlFilme;
     }
 
     @Override
@@ -128,6 +129,14 @@ public class Filme implements Serializable {
                 "Duração: "+ duracaoHora + ":" + duracaoMinuto + "/n"+
                 "Ano de Lançamento: " + anoLanc + "/n"+
                 "Sinopse: /n" + sinopse;
+    }
+
+    public String getUrlTrailler() {
+        return urlTrailler;
+    }
+
+    public void setUrlTrailler(String urlTrailler) {
+        this.urlTrailler = urlTrailler;
     }
 }
 

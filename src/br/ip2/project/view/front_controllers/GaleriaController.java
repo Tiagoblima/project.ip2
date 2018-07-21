@@ -12,10 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -44,9 +41,25 @@ public class GaleriaController implements Initializable {
     public Pane drama;
 
     @FXML
-    public AnchorPane toWeb;
-    @FXML
     public AnchorPane telaFilmes;
+
+    @FXML
+    public Label lblSinopse;
+
+    @FXML
+    public Label lblHoras;
+
+    @FXML
+    public Label lblMinutos;
+
+    @FXML
+    public AnchorPane pnDetalhes;
+
+    @FXML
+    public Label lblTitulo;
+
+    @FXML
+    public Label lblGenero;
 
 
     private Stage stage;
@@ -60,6 +73,8 @@ public class GaleriaController implements Initializable {
         try {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
+
+            menuBar.setTranslateY(-750);
             anchorGaleria.getChildren().add(menuBar);
 
         } catch (IOException e) {
@@ -88,61 +103,69 @@ public class GaleriaController implements Initializable {
 
     }
 
+    private void setupDetalhes(Filme filme){
 
+
+        this.lblSinopse.setText(filme.getSinopse());
+        this.lblHoras.setText(String.valueOf(filme.getDuracaoHora()));
+        this.lblMinutos.setText(String.valueOf(filme.getDuracaoMinuto()));
+
+
+
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+        webView.setPrefWidth(350);
+        webView.setPrefHeight(225);
+        webView.setLayoutX(0);
+        webView.setLayoutY(500);
+        webView.setScaleZ(450);
+        webEngine.load(filme.getUrlTrailler());
+        this.pnDetalhes.getChildren().add(webView);
+
+
+
+
+    }
     private void setupButtons(Filme filme, double layoutX, double layoutY){
 
         ButtonBar buttonBar = new ButtonBar();
 
-        Button detalhes = new Button();
-        detalhes.setText("Detalhes");
-        detalhes.setId(String.valueOf(filme.hashCode()));
-        detalhes.setAlignment(Pos.CENTER);
+        Button btnDetalhe = new Button();
+        btnDetalhe.setText("Detalhes");
+        btnDetalhe.setId(String.valueOf(filme.hashCode()));
+        btnDetalhe.setAlignment(Pos.CENTER);
 
 
+        btnDetalhe.setOnAction(event -> {
 
-
-
-
-        filme.setSinopse("https://www.imdb.com/title/tt0120815/plotsummary?ref_=ttpl_ql_3#synopsis");
-
-        detalhes.setOnAction(event -> {
-
-            WebView webView = new WebView();
-            WebEngine webEngine = webView.getEngine();
-            webView.setPrefWidth(400);
-            webView.setPrefHeight(600);
-            webView.setLayoutY(100);
-            webView.setScaleZ(20);
-            webEngine.load(filme.getSinopse());
-            toWeb.getChildren().add(webView);
+            setupDetalhes(filme);
         });
 
-        Button assistir = new Button();
+        Button btnAssistir = new Button();
 
-        assistir.setText("Assistir");
-        assistir.setId(String.valueOf(filme.hashCode()));
-        assistir.setAlignment(Pos.CENTER);
+        btnAssistir.setText("Assistir");
+        btnAssistir.setId(String.valueOf(filme.hashCode()));
+        btnAssistir.setAlignment(Pos.CENTER);
 
 
-        assistir.setOnAction(event -> {
+        btnAssistir.setOnAction(event -> {
 
             WebView webView = new WebView();
             WebEngine webEngine = webView.getEngine();
 
             stage = new Stage();
-            filme.setUrlMidia("https://www.youtube.com/embed/7A18k0wFSK4");
 
             webView.setPrefWidth(1382.0);
             webView.setPrefHeight(784.0);
-            webEngine.load(filme.getUrlMidia());
+            webEngine.load(filme.getUrlFilme());
             stage.setScene(new Scene(webView));
             stage.setFullScreen(true);
             stage.show();
 
         });
 
-        buttonBar.getButtons().add(detalhes);
-        buttonBar.getButtons().add(assistir);
+        buttonBar.getButtons().add(btnDetalhe);
+        buttonBar.getButtons().add(btnAssistir);
 
         buttonBar.setLayoutX(layoutX);
         buttonBar.setLayoutY(layoutY + 300);
