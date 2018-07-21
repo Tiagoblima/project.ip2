@@ -59,34 +59,18 @@ public class Main extends Application {
 
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
-        filme1();
+
+
+
+
+
     }
 
 
 
     public static void filme1(){
 
-        FilmeController filmeController = new FilmeController();
 
-        String nome = null;
-        String sinopse = null;
-
-      /*  Filme filme = new Filme(nome,2,50,1998,sinopse,GeneroFilme.ACAO);
-
-        String url = "https://is2-ssl.mzstatic.com/image/thumb/Video/v4/9b/06/40/9b0640cf-d981-911a-e1f2-c82929fcb59e/source/1200x630bb.jpg";
-        filme.setUrlMiniatura(url);
-        url = "https://www.youtube.com/watch?v=RYID71hYHzg";
-        filme.setUrlMiniatura(url);
-
-        try {
-            filmeController.cadastrarFilme(filme);
-        } catch (Exception e) {
-
-            System.out.println("O filme não pode ser cadastrado!\n");
-            e.printStackTrace();
-        }
-
-*/
     }
 
     public  static void changeScreen(Scenes name){

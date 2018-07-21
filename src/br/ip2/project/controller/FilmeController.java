@@ -55,6 +55,8 @@ public class FilmeController {
         this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
     }
     public void alterarFilme(Filme f, Filme novoF) throws Exception{
+
+
         this.filme = f;
 
         if(fHashmap.containsKey(this.filme.hashCode())){

@@ -1,6 +1,7 @@
 package br.ip2.project.view.front_controllers;
 
 import br.ip2.project.controller.CatalogoController;
+import br.ip2.project.controller.FilmeController;
 import br.ip2.project.model.Catalogo;
 import br.ip2.project.model.Filme;
 import br.ip2.project.model.GeneroFilme;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Menu;
@@ -19,6 +21,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,12 +43,15 @@ public class GaleriaController implements Initializable {
     @FXML
     public Pane drama;
 
+    @FXML
     public AnchorPane toWeb;
-
-
+    @FXML
     public AnchorPane telaFilmes;
 
-    private CatalogoController catalogoController;
+
+    private Stage stage;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -93,11 +99,22 @@ public class GaleriaController implements Initializable {
         detalhes.setAlignment(Pos.CENTER);
 
 
-        detalhes.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(javafx.event.ActionEvent event) {
 
-            }
+
+
+
+        filme.setSinopse("https://www.imdb.com/title/tt0120815/plotsummary?ref_=ttpl_ql_3#synopsis");
+
+        detalhes.setOnAction(event -> {
+
+            WebView webView = new WebView();
+            WebEngine webEngine = webView.getEngine();
+            webView.setPrefWidth(400);
+            webView.setPrefHeight(600);
+            webView.setLayoutY(100);
+            webView.setScaleZ(20);
+            webEngine.load(filme.getSinopse());
+            toWeb.getChildren().add(webView);
         });
 
         Button assistir = new Button();
@@ -107,11 +124,21 @@ public class GaleriaController implements Initializable {
         assistir.setAlignment(Pos.CENTER);
 
 
-        assistir.setOnAction(new EventHandler<javafx.event.ActionEvent>() {
-            @Override
-            public void handle(javafx.event.ActionEvent event) {
+        assistir.setOnAction(event -> {
 
-            }
+            WebView webView = new WebView();
+            WebEngine webEngine = webView.getEngine();
+
+            stage = new Stage();
+            filme.setUrlMidia("https://www.youtube.com/embed/7A18k0wFSK4");
+
+            webView.setPrefWidth(1382.0);
+            webView.setPrefHeight(784.0);
+            webEngine.load(filme.getUrlMidia());
+            stage.setScene(new Scene(webView));
+            stage.setFullScreen(true);
+            stage.show();
+
         });
 
         buttonBar.getButtons().add(detalhes);
