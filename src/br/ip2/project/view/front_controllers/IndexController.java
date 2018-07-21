@@ -58,9 +58,7 @@ public class IndexController {
 
         if(acess){
 
-            this.cliente = controllerCliente.getCliente();
             toHome(actionEvent);
-
         }
 
         lblMsg.setText(msg);

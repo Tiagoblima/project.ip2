@@ -36,16 +36,15 @@
 
     -fx-text-fill: white;
     -fx-font-family: "Cooper Black";
-    -fx-font-size: 16pt;
-    -fx-font-weight: bold;
+    -fx-font-size: 12pt;
     -fx-padding: 2px 2px 1px 2px;
+    -fx-alignment: center;
 }
 
 .Label{
 
     -fx-text-fill: #e2e2e2;
     -fx-font-family: "Arial Narrow";
-    -fx-font-size: 16pt;
-    -fx-font-weight: bold;
+    -fx-font-size: 12pt;
     -fx-padding: 2px 2px 1px 2px;
 }

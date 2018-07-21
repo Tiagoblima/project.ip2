@@ -6,11 +6,14 @@ import br.ip2.project.model.Catalogo;
 import br.ip2.project.model.Filme;
 import br.ip2.project.model.GeneroFilme;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -29,11 +32,21 @@ public class TelaFilmesController implements Initializable{
     public Pane pn5;
     @FXML
     public Pane pn6;
+    public AnchorPane telafilmes;
 
     private GeneroFilme generoFilme;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+
+    }
+
+
+    private void schowCatalogo(GeneroFilme generoFilme){
+
+
         WebView[] webviews = new WebView[6];
         WebEngine[] engines = new WebEngine[6];
 
@@ -81,11 +94,24 @@ public class TelaFilmesController implements Initializable{
             i++;
         }
 
+    }
+    public void toDrama(){
+
+
+    }
+    public void toAcao(){
 
 
     }
 
+    public void toComedia(){
 
+
+    }
+    public void toNacionais(){
+
+
+    }
     public void setGenero(GeneroFilme genero){
         this.generoFilme =  GeneroFilme.DRAMA;
     }

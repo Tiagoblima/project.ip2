@@ -37,7 +37,7 @@ public class FormController {
     public void ConfirmaCliente(ActionEvent actionEvent) {
 
 
-        ClienteController clienteController = new ClienteController();
+        ClienteController clienteController = ClienteController.getInstance();
 
         String nome = this.nomeField.getText();
         String email = this.emailField.getText();
@@ -67,7 +67,7 @@ public class FormController {
 
                      clienteController.cadastrarCliente(this.cliente);
 
-                     System.out.println(clienteController.getCCHashMap().toString());
+
                      msg = "Cliente cadastrado com sucesso";
 
                  }catch (Exception e){
@@ -102,7 +102,7 @@ public class FormController {
 
                      clienteController.cadastrarCliente(this.cliente);
 
-                     System.out.println(clienteController.getCCHashMap().toString());
+
                      msg = "Cliente cadastrado com sucesso";
 
 

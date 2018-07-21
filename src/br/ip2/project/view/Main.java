@@ -54,7 +54,7 @@ public class Main extends Application {
         primaryStage.setTitle("EasyFilms");
 
         primaryStage.setScene(Galeria);
-        primaryStage.setFullScreen(true);
+        primaryStage.setMaximized(true);
         primaryStage.show();
 
         System.out.println("Width: " + primaryStage.getWidth());

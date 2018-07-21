@@ -40,7 +40,7 @@ public class GaleriaController implements Initializable {
         try {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
-            menuBar.setTranslateY(-740);
+            menuBar.setTranslateY(-720);
             anchorGaleria.getChildren().add(menuBar);
 
             this.telaFilmes = FXMLLoader.load(getClass().getResource("../fxml/telaFilmes.fxml"));
@@ -51,30 +51,10 @@ public class GaleriaController implements Initializable {
         }
 
 
-
-    }
-
-    public void toDrama(){
-
-        catalogoController = CatalogoController.getInstance(GeneroFilme.DRAMA);
-      this.content.getChildren().add(this.telaFilmes);
-    }
-    public void toAcao(){
-
-        catalogoController = CatalogoController.getInstance(GeneroFilme.DRAMA);
         this.content.getChildren().add(this.telaFilmes);
     }
 
-    public void toComedia(){
 
-        catalogoController = CatalogoController.getInstance(GeneroFilme.DRAMA);
-        this.content.getChildren().add(this.telaFilmes);
-    }
-    public void toNacionais(){
-
-        catalogoController = CatalogoController.getInstance(GeneroFilme.DRAMA);
-        this.content.getChildren().add(this.telaFilmes);
-    }
 
 
 }
