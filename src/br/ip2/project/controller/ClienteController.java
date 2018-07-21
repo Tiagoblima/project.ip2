@@ -12,7 +12,7 @@ public class ClienteController {
 
     private static ClienteController controller = new ClienteController();
     private final HashMap<String,Cliente> CHashMap = new HashMap<>(); //Cliente HashMap
-    private Repositorio<HashMap<String,Cliente>> repositorio = new Repositorio<>();
+    private Repositorio<HashMap<String,Cliente>> repositorio = Repositorio.getInstance();
 
     private static Cliente cliente;
 
@@ -48,8 +48,7 @@ public class ClienteController {
         }
 
         CHashMap.put(cliente.getLogin(), cliente);
-        this.repositorio.setObject(this.CHashMap);
-        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
+        this.repositorio.salvar(CHashMap,"src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
 
     }
 
@@ -64,8 +63,6 @@ public class ClienteController {
         if (!(cliente.getSenha().equals(senha))) {
            throw new Exception();
         }
-
-
 
    }
 

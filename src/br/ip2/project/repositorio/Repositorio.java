@@ -7,14 +7,15 @@ import java.io.*;
 public class Repositorio <T> {
 
 
-    private T object;
+    private static Repositorio<Object> repositorio = new Repositorio<>();
 
-    public void setObject(T object) {
-        this.object = object;
+    private Repositorio(){
+
     }
 
-
-
+    public static <T> T getInstance () {
+        return (T) repositorio;
+    }
 
     public void salvar(T object, String filePath){
 
@@ -51,40 +52,6 @@ public class Repositorio <T> {
 
     }
 
-    public void salvar(String filePath){
-
-        try{
-
-            FileOutputStream  fout  =  new FileOutputStream(filePath);
-
-            ObjectOutputStream oos = new ObjectOutputStream(fout);
-            oos.writeObject(this.object);
-            oos.close();
-            fout.close();
-
-        }catch (FileNotFoundException e){
-
-            try{
-                File file = new File(filePath);
-                boolean b = file.createNewFile();
-
-                boolean b1 = file.setWritable(true);
-            }catch (Exception f){
-                System.out.println("O arquivo não pode ser criado");
-            }
-
-        }catch (EOFException  e){
-
-            System.out.println("problema na escrita do arquivo");
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-    }
 
     public T ler(String filePath) throws Exception{
 

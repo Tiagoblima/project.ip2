@@ -12,79 +12,22 @@ import java.util.HashMap;
 
 public class FilmeController {
 
-    private HashMap<Integer, Filme> fHashmap;
-    private static HashMap<String, Filme> findHashmap;
-    private Filme filme;
-    private Repositorio<HashMap<Integer, Filme>> repositorio = new Repositorio<>();
+
+    private static FilmeController controller = new FilmeController();
+    private final HashMap<Integer, Filme> fHashmap;
+    private final HashMap<String, Filme> findHashmap;
+    private Repositorio<HashMap<Integer, Filme>> repositorio = Repositorio.getInstance();
 
 
-    public FilmeController(){
+    private FilmeController(){
+
+        HashMap<Integer, Filme> hashMap;
         try{
-            fHashmap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+            hashMap = this.repositorio.ler("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
         }catch (Exception e){
-            fHashmap = new HashMap<>();
+            hashMap = new HashMap<>();
         }
-    }
-
-    public void setFilme(Filme filme){
-        this.filme = filme;
-    }
-
-    public Filme getFilme(){
-        return fHashmap.get(this.filme.hashCode());
-    }
-
-
-    public void cadastrarFilme(Filme f) throws Exception{
-        this.filme = f;
-        if(fHashmap.containsKey(this.filme.hashCode())){
-            throw new Exception();
-        }
-        fHashmap.put(this.filme.hashCode(),f);
-        this.repositorio.setObject(fHashmap);
-        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
-    }
-    public void removerFilme(Filme f) throws Exception{
-        this.filme = f;
-        if (fHashmap.containsKey(this.filme.hashCode())){
-            fHashmap.remove(this.filme.hashCode());
-        } else {
-            throw new Exception();
-        }
-        this.repositorio.setObject(fHashmap);
-        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
-    }
-    public void alterarFilme(Filme f, Filme novoF) throws Exception{
-
-
-        this.filme = f;
-
-        if(fHashmap.containsKey(this.filme.hashCode())){
-            fHashmap.remove(this.filme.hashCode());
-            fHashmap.put(this.filme.hashCode(),novoF);
-        }else{
-            throw new Exception();
-        }
-        this.repositorio.setObject(fHashmap);
-        this.repositorio.salvar("src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
-    }
-
-    public HashMap<Integer, Filme> getfHashmap() {
-        return this.fHashmap;
-    }
-    public void setfHashmap(HashMap<Integer, Filme> fHashmap) {
-        this.fHashmap = fHashmap;
-    }
-    public static void setFindHashmap(HashMap<String, Filme> findHashmap) {
-        FilmeController.findHashmap = findHashmap;
-    }
-    public void setRepositorio(Repositorio<HashMap<Integer, Filme>> repositorio) {
-        this.repositorio = repositorio;
-    }
-
-
-
-    public Filme procurarFilme(String title){
+        fHashmap = hashMap;
 
         Collection<Filme> filmes =  fHashmap.values();
 
@@ -93,6 +36,45 @@ public class FilmeController {
             findHashmap.put(filme.getTitulo(),filme);
         }
 
+    }
+
+    public static FilmeController getInstance(){
+        return controller;
+    }
+
+    public void cadastrarFilme(Filme filme) throws Exception{
+
+        if(fHashmap.containsKey(filme.hashCode())){
+            throw new Exception();
+        }
+        fHashmap.put(filme.hashCode(),filme);
+        this.repositorio.salvar(fHashmap,"src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+    }
+    public void removerFilme(Filme filme) throws Exception{
+
+        if (fHashmap.containsKey(filme.hashCode())){
+            fHashmap.remove(filme.hashCode());
+        } else {
+            throw new Exception();
+        }
+
+        this.repositorio.salvar(fHashmap,"src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+    }
+    public void alterarFilme(Filme filmeVelho, Filme filmeNovo){
+
+        this.fHashmap.replace(filmeVelho.hashCode(),filmeVelho,filmeNovo);
+
+        this.repositorio.salvar(fHashmap,"src\\br\\ip2\\project\\repositorio\\files\\hashMapFilmes.txt");
+    }
+
+    public HashMap<Integer, Filme> getfHashmap() {
+        return this.fHashmap;
+    }
+    public void setRepositorio(Repositorio<HashMap<Integer, Filme>> repositorio) {
+        this.repositorio = repositorio;
+    }
+
+    public Filme procurarFilme(String title){
         return findHashmap.get(title);
     }
 }
