@@ -10,11 +10,14 @@ import java.util.HashMap;
 public class ClienteController {
 
 
-    private static ClienteController controller = new ClienteController();
+    private static ClienteController controller;
     private final HashMap<String,Cliente> CHashMap = new HashMap<>(); //Cliente HashMap
     private Repositorio<HashMap<String,Cliente>> repositorio = Repositorio.getInstance();
 
-    private static Cliente cliente;
+    public static Cliente cliente;
+    public static String name;
+
+
 
     private ClienteController(){
 
@@ -30,11 +33,15 @@ public class ClienteController {
     }
 
 
-    public static ClienteController getInstance() {
+    public static synchronized ClienteController getInstance() {
+        if(controller==null) controller = new ClienteController();
         return controller;
     }
 
     public Cliente getCliente(){
+
+
+
         return cliente;
     }
 
@@ -47,6 +54,7 @@ public class ClienteController {
         }
 
         cliente = novoCliente;
+
         CHashMap.put(cliente.getLogin(), cliente);
         this.repositorio.salvar(CHashMap,"src\\br\\ip2\\project\\repositorio\\files\\hashMapCliente.txt");
 
@@ -60,6 +68,13 @@ public class ClienteController {
         }
 
         cliente = CHashMap.get(login);
+
+        name = "tiago";
+        if(cliente==null){
+            System.out.println("O cliente não está aqui");
+        }else {
+            System.out.println("O cliente está no controller");
+        }
         if (!(cliente.getSenha().equals(senha))) {
            throw new Exception();
         }

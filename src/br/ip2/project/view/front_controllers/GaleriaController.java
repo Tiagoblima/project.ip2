@@ -167,6 +167,7 @@ public class GaleriaController implements Initializable {
             stage.setFullScreen(true);
             stage.show();
 
+
         });
 
         buttonBar.getButtons().add(btnDetalhe);
@@ -216,7 +217,6 @@ public class GaleriaController implements Initializable {
     public void toAcao(){
         showCatalogo(ACAO);
     }
-
     public void toComedia(){
         showCatalogo(COMEDIA);
     }

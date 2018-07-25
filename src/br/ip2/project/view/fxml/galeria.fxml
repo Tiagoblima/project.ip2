@@ -75,7 +75,7 @@
                   <Label layoutX="25.0" layoutY="20.0" text="Drama" />
                 </children>
               </Pane>
-              <Pane fx:id="nacionais" layoutX="260.0" layoutY="70.0" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
+              <Pane fx:id="nacionais" layoutX="260.0" layoutY="70.0" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero" onMouseReleased="#toNacionais">
                 <children>
                   <Label layoutX="15.0" layoutY="20.0" text="Nacionais" />
                 </children>

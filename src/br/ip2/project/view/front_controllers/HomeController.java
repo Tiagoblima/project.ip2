@@ -1,6 +1,8 @@
 package br.ip2.project.view.front_controllers;
 
 
+import br.ip2.project.controller.ClienteController;
+import javafx.application.Platform;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,8 @@ import br.ip2.project.view.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static br.ip2.project.controller.ClienteController.cliente;
 
 public class HomeController implements Initializable{
 
@@ -52,7 +56,11 @@ public class HomeController implements Initializable{
 
     }
 
-    public void toPerfil(ActionEvent actionEvent) { Main.changeScreen(Scenes.Perfil); }
+    public void toPerfil(ActionEvent actionEvent) {
+        Main.changeScreen(Scenes.Perfil);
+
+
+    }
 
 
     public void sair(ActionEvent actionEvent) {
