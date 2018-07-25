@@ -61,6 +61,11 @@ public class GaleriaController implements Initializable {
     @FXML
     public Label lblGenero;
 
+    @FXML
+    public Pane pnTrailer;
+
+    @FXML
+    public Pane pnMsg;
 
     private Stage stage;
 
@@ -74,14 +79,14 @@ public class GaleriaController implements Initializable {
 
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
 
-            menuBar.setTranslateY(-750);
+            menuBar.setTranslateY(-770);
             anchorGaleria.getChildren().add(menuBar);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
+        pnDetalhes.setVisible(false);
 
     }
 
@@ -109,17 +114,16 @@ public class GaleriaController implements Initializable {
         this.lblSinopse.setText(filme.getSinopse());
         this.lblHoras.setText(String.valueOf(filme.getDuracaoHora()));
         this.lblMinutos.setText(String.valueOf(filme.getDuracaoMinuto()));
-
-
+        this.lblTitulo.setText(filme.getTitulo());
+        this.lblGenero.setText(String.valueOf(filme.getGenero()));
 
         WebView webView = new WebView();
         WebEngine webEngine = webView.getEngine();
-        webView.setPrefWidth(350);
-        webView.setPrefHeight(225);
+        webView.setPrefWidth(450);
+        webView.setPrefHeight(275);
         webView.setLayoutX(0);
         webView.setLayoutY(500);
-        webView.setScaleZ(450);
-        webEngine.load(filme.getUrlTrailler());
+        webEngine.loadContent(filme.getUrlTrailler());
         this.pnDetalhes.getChildren().add(webView);
 
 
@@ -139,6 +143,7 @@ public class GaleriaController implements Initializable {
         btnDetalhe.setOnAction(event -> {
 
             setupDetalhes(filme);
+            pnDetalhes.setVisible(true);
         });
 
         Button btnAssistir = new Button();
@@ -157,7 +162,7 @@ public class GaleriaController implements Initializable {
 
             webView.setPrefWidth(1382.0);
             webView.setPrefHeight(784.0);
-            webEngine.load(filme.getUrlFilme());
+            webEngine.loadContent(filme.getUrlFilme());
             stage.setScene(new Scene(webView));
             stage.setFullScreen(true);
             stage.show();
@@ -178,6 +183,7 @@ public class GaleriaController implements Initializable {
     private void showCatalogo(GeneroFilme generoFilme){
 
 
+        pnMsg.setVisible(false);
         CatalogoController Catalogocontroller = CatalogoController.getInstance();
 
         ArrayList<Filme> arrayFilme = Catalogocontroller.getArrayFilmes(generoFilme);
