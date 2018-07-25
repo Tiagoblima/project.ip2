@@ -1,0 +1,49 @@
+
+
+
+/*  Menu bar confiurations*/
+.menu-item{
+    -fx-text-fill: #17b2ff;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 14pt;
+}
+.menu .label{
+
+    -fx-text-fill: #53c7af;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-padding: 2px 2px 1px 2px;
+}
+
+/*//////////////////////////*/
+
+
+.pnGenero{
+    -fx-border-radius: 25px;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+    -fx-height: 150px;
+    -fx-background-size: 200px 200px;
+    -fx-background-image: url("../img/gradients/gradient1.jpg");
+}
+.pnGenero:hover{
+    -fx-background-image: url("../img/gradients/gradient2.jpg");
+}
+
+
+.label{
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-size: 10pt;
+    -fx-padding: 1px 1px 1px 1px;
+    -fx-alignment: center;
+}
+
+.Label{
+
+    -fx-text-fill: #00e2df;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-size: 12pt;
+    -fx-padding: 2px 2px 1px 2px;
+}
