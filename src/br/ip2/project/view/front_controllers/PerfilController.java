@@ -61,10 +61,6 @@ public class PerfilController implements Initializable {
        // Cliente cliente = ClienteController.cliente;
 
 
-
-
-
-    lblErro.setText(msg);
     }
 
 
