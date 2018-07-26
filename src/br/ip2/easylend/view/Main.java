@@ -49,7 +49,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Home);
+        primaryStage.setScene(Index);
         primaryStage.show();
 
         System.out.println("Width: " + primaryStage.getWidth());

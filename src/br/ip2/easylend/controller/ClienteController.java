@@ -75,10 +75,20 @@ public class ClienteController {
            throw new Exception();
         }
 
+   }
 
+   public void alterarLogin(String login) throws Exception {
 
+        if(CHashMap.containsKey(login)){
+            throw new Exception();
+        }
+        cliente.setLogin(login);
+        alterarCliente();
+   }
+   public void alterarCliente(){
 
-
+        CHashMap.replace(cliente.getLogin(),cliente);
+       this.repositorio.salvar(CHashMap,"src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
    }
 
 

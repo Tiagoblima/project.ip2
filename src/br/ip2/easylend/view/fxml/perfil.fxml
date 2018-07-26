@@ -37,10 +37,10 @@
           <Label fx:id="lblFilmes" layoutX="40.0" styleClass="Label" text="Qtd de Filmes" GridPane.columnIndex="1" GridPane.rowIndex="1" />
           <Label fx:id="lblCreditos" styleClass="Label" text="Creditos disponiveis" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          <Label fx:id="lblMsg" styleClass="Label" text="tipo cliente" GridPane.rowIndex="3" />
-         <Button fx:id="btnAlterarLogin" mnemonicParsing="false" text="Alterar" GridPane.columnIndex="2" />
-         <Button fx:id="btnAddFIlme" layoutX="277.0" layoutY="24.0" mnemonicParsing="false" text="Adicionar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-         <Button layoutX="277.0" layoutY="76.0" mnemonicParsing="false" text="Comprar" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-         <Button layoutX="277.0" layoutY="127.0" mnemonicParsing="false" text="Alterar" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         <Button fx:id="btnAlterarLogin" mnemonicParsing="false" onAction="#altrarLogin" text="Alterar" GridPane.columnIndex="2" />
+         <Button fx:id="btnAddFIlme" layoutX="277.0" layoutY="24.0" mnemonicParsing="false" onAction="#addFilme" text="Adicionar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         <Button fx:id="btnCompCredito" layoutX="277.0" layoutY="76.0" mnemonicParsing="false" onAction="#compCredito" text="Comprar" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         <Button fx:id="btnMudarTipoCliente" layoutX="277.0" layoutY="127.0" mnemonicParsing="false" onAction="#mudarTipo" text="Alterar" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          <Label fx:id="lblTipoCliente" prefHeight="39.0" prefWidth="106.0" styleClass="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       </GridPane>
       <Label layoutX="74.0" layoutY="246.0" styleClass="Label" text="Meus Favoritos" />
@@ -51,6 +51,6 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="252.0" prefWidth="576.0" />
         </content>
       </ScrollPane>
-       <Button fx:id="btnMaisPerfil" layoutX="228.0" layoutY="243.0" styleClass="Label" text="Mais do perfil" />
+       <Button fx:id="btnMaisPerfil" layoutX="400.0" layoutY="246.0" styleClass="Label" text="Mais do perfil" />
    </children>
 </AnchorPane>

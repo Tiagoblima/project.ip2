@@ -70,4 +70,5 @@ public abstract class Cliente extends Pessoa{
         favoritos.put(filme.hashCode(), filme);
 
     }
+
 }

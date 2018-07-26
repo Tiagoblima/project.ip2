@@ -1,12 +1,13 @@
 package br.ip2.easylend.view.front_controllers;
 
 import br.ip2.easylend.controller.ClienteController;
-import br.ip2.easylend.repositorio.Repositorio;
-import javafx.application.Platform;
+import br.ip2.easylend.view.Main;
+import br.ip2.easylend.view.Scenes;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
@@ -15,10 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import br.ip2.easylend.model.*;
-import br.ip2.easylend.view.*;
-
-import static br.ip2.easylend.controller.ClienteController.cliente;
-import static br.ip2.easylend.controller.ClienteController.getInstance;
+import javafx.stage.Stage;
 
 public class PerfilController implements Initializable {
 
@@ -48,6 +46,18 @@ public class PerfilController implements Initializable {
     @FXML
     public  Label lblTipoCliente;
 
+    @FXML
+    public Button btnAlterarLogin;
+
+    @FXML
+    public Button btnAddFIlme;
+
+    @FXML
+    public Button btnMudarTipoCliente;
+
+    @FXML
+    public Button btnCompCredito;
+
 
 
     @Override
@@ -74,10 +84,104 @@ public class PerfilController implements Initializable {
     }
 
 
-    public void toHome(ActionEvent actionEvent) { Main.changeScreen(Scenes.Home); }
+    private void criarStage(String msg){
 
-    public void sair(ActionEvent actionEvent) {
-        System.exit(0);
+        Stage stage = new Stage();
+        AnchorPane pnMsg = new AnchorPane();
+
+        pnMsg.setPrefWidth(100);
+        pnMsg.setPrefHeight(50);
+
+
+
+        Label label = new Label(msg);
+
+        label.setLayoutX(0);
+        label.setLayoutY(0);
+        pnMsg.getChildren().add(label);
+
+        Button btnOk = new Button("OK");
+        btnOk.setOnAction(event -> stage.close());
+        btnOk.setLayoutX(90);
+        btnOk.setLayoutY(50);
+        pnMsg.getChildren().add(btnOk);
+        stage.setScene(new Scene(pnMsg));
+
+        stage.show();
+
+    }
+    private void login(String newLogin){
+
+        String msg = null;
+        try {
+            ClienteController.getInstance().alterarLogin(newLogin);
+
+            msg = "Login alterado com sucesso";
+        } catch (Exception e) {
+          msg = "O login não está disponível\nnDigite um novo login";
+        }
+
+        criarStage(msg);
+
+    }
+    private void alterar(String alteraçao){
+
+        Stage stage = new Stage();
+
+        AnchorPane pnAlterar = new AnchorPane();
+
+        pnAlterar.setPrefWidth(300);
+        pnAlterar.setPrefHeight(200);
+
+
+
+        Label label = new Label("Digite aqui: ");
+        label.setLayoutX(20);
+        label.setLayoutY(50);
+        pnAlterar.getChildren().add(label);
+
+        TextField textField = new TextField();
+
+        textField.setLayoutX(100);
+        textField.setLayoutY(50);
+        pnAlterar.getChildren().add(textField);
+
+        ButtonBar btnBar = new ButtonBar();
+
+        btnBar.setLayoutX(50);
+        btnBar.setLayoutY(100);
+        Button btnCancelar = new Button("Cancelar");
+        btnCancelar.setCancelButton(true);
+
+        btnCancelar.setOnAction(event -> stage.close());
+
+        Button btnConfirmar = new Button("Confirmar");
+
+        btnConfirmar.setOnAction(event -> login(textField.getText()));
+        btnBar.getButtons().add(btnCancelar);
+        btnBar.getButtons().add(btnConfirmar);
+        pnAlterar.getChildren().add(btnBar);
+        Scene scene = new Scene(pnAlterar);
+        stage.setScene(scene);
+
+
+        stage.show();
+    }
+
+    public void altrarLogin(ActionEvent actionEvent) {
+        alterar("login");
+    }
+
+    public void addFilme(ActionEvent actionEvent) {
+        Main.changeScreen(Scenes.Galeria);
+    }
+
+    public void compCredito(ActionEvent actionEvent) {
+    }
+
+    public void mudarTipo(ActionEvent actionEvent) {
+
+
     }
 }
 
