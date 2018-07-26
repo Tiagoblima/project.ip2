@@ -181,7 +181,6 @@ public class PerfilController implements Initializable {
 
     public void mudarTipo(ActionEvent actionEvent) {
 
-
     }
 }
 
