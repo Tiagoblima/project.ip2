@@ -44,6 +44,12 @@
 
     -fx-text-fill: #00e2df;
     -fx-font-family: "Arial Narrow";
-    -fx-font-size: 12pt;
+    -fx-font-size: 14pt;
     -fx-padding: 2px 2px 1px 2px;
+}
+/* perfil */
+#avatar{
+    -fx-background-image: url("../img/avatar.png") no-repeat;
+    -fx-border-image-repeat: none;
+    -fx-background-size: 200px 200px;
 }

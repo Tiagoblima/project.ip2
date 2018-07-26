@@ -14,8 +14,3 @@
     -fx-font-family: "Rockwell Extra Bold";
     -fx-font-size: 12pt;
 }
-#avatar{
-    -fx-background-image: url("../img/avatar.png") no-repeat;
-    -fx-border-image-repeat: none;
-    -fx-background-size: 200px 200px;
-}

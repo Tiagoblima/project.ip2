@@ -31,6 +31,7 @@ public class CatalogoController {
             hashMap = repositorio.ler("src\\br\\ip2\\easylend\\repositorio\\files\\hashMapFilmes.txt");
         }catch (Exception e){
             hashMap = new HashMap<>();
+            System.out.println("Erro");
         }
 
         fullHashMap.putAll(hashMap);

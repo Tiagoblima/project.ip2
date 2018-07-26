@@ -32,8 +32,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-         final Cliente cliente = null;
-
         stage = primaryStage;
 
         AnchorPane index = FXMLLoader.load(getClass().getResource("fxml/index.fxml"));
@@ -51,13 +49,11 @@ public class Main extends Application {
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Index);
+        primaryStage.setScene(Home);
         primaryStage.show();
 
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
-
-
 
     }
 
@@ -73,16 +69,15 @@ public class Main extends Application {
                 stage.setScene(Form);
                 break;
             case Home:
-                stage.setMaximized(true);
                 stage.setScene(Home);
+                stage.setMaximized(true);
                 break;
             case Perfil:
-
                 stage.setScene(Perfil);
                 break;
             case Galeria:
-                stage.setMaximized(true);
                 stage.setScene(Galeria);
+                stage.setMaximized(true);
                 break;
         }
 

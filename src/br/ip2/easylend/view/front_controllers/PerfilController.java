@@ -45,6 +45,11 @@ public class PerfilController implements Initializable {
     @FXML
     public AnchorPane anchorPerfil;
 
+    @FXML
+    public  Label lblTipoCliente;
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -52,6 +57,7 @@ public class PerfilController implements Initializable {
         MenuBar menuBar = null;
         try {
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
+            menuBar.setPrefWidth(800);
             anchorPerfil.getChildren().add(menuBar);
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,7 +68,7 @@ public class PerfilController implements Initializable {
         lblNomeUsuario.setText(cliente.getLogin());
         lblCreditos.setText(String.valueOf(cliente.getCredito()));
         lblFilmes.setText(String.valueOf(cliente.getQtdFilmes()));
-
+        lblTipoCliente.setText(cliente.getTipoCliente());
         String msg = null;
 
     }

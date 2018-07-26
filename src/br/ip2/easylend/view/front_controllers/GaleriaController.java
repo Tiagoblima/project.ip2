@@ -184,9 +184,9 @@ public class GaleriaController implements Initializable {
     private void showCatalogo(GeneroFilme generoFilme){
 
 
-        pnMsg.setVisible(false);
-        CatalogoController Catalogocontroller = CatalogoController.getInstance();
 
+        CatalogoController Catalogocontroller = CatalogoController.getInstance();
+        pnMsg.setVisible(false);
         ArrayList<Filme> arrayFilme = Catalogocontroller.getArrayFilmes(generoFilme);
 
         double layoutX = 100;

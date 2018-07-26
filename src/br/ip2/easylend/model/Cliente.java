@@ -1,11 +1,14 @@
 package br.ip2.easylend.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public abstract class Cliente extends Pessoa{
 
     protected double credito;
     protected int qtdFilmes; //LIMITADOR DE FILMES
     protected String tipoCliente;
-
+    protected HashMap<Integer, Filme> favoritos = new HashMap<>();
 
     public Cliente(String nome,String email ,String dataAniv, String login, String senha, Endereco endereco)throws Exception {
 
@@ -33,6 +36,7 @@ public abstract class Cliente extends Pessoa{
     }
 
 
+
     public abstract void mudarTipoCliente();
     public String getTipoCliente(){ return this.tipoCliente;}
     public String getEmail(){
@@ -57,6 +61,13 @@ public abstract class Cliente extends Pessoa{
     }
     public String getDataNasc() { return this.getDataAniv(); }
 
+    public void adicionarFavorito(Filme filme) throws Exception {
 
+        if(favoritos.containsKey(filme.hashCode())){
+            throw new Exception();
+        }
 
+        favoritos.put(filme.hashCode(), filme);
+
+    }
 }
