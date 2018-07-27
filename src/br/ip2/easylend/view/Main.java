@@ -56,7 +56,9 @@ public class Main extends Application {
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
 
-        FilmeDataBase.drama1();
+//        FilmeDataBase.drama1();
+        FilmeDataBase.aventura1();
+
     }
 
 

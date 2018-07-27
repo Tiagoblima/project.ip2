@@ -52,4 +52,37 @@ public class FilmeDataBase {
                         e.printStackTrace();
                 }
         }
+
+        public static void aventura1(){
+            String titulo = "Warcraft: O Primeiro Encontro de Dois Mundos";
+
+            String sinopse = "A região de Azeroth sempre viveu em paz, até a chegada dos guerreiros Orc. " +
+                            "\nCom a abertura de um portal, eles puderam chegar à nova Terra com a intenção " +
+                            "\nde destruir o povo inimigo. Cada lado da batalha possui um grande herói, e os " +
+                            "\ndois travam uma disputa pessoal, colocando em risco seu povo, sua família e todas " +
+                            "\nas pessoas que amam.";
+
+
+            String urlM = "http://br.web.img2.acsta.net/r_1920_1080/pictures/16/03/30/18/58/593834.jpg";
+            String urlT = "<iframe width=\"450\" height=\"275\" src=\"https://www.youtube.com/embed/Dqvz8w-latE?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+            String urlF = "<iframe width=\"1382\" height=\"784\" src=\"https://www.youtube.com/embed/JvmxnIlXqdk\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+
+            int ano = 2016;
+            int h = 2;
+            int min = 04;
+            double preco = 200;
+
+            Filme filme = new Filme(titulo,h,min,ano,sinopse, GeneroFilme.AVENTURA,preco);
+            filme.setUrlFilme(urlF);
+            filme.setUrlMiniatura(urlM);
+            filme.setUrlTrailler(urlT);
+
+            FilmeController controller = FilmeController.getInstance();
+
+            try {
+                controller.cadastrarFilme(filme);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 }
