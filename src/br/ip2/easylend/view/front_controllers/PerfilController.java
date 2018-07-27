@@ -124,7 +124,60 @@ public class PerfilController implements Initializable {
         criarStage(msg);
 
     }
-    private void alterar(String alteraçao){
+    private void confirmaNovoTipo(){
+        String tipoCliente = ClienteController.getInstance().getCliente().getTipoCliente();
+        String msg = null;
+        if(tipoCliente.equals("Premium")) {
+            msg = "Você deixou o plano premium";
+        }else{
+            msg = "Agora você é premium";
+        }
+        ClienteController.getInstance().getCliente().mudarTipoCliente();
+
+        criarStage(msg);
+
+    }
+    private void alterarTipoUsuario(){
+        Stage stage = new Stage();
+
+        AnchorPane pnAlterar = new AnchorPane();
+
+        pnAlterar.setPrefWidth(300);
+        pnAlterar.setPrefHeight(200);
+
+
+
+        Label label = new Label("Confirmar mudança de plano");
+        label.setLayoutX(20);
+        label.setLayoutY(50);
+        pnAlterar.getChildren().add(label);
+
+
+        ButtonBar btnBar = new ButtonBar();
+
+        btnBar.setLayoutX(50);
+        btnBar.setLayoutY(100);
+        Button btnCancelar = new Button("Cancelar");
+        btnCancelar.setCancelButton(true);
+
+        btnCancelar.setOnAction(event -> stage.close());
+
+        Button btnConfirmar = new Button("Confirmar");
+
+        btnConfirmar.setOnAction(event -> confirmaNovoTipo());
+        btnBar.getButtons().add(btnCancelar);
+        btnBar.getButtons().add(btnConfirmar);
+        pnAlterar.getChildren().add(btnBar);
+        Scene scene = new Scene(pnAlterar);
+        stage.setScene(scene);
+
+
+        stage.show();
+
+    }
+
+
+    private void alterarLogin(){
 
         Stage stage = new Stage();
 
@@ -168,8 +221,10 @@ public class PerfilController implements Initializable {
         stage.show();
     }
 
+
+
     public void altrarLogin(ActionEvent actionEvent) {
-        alterar("login");
+        alterarLogin();
     }
 
     public void addFilme(ActionEvent actionEvent) {
@@ -180,7 +235,7 @@ public class PerfilController implements Initializable {
     }
 
     public void mudarTipo(ActionEvent actionEvent) {
-
+        alterarTipoUsuario();
     }
 }
 
