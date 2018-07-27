@@ -16,6 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import br.ip2.easylend.model.*;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class PerfilController implements Initializable {
@@ -177,6 +179,25 @@ public class PerfilController implements Initializable {
     }
 
 
+
+
+    private void paypal(){
+
+
+        Stage stage = new Stage();
+
+        WebView webView = new WebView();
+        WebEngine engine = webView.getEngine();
+        engine.load("https://www.paypal.com/us/home");
+        webView.setPrefWidth(400);
+        webView.setPrefHeight(400);
+
+        stage.setScene(new Scene(webView));
+
+        stage.show();
+
+
+    }
     private void alterarLogin(){
 
         Stage stage = new Stage();
@@ -232,6 +253,7 @@ public class PerfilController implements Initializable {
     }
 
     public void compCredito(ActionEvent actionEvent) {
+        paypal();
     }
 
     public void mudarTipo(ActionEvent actionEvent) {

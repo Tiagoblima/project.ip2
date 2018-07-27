@@ -13,7 +13,17 @@ import static br.ip2.easylend.model.GeneroFilme.*;
 public class CatalogoController {
 
 
-    private static CatalogoController controller = new CatalogoController();;
+    private static CatalogoController controller;
+
+    static {
+        try {
+            controller = new CatalogoController();
+        } catch (Exception e) {
+            System.out.println("Ainda não há o genero cadastrado");
+        }
+    }
+
+    ;
 
     private final HashMap<GeneroFilme, ArrayList<Filme>> catalogo = new HashMap<>();
     private final HashMap<Integer, Filme> fullHashMap = new HashMap<Integer, Filme>();;
@@ -21,7 +31,7 @@ public class CatalogoController {
 
 
 
-    private CatalogoController(){
+    private CatalogoController() throws Exception {
 
 
         Repositorio<HashMap<Integer, Filme>> repositorio = Repositorio.getInstance();
@@ -46,7 +56,7 @@ public class CatalogoController {
     }
 
 
-    private void gerarCatalogo(){
+    private void gerarCatalogo() throws Exception {
 
 
         Collection<Filme> filmes =  fullHashMap.values();
@@ -59,7 +69,7 @@ public class CatalogoController {
         ArrayList<Filme> arrayTerror = new ArrayList<>();
         ArrayList<Filme> arrayComedia = new ArrayList<>();
         ArrayList<Filme> arrayRomance = new ArrayList<>();
-
+        ArrayList<Filme> arrayAventura = new ArrayList<>();
         for (Filme filme: filmes) {
 
             switch (filme.getGenero()){
@@ -71,6 +81,11 @@ public class CatalogoController {
                 case TERROR: { arrayTerror.add(filme);break; }
                 case COMEDIA:{ arrayComedia.add(filme);break; }
                 case ROMANCE: { arrayRomance.add(filme);break; }
+                case AVENTURA: { arrayAventura.add(filme); break;}
+
+                default:{
+                    throw new Exception();
+                }
             }
 
         }
@@ -84,7 +99,7 @@ public class CatalogoController {
         this.catalogo.put(ROMANCE,arrayRomance);
 
     }
-    public HashMap<GeneroFilme,ArrayList<Filme>> getCatalogo(){
+    public HashMap<GeneroFilme,ArrayList<Filme>> getCatalogo() throws Exception {
 
         gerarCatalogo();
         return this.catalogo;
