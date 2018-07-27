@@ -65,6 +65,7 @@ public class Main extends Application {
     public  static void changeScreen(Scenes name){
 
 
+        stage.setResizable(false);
         switch (name){
             case Index:
                 stage.setScene(Index);

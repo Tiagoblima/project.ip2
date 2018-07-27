@@ -97,6 +97,7 @@ public class CatalogoController {
         this.catalogo.put(TERROR,arrayTerror);
         this.catalogo.put(COMEDIA,arrayComedia);
         this.catalogo.put(ROMANCE,arrayRomance);
+        this.catalogo.put(AVENTURA,arrayAventura);
 
     }
     public HashMap<GeneroFilme,ArrayList<Filme>> getCatalogo() throws Exception {

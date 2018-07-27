@@ -56,16 +56,17 @@ public class FilmeDataBase {
         public static void aventura1(){
             String titulo = "Warcraft: O Primeiro Encontro de Dois Mundos";
 
-            String sinopse = "A região de Azeroth sempre viveu em paz, até a chegada dos guerreiros Orc. " +
-                            "\nCom a abertura de um portal, eles puderam chegar à nova Terra com a intenção " +
-                            "\nde destruir o povo inimigo. Cada lado da batalha possui um grande herói, e os " +
-                            "\ndois travam uma disputa pessoal, colocando em risco seu povo, sua família e todas " +
-                            "\nas pessoas que amam.";
+            String sinopse = "A região de Azeroth sempre viveu em paz, até a chegada " +
+                             "\ndos guerreiros Orc. Com a abertura de um portal, eles " +
+                             "\npuderam chegar à nova Terra com a intenção de destruir" +
+                             "\no povo inimigo. Cada lado da batalha possui um grande " +
+                             "\nherói, e os dois travam uma disputa pessoal, colocando" +
+                             "\nem risco seu povo, sua família e todas as pessoas que amam.";
 
 
             String urlM = "http://br.web.img2.acsta.net/r_1920_1080/pictures/16/03/30/18/58/593834.jpg";
             String urlT = "<iframe width=\"450\" height=\"275\" src=\"https://www.youtube.com/embed/Dqvz8w-latE?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
-            String urlF = "<iframe width=\"1382\" height=\"784\" src=\"https://www.youtube.com/embed/JvmxnIlXqdk\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+            String urlF = "<iframe width=\"1382\" height=\"784\" src=\"https://www.youtube.com/embed/Dqvz8w-latE?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
 
             int ano = 2016;
             int h = 2;
@@ -80,7 +81,9 @@ public class FilmeDataBase {
             FilmeController controller = FilmeController.getInstance();
 
             try {
-                controller.cadastrarFilme(filme);
+
+                controller.removerFilme(controller.procurarFilme(titulo));
+                    controller.cadastrarFilme(filme);
             } catch (Exception e) {
                 e.printStackTrace();
             }
