@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.easylend.view.front_controllers.Alterar">
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.easylend.view.front_controllers.FilmeDataBase">
    <children>
       <Label layoutX="25.0" layoutY="56.0" text="Digite :" />
       <TextField layoutX="105.0" layoutY="52.0" promptText="Digite a alteração" />
