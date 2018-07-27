@@ -1,6 +1,7 @@
 package br.ip2.easylend.view;
 
 import br.ip2.easylend.controller.FilmeController;
+import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -55,6 +56,7 @@ public class Main extends Application {
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
 
+        FilmeDataBase.drama1();
     }
 
 

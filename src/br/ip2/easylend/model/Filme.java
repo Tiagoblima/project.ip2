@@ -15,8 +15,9 @@ public class Filme implements Serializable {
     private String urlMiniatura;
     private String urlFilme;
     private String urlTrailler;
+    private double preco;
 
-    public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero) {
+    public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero, double preco) {
 
         this.titulo = titulo;
         this.duracaoHora = duracaoHora;
@@ -24,6 +25,7 @@ public class Filme implements Serializable {
         this.anoLanc = anoLanc;
         this.sinopse = sinopse;
         this.genero = genero;
+        this.preco = preco;
     }
     public void verificaHora(int hora) throws Exception{
         if(hora>23 || hora<0){
@@ -137,6 +139,14 @@ public class Filme implements Serializable {
 
     public void setUrlTrailler(String urlTrailler) {
         this.urlTrailler = urlTrailler;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
 
