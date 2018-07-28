@@ -47,6 +47,32 @@ public class GaleriaController implements Initializable {
 
     public AnchorPane pnDetalhes;
 
+    @FXML
+    public Label lblTitulo;
+
+    @FXML
+    public TextArea txtaSinopse;
+
+    @FXML
+    public Label lblHoras;
+
+    @FXML
+    public Label lblMinutos;
+
+    @FXML
+    public Label lblGenero;
+
+    @FXML
+    public Label lblPreco;
+
+    @FXML
+    public Button btnAdquirir;
+
+    @FXML
+    public Button btnTrailler;
+
+
+    @FXML
     private Stage stage;
 
 
@@ -62,6 +88,7 @@ public class GaleriaController implements Initializable {
             e.printStackTrace();
         }
 
+        pnDetalhes.setVisible(false);
 
 
     }
@@ -87,23 +114,36 @@ public class GaleriaController implements Initializable {
     private void setupDetalhes(Filme filme){
 
 
-//        this.lblSinopse.setText(filme.getSinopse());
-//        this.lblHoras.setText(String.valueOf(filme.getDuracaoHora()));
-//        this.lblMinutos.setText(String.valueOf(filme.getDuracaoMinuto()));
-//        this.lblTitulo.setText(filme.getTitulo());
-//        this.lblGenero.setText(String.valueOf(filme.getGenero()));
-//
-//        WebView webView = new WebView();
-//        WebEngine webEngine = webView.getEngine();
-//        webView.setPrefWidth(450);
-//        webView.setPrefHeight(275);
-//        webView.setLayoutX(0);
-//        webView.setLayoutY(500);
-//        webEngine.loadContent(filme.getUrlTrailler());
-//        this.pnDetalhes.getChildren().add(webView);
+
+        this.txtaSinopse.setText(filme.getSinopse());
+        this.lblHoras.setText(String.valueOf(filme.getDuracaoHora()));
+        this.lblMinutos.setText(String.valueOf(filme.getDuracaoMinuto()));
+        this.lblTitulo.setText(filme.getTitulo());
+        this.lblGenero.setText(String.valueOf(filme.getGenero()));
+        this.lblPreco.setText(String.valueOf(filme.getPreco()));
+
+
+        btnTrailler.setOnAction(event -> {
+
+            WebView webView = new WebView();
+            WebEngine webEngine = webView.getEngine();
+            webView.setPrefWidth(450);
+            webView.setPrefHeight(275);
+            webView.setLayoutX(0);
+            webView.setLayoutY(500);
+            webEngine.loadContent(filme.getUrlTrailler());
+
+            Stage stage = new Stage();
+            stage.setWidth(450);
+            stage.setHeight(275);
+            stage.setScene(new Scene(webView));
+            stage.show();
+
+        });
 
 
 
+        pnDetalhes.setVisible(true);
 
     }
     private void setupButtons(Filme filme, double layoutX, double layoutY){
@@ -128,8 +168,8 @@ public class GaleriaController implements Initializable {
             webView.setPrefWidth(280);
             webView.setPrefHeight(560);
 
-            pnDetalhes.getChildren().add(webView);
-           // setupDetalhes(filme);
+           // pnDetalhes.getChildren().add(webView);
+            setupDetalhes(filme);
 
         });
 
