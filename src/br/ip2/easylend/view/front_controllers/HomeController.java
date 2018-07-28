@@ -50,8 +50,9 @@ public class HomeController implements Initializable{
         WebView webview = new WebView();
         WebEngine engine = webview.getEngine();
         engine.load("https://www.imdb.com/news/top?ref_=nv_nw_tp");
-        webview.setPrefHeight(600);
-        webview.setPrefWidth(700);
+        webview.setPrefHeight(550);
+        webview.setPrefWidth(430);
+        webview.setZoom(0.65);
         feedNoticias.getChildren().add(webview);
 
     }

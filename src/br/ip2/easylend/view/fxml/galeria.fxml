@@ -1,98 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="anchorGaleria" prefHeight="784.0" prefWidth="1382.0" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.easylend.view.front_controllers.GaleriaController">
-  <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-    <items>
-      <AnchorPane fx:id="pnDetalhes" prefHeight="780.0" prefWidth="700.0">
-        <children>
-          <Label layoutX="14.0" layoutY="40.0" styleClass="Label" text="Detalhes do Filme" />
-               <Label layoutX="14.0" layoutY="124.0" style="-fx-text-fill: blue;" text="Sinopse" />
-               <Pane layoutX="-1.0" layoutY="156.0" prefHeight="253.0" prefWidth="450.0" style="-fx-background-color: blue;">
-                  <children>
-                     <Label fx:id="lblSinopse" layoutX="14.0" layoutY="14.0" text="Label" />
-                  </children>
-               </Pane>
-               <Label layoutX="5.0" layoutY="413.0" style="-fx-text-fill: blue;" text="Duração :" />
-               <Label fx:id="lblHoras" layoutX="91.0" layoutY="413.0" style="-fx-text-fill: blue;" text="H" />
-               <Label fx:id="lblMinutos" layoutX="116.0" layoutY="413.0" style="-fx-text-fill: blue;" text="M" />
-               <Pane layoutY="500.0" prefHeight="275.0" prefWidth="0.0" style="-fx-background-color: blue;" />
-               <Label layoutX="5.0" layoutY="475.0" style="-fx-text-fill: blue;" text="Trailler" />
-               <Label fx:id="lblTitulo" layoutX="14.0" layoutY="90.0" style="-fx-text-fill: blue;" text="Titulo" />
-               <Label layoutX="5.0" layoutY="448.0" style="-fx-text-fill: blue;" text="Gênero :" />
-               <Label fx:id="lblGenero" layoutX="84.0" layoutY="448.0" style="-fx-text-fill: blue;" text="genero" />
-               <Label layoutX="102.0" layoutY="413.0" style="-fx-text-fill: cyan;" text="H" />
-               <Label layoutX="134.0" layoutY="413.0" style="-fx-text-fill: cyan;" text="Min" />
-               <Pane layoutY="500.0" prefHeight="275.0" prefWidth="450.0" />
-        </children>
-      </AnchorPane>
-      <ScrollPane prefHeight="782.0" prefWidth="954.0">
-        <content>
-          <AnchorPane fx:id="telaFilmes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="811.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
-            <children>
-              <Label alignment="CENTER" layoutX="14.0" layoutY="58.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" styleClass="Label" text="Pesquise aqui" textAlignment="CENTER" wrapText="false">
-                <font>
-                  <Font size="18.0" fx:id="x1" />
-                </font>
-                <textFill>
-                  <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-                </textFill>
-              </Label>
-              <TextField layoutX="14.0" layoutY="96.0" />
-              <Button layoutX="178.0" layoutY="96.0" mnemonicParsing="false" text="Go" />
-              <Pane fx:id="comedia" layoutX="460.0" layoutY="70.0" onMouseReleased="#toComedia" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
-                <children>
-                  <Label layoutX="15.0" layoutY="20.0" text="Comedia " />
-                </children>
-              </Pane>
-              <Pane fx:id="aventura" layoutX="760.0" layoutY="70.0" onMouseReleased="#toAventura" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
-                <children>
-                  <Label layoutX="15.0" layoutY="20.0" text="Aventura" />
-                </children>
-              </Pane>
-              <Pane fx:id="familia" layoutX="560.0" layoutY="70.0" onMouseReleased="#toFamilia" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
-                <children>
-                  <Label layoutX="25.0" layoutY="20.0" text="Família" />
-                </children>
-              </Pane>
-              <Pane fx:id="acao" layoutX="660.0" layoutY="70.0" onMouseReleased="#toAcao" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
-                <children>
-                  <Label layoutX="30.0" layoutY="20.0" text="Ação" />
-                </children>
-              </Pane>
-              <Pane fx:id="drama" layoutX="360.0" layoutY="70.0" onMouseReleased="#toDrama" prefHeight="50.0" prefWidth="100.0" style="-fx-border-radius: 25px;" styleClass="pnGenero">
-                <children>
-                  <Label layoutX="25.0" layoutY="20.0" text="Drama" />
-                </children>
-              </Pane>
-              <Pane fx:id="nacionais" layoutX="260.0" layoutY="70.0" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero" onMouseReleased="#toNacionais">
-                <children>
-                  <Label layoutX="15.0" layoutY="20.0" text="Nacionais" />
-                </children>
-              </Pane>
-                     <Pane fx:id="pnMsg" layoutX="136.0" layoutY="306.0" prefHeight="296.0" prefWidth="649.0">
-                        <children>
-                           <Label layoutX="155.0" layoutY="86.0" prefHeight="141.0" prefWidth="340.0" style="-fx-text-fill: cyan;" text="Clique em uma categoria ">
-                              <font>
-                                 <Font size="21.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </Pane>
-            </children>
-          </AnchorPane>
-        </content>
-      </ScrollPane>
-    </items>
-  </SplitPane>
-</VBox>
+<BorderPane fx:id="pnMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/front_end.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.easylend.view.front_controllers.GaleriaController">
+   <center>
+      <SplitPane dividerPositions="0.3609022556390977" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                <AnchorPane fx:id="pnDetalhes" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="280.0">
+                     <children>
+                        <ButtonBar layoutX="66.0" prefHeight="40.0" prefWidth="200.0">
+                          <buttons>
+                              <Label fx:id="lblpreco" alignment="CENTER" prefHeight="33.0" style="-fx-background-color: blue;" text="preco" />
+                            <Button mnemonicParsing="false" text="Adquiri" />
+                          </buttons>
+                        </ButtonBar>
+                        <ScrollPane layoutY="109.0" prefHeight="200.0" prefWidth="276.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="280.0">
+                                 <children>
+                                    <Label fx:id="lblSinopse" layoutX="21.0" layoutY="23.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Label fx:id="lblTitulo" layoutY="32.0" prefHeight="36.0" prefWidth="99.0" styleClass="Label" text="Titulo" />
+                        <Label layoutY="82.0" styleClass="Label" text="Sinopse">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="343.0" prefHeight="27.0" prefWidth="58.0" style="-fx-background-color: blue;" stylesheets="@../css/front_end.css" text="Duração:" />
+                        <Label layoutX="71.0" layoutY="348.0" text="Label" />
+                        <Label fx:id="lblH" layoutX="71.0" layoutY="348.0" style="-fx-background-color: blue;" text="H" />
+                        <Label layoutX="81.0" layoutY="348.0" style="-fx-background-color: blue;" text="H" />
+                        <Label fx:id="lblMin" layoutX="100.0" layoutY="348.0" style="-fx-background-color: blue;" text="Min" />
+                        <Label layoutX="120.0" layoutY="348.0" style="-fx-background-color: blue;" text="min" />
+                        <Label layoutY="394.0" prefHeight="27.0" prefWidth="58.0" style="-fx-background-color: blue;" stylesheets="@../css/front_end.css" text="Gênero: " />
+                        <Label fx:id="lblGenero" layoutX="71.0" layoutY="394.0" prefHeight="27.0" prefWidth="58.0" styleClass="Label" stylesheets="@../css/front_end.css" text="Gênero" />
+                        <Button fx:id="btnTrailler" layoutX="74.0" layoutY="471.0" mnemonicParsing="false" text="Assistir Trailler" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="600.0" prefWidth="535.0">
+              <content>
+                <AnchorPane fx:id="telaCatalogo" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="530.0">
+                     <children>
+                        <Pane fx:id="comedia" layoutX="100.0" onMouseReleased="#toComedia" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
+                           <children>
+                              <Label layoutX="25.0" layoutY="20.0" text="Comedia " />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="aventura" onMouseReleased="#toAventura" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
+                           <children>
+                              <Label layoutX="25.0" layoutY="20.0" text="Aventura" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="familia" layoutY="50.0" onMouseReleased="#toFamilia" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
+                           <children>
+                              <Label layoutX="25.0" layoutY="20.0" text="Família" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="acao" layoutX="200.0" onMouseReleased="#toAcao" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
+                           <children>
+                              <Label layoutX="30.0" layoutY="20.0" text="Ação" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="drama" layoutX="100.0" layoutY="50.0" onMouseReleased="#toDrama" prefHeight="50.0" prefWidth="100.0" style="-fx-border-radius: 25px;" styleClass="pnGenero">
+                           <children>
+                              <Label layoutX="25.0" layoutY="20.0" text="Drama" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="nacionais" layoutX="200.0" layoutY="50.0" onMouseReleased="#toNacionais" prefHeight="50.0" prefWidth="100.0" styleClass="pnGenero">
+                           <children>
+                              <Label layoutX="25.0" layoutY="20.0" text="Nacionais" />
+                           </children>
+                        </Pane>
+                        <Label fx:id="lblMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="273.0" prefHeight="100.0" prefWidth="300.0" style="-fx-text-fill: cyan;" text="Clique em uma categoria ">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

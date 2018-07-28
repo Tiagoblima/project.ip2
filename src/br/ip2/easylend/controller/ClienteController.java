@@ -88,10 +88,8 @@ public class ClienteController {
        this.repositorio.salvar(CHashMap,"src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
         alterarCliente();
    }
-   public void alterarCliente(){
-
+   private void alterarCliente(){
         CHashMap.replace(cliente.getLogin(),cliente);
-
    }
 
 

@@ -1,5 +1,6 @@
 package br.ip2.easylend.view;
 
+import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.FilmeController;
 import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
@@ -7,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -14,6 +16,7 @@ import br.ip2.easylend.model.*;
 import br.ip2.easylend.model.GeneroFilme.*;
 import br.ip2.easylend.controller.ClienteController.*;
 import static br.ip2.easylend.model.GeneroFilme.*;
+import static br.ip2.easylend.view.MoviesDataBase.drama1;
 
 public class Main extends Application {
 
@@ -45,7 +48,7 @@ public class Main extends Application {
         Form = new Scene(form);
 
 
-        VBox galeria = FXMLLoader.load(getClass().getResource("fxml/galeria.fxml"));
+        BorderPane galeria = FXMLLoader.load(getClass().getResource("fxml/galeria.fxml"));
         Galeria = new Scene(galeria);
 
         primaryStage.setTitle("EasyFilms");
@@ -57,7 +60,9 @@ public class Main extends Application {
         System.out.println("Height: " + primaryStage.getHeight());
 
 //        FilmeDataBase.drama1();
-        FilmeDataBase.aventura1();
+
+      //  FilmeDataBase.aventura1();
+
 
     }
 
@@ -66,6 +71,8 @@ public class Main extends Application {
 
 
         stage.setResizable(false);
+        stage.setHeight(600);
+        stage.setWidth(800);
         switch (name){
             case Index:
                 stage.setScene(Index);
@@ -75,14 +82,12 @@ public class Main extends Application {
                 break;
             case Home:
                 stage.setScene(Home);
-                stage.setMaximized(true);
                 break;
             case Perfil:
                 stage.setScene(Perfil);
                 break;
             case Galeria:
                 stage.setScene(Galeria);
-                stage.setMaximized(true);
                 break;
         }
 

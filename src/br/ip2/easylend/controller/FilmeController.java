@@ -32,9 +32,7 @@ public class FilmeController {
         Collection<Filme> filmes =  fHashmap.values();
 
         findHashmap = new HashMap<>();
-        for (Filme filme: filmes) {
-            findHashmap.put(filme.getTitulo(),filme);
-        }
+
 
     }
 

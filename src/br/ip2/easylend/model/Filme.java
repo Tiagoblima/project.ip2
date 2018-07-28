@@ -16,7 +16,7 @@ public class Filme implements Serializable {
     private String urlFilme;
     private String urlTrailler;
     private double preco;
-
+    private String urlImdb;
     public Filme(String titulo, int duracaoHora, int duracaoMinuto, int anoLanc, String sinopse, GeneroFilme genero, double preco) {
 
         this.titulo = titulo;
@@ -130,7 +130,8 @@ public class Filme implements Serializable {
         return  "Título: " + titulo + "/n" +
                 "Duração: "+ duracaoHora + ":" + duracaoMinuto + "/n"+
                 "Ano de Lançamento: " + anoLanc + "/n"+
-                "Sinopse: /n" + sinopse;
+                "Sinopse: /n" + sinopse +
+                "Preco: " + preco;
     }
 
     public String getUrlTrailler() {
@@ -141,12 +142,17 @@ public class Filme implements Serializable {
         this.urlTrailler = urlTrailler;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getPreco() { return preco; }
+
+    public void setPreco(double preco) { this.preco = preco; }
+
+
+    public String getUrlImdb() {
+        return urlImdb;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setUrlImdb(String urlImdb) {
+        this.urlImdb = urlImdb;
     }
 }
 

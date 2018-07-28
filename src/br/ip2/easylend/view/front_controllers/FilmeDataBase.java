@@ -82,7 +82,7 @@ public class FilmeDataBase {
 
             try {
 
-                controller.removerFilme(controller.procurarFilme(titulo));
+//                controller.removerFilme(controller.procurarFilme(titulo));
                     controller.cadastrarFilme(filme);
             } catch (Exception e) {
                 e.printStackTrace();

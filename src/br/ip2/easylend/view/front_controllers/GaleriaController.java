@@ -14,6 +14,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
@@ -31,41 +32,20 @@ import static br.ip2.easylend.model.GeneroFilme.FAMILIA;
 
 public class GaleriaController implements Initializable {
 
-    @FXML
-    public VBox anchorGaleria;
-
-    @FXML
-    public AnchorPane content;
 
     @FXML
     public Pane drama;
 
     @FXML
-    public AnchorPane telaFilmes;
+    public AnchorPane telaCatalogo;
 
     @FXML
-    public Label lblSinopse;
+    public BorderPane pnMain;
 
     @FXML
-    public Label lblHoras;
+    public Label lblMsg;
 
-    @FXML
-    public Label lblMinutos;
-
-    @FXML
     public AnchorPane pnDetalhes;
-
-    @FXML
-    public Label lblTitulo;
-
-    @FXML
-    public Label lblGenero;
-
-    @FXML
-    public Pane pnTrailer;
-
-    @FXML
-    public Pane pnMsg;
 
     private Stage stage;
 
@@ -74,19 +54,15 @@ public class GaleriaController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        MenuBar menuBar;
+        MenuBar menuBar = null;
         try {
-
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
-
-            menuBar.setTranslateY(-770);
-            anchorGaleria.getChildren().add(menuBar);
-
+            pnMain.setTop(menuBar);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        pnDetalhes.setVisible(false);
+
 
     }
 
@@ -104,34 +80,34 @@ public class GaleriaController implements Initializable {
         webView.toFront();
         webView.setId(String.valueOf(filme.hashCode()));
 
-        boolean add = this.telaFilmes.getChildren().add(webView);
+        boolean add = this.telaCatalogo.getChildren().add(webView);
 
     }
 
     private void setupDetalhes(Filme filme){
 
 
-        this.lblSinopse.setText(filme.getSinopse());
-        this.lblHoras.setText(String.valueOf(filme.getDuracaoHora()));
-        this.lblMinutos.setText(String.valueOf(filme.getDuracaoMinuto()));
-        this.lblTitulo.setText(filme.getTitulo());
-        this.lblGenero.setText(String.valueOf(filme.getGenero()));
-
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
-        webView.setPrefWidth(450);
-        webView.setPrefHeight(275);
-        webView.setLayoutX(0);
-        webView.setLayoutY(500);
-        webEngine.loadContent(filme.getUrlTrailler());
-        this.pnDetalhes.getChildren().add(webView);
+//        this.lblSinopse.setText(filme.getSinopse());
+//        this.lblHoras.setText(String.valueOf(filme.getDuracaoHora()));
+//        this.lblMinutos.setText(String.valueOf(filme.getDuracaoMinuto()));
+//        this.lblTitulo.setText(filme.getTitulo());
+//        this.lblGenero.setText(String.valueOf(filme.getGenero()));
+//
+//        WebView webView = new WebView();
+//        WebEngine webEngine = webView.getEngine();
+//        webView.setPrefWidth(450);
+//        webView.setPrefHeight(275);
+//        webView.setLayoutX(0);
+//        webView.setLayoutY(500);
+//        webEngine.loadContent(filme.getUrlTrailler());
+//        this.pnDetalhes.getChildren().add(webView);
 
 
 
 
     }
     private void setupButtons(Filme filme, double layoutX, double layoutY){
-
+//
         ButtonBar buttonBar = new ButtonBar();
 
         Button btnDetalhe = new Button();
@@ -142,8 +118,19 @@ public class GaleriaController implements Initializable {
 
         btnDetalhe.setOnAction(event -> {
 
-            setupDetalhes(filme);
-            pnDetalhes.setVisible(true);
+            WebView webView = new WebView();
+            WebEngine engine = webView.getEngine();
+
+            engine.load(filme.getUrlImdb());
+
+            webView.setLayoutX(0);
+            webView.setLayoutY(40);
+            webView.setPrefWidth(280);
+            webView.setPrefHeight(560);
+
+            pnDetalhes.getChildren().add(webView);
+           // setupDetalhes(filme);
+
         });
 
         Button btnAssistir = new Button();
@@ -177,7 +164,7 @@ public class GaleriaController implements Initializable {
         buttonBar.setLayoutY(layoutY + 300);
 
         buttonBar.toFront();
-        this.telaFilmes.getChildren().add(buttonBar);
+        this.telaCatalogo.getChildren().add(buttonBar);
 
     }
 
@@ -186,10 +173,10 @@ public class GaleriaController implements Initializable {
 
 
         CatalogoController Catalogocontroller = CatalogoController.getInstance();
-        pnMsg.setVisible(false);
+        lblMsg.setVisible(false);
         ArrayList<Filme> arrayFilme = Catalogocontroller.getArrayFilmes(generoFilme);
 
-        double layoutX = 100;
+        double layoutX = 50;
         double layoutY = 200;
 
         int i = 0;
@@ -201,10 +188,10 @@ public class GaleriaController implements Initializable {
 
 
             if(++i < 3){
-                layoutX += 300;
+                layoutX += 250;
             }else {
                 layoutY += 400;
-                layoutX = 100;
+                layoutX = 50;
             }
 
         }
