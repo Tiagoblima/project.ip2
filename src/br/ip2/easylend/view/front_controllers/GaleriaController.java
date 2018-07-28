@@ -3,12 +3,14 @@ package br.ip2.easylend.view.front_controllers;
 import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.DragEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -183,6 +185,8 @@ public class GaleriaController implements Initializable {
             webView.setPrefHeight(784.0);
             webEngine.loadContent(filme.getUrlFilme());
             stage.setScene(new Scene(webView));
+
+
             stage.setFullScreen(true);
             stage.show();
         });

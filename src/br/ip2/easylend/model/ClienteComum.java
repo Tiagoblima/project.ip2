@@ -18,8 +18,15 @@ public class ClienteComum extends Cliente {
     }
 
     @Override
-    public void mudarTipoCliente() { super.tipoCliente = "Premium"; }
+    public void mudarTipoCliente() { super.tipoCliente = "Premium"; this.credito = 10000000;}
 
+    public int getLimiteDeFilmes() {
+        return limiteDeFilmes;
+    }
+
+    public void setLimiteDeFilmes(int limiteDeFilmes) {
+        this.limiteDeFilmes = limiteDeFilmes;
+    }
 
 
     //TODO Pensar nas desvantagens de ser um Cliente Comum

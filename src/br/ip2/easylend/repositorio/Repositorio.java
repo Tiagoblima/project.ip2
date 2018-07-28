@@ -2,6 +2,8 @@ package br.ip2.easylend.repositorio;
 
 //import weka.core.stopwords.Null;
 
+import com.google.gson.Gson;
+
 import java.io.*;
 
 public class Repositorio <T> {
@@ -52,6 +54,60 @@ public class Repositorio <T> {
 
     }
 
+
+    public void jsonSalve(T object, String filePath){
+
+        Gson gson = new Gson();
+        String obejctJson = gson.toJson(object);
+        System.out.println(obejctJson);
+        try{
+
+         File file = new File(filePath);
+         FileWriter fileWriter = new FileWriter(file);
+         fileWriter.write(obejctJson);
+        fileWriter.close();
+        }catch (Exception e){
+
+            System.out.println("Arquivo não encontrado\nCriando novo arquivo em " + filePath);
+            try{
+                File file = new File(filePath);
+                boolean b = file.createNewFile();
+                boolean b1 = file.setWritable(true);
+            }catch (Exception f){
+                System.out.println("O arquivo não pode ser criado em " + filePath);
+
+            }
+
+        }
+
+    }
+
+    public void jsonRead(T object, String filePath){
+
+        Gson gson = new Gson();
+
+
+        try{
+
+            File file = new File(filePath);
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(obejctJson);
+            fileWriter.close();
+        }catch (Exception e){
+
+            System.out.println("Arquivo não encontrado\nCriando novo arquivo em " + filePath);
+            try{
+                File file = new File(filePath);
+                boolean b = file.createNewFile();
+                boolean b1 = file.setWritable(true);
+            }catch (Exception f){
+                System.out.println("O arquivo não pode ser criado em " + filePath);
+
+            }
+
+        }
+
+    }
 
     public T ler(String filePath) throws Exception{
 

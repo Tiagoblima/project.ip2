@@ -53,7 +53,9 @@ public class ClienteController {
         cliente = novoCliente;
 
         CHashMap.put(cliente.getLogin(), cliente);
-        this.repositorio.salvar(CHashMap,"src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
+        String path = "src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt";
+        this.repositorio.jsonSalve(CHashMap, path);
+        //this.repositorio.salvar(CHashMap, path);
 
     }
 
