@@ -1,12 +1,9 @@
 package br.ip2.easylend.controller;
 
 
+import br.ip2.easylend.model.Filme;
+import br.ip2.easylend.repositorio.Repositorio;
 
-
-import br.ip2.easylend.model.*;
-import br.ip2.easylend.repositorio.*;
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 

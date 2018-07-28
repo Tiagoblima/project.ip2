@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <AnchorPane fx:id="anchorHome" prefHeight="600" prefWidth="800" styleClass="background" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ip2.easylend.view.front_controllers.HomeController">
  <AnchorPane fx:id="feedNoticias" layoutY="158.0" minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="430.0" />
     <Label layoutX="14.0" layoutY="113.0" styleClass="title" text="Feed de Notícias" />

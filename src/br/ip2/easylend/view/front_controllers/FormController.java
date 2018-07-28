@@ -1,13 +1,16 @@
 package br.ip2.easylend.view.front_controllers;
 
 
-
-import javafx.fxml.FXML;
+import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.model.Cliente;
+import br.ip2.easylend.model.ClienteComum;
+import br.ip2.easylend.model.ClientePremium;
+import br.ip2.easylend.model.Endereco;
+import br.ip2.easylend.view.Main;
+import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import br.ip2.easylend.model.*;
-import br.ip2.easylend.controller.*;
-import br.ip2.easylend.view.*;
 
 public class FormController {
 

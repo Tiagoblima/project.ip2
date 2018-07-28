@@ -1,22 +1,12 @@
 package br.ip2.easylend.view;
 
-import br.ip2.easylend.controller.CatalogoController;
-import br.ip2.easylend.controller.FilmeController;
 import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import br.ip2.easylend.model.*;
-import br.ip2.easylend.model.GeneroFilme.*;
-import br.ip2.easylend.controller.ClienteController.*;
-import static br.ip2.easylend.model.GeneroFilme.*;
-import static br.ip2.easylend.view.MoviesDataBase.drama1;
 
 public class Main extends Application {
 

@@ -1,16 +1,17 @@
 package br.ip2.easylend.view.front_controllers;
 
 
-
+import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.model.Cliente;
+import br.ip2.easylend.view.Main;
+import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import br.ip2.easylend.controller.*;
-import br.ip2.easylend.view.*;
 public class IndexController {
 
     @FXML

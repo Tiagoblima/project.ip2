@@ -1,12 +1,8 @@
 package br.ip2.easylend.view.front_controllers;
 
 import br.ip2.easylend.controller.CatalogoController;
-import br.ip2.easylend.controller.FilmeController;
-import br.ip2.easylend.model.Catalogo;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -27,8 +22,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static br.ip2.easylend.model.GeneroFilme.*;
-import static br.ip2.easylend.model.GeneroFilme.AVENTURA;
-import static br.ip2.easylend.model.GeneroFilme.FAMILIA;
 
 public class GaleriaController implements Initializable {
 
@@ -125,18 +118,17 @@ public class GaleriaController implements Initializable {
 
         btnTrailler.setOnAction(event -> {
 
+
             WebView webView = new WebView();
             WebEngine webEngine = webView.getEngine();
+
+            stage = new Stage();
+
             webView.setPrefWidth(450);
             webView.setPrefHeight(275);
-            webView.setLayoutX(0);
-            webView.setLayoutY(500);
             webEngine.loadContent(filme.getUrlTrailler());
-
-            Stage stage = new Stage();
-            stage.setWidth(450);
-            stage.setHeight(275);
             stage.setScene(new Scene(webView));
+
             stage.show();
 
         });
@@ -193,8 +185,6 @@ public class GaleriaController implements Initializable {
             stage.setScene(new Scene(webView));
             stage.setFullScreen(true);
             stage.show();
-
-
         });
 
         buttonBar.getButtons().add(btnDetalhe);
@@ -237,10 +227,7 @@ public class GaleriaController implements Initializable {
         }
 
     }
-    public void toDrama(){
-
-        showCatalogo(DRAMA);
-    }
+    public void toDrama(){ showCatalogo(DRAMA); }
     public void toAcao(){
         showCatalogo(ACAO);
     }
@@ -250,11 +237,9 @@ public class GaleriaController implements Initializable {
     public void toNacionais(){
         showCatalogo(NACIONAIS);
     }
-
     public void toAventura(){
         showCatalogo(AVENTURA);
     }
-
     public void toFamilia(){
         showCatalogo(FAMILIA);
     }

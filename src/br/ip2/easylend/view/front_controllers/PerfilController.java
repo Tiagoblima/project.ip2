@@ -1,66 +1,58 @@
 package br.ip2.easylend.view.front_controllers;
 
 import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
-import javafx.event.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import br.ip2.easylend.model.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class PerfilController implements Initializable {
 
 
     @FXML
-    public Label lblNomeUsuario;
-
-    @FXML
-    public Label lblFilmes;
+    public Label lblNome;
 
     @FXML
     public Label lblCreditos;
 
     @FXML
-    public Label lblMsg;
-
-    @FXML
-    public Button btnMaisPerfil;
-
-    @FXML
-    public Label lblErro;
-    @FXML
-    public ImageView profile_img;
-    @FXML
-    public AnchorPane anchorPerfil;
-
-    @FXML
     public  Label lblTipoCliente;
 
     @FXML
-    public Button btnAlterarLogin;
+    public Button btnMudarLogin;
 
     @FXML
-    public Button btnAddFIlme;
+    public Button btnMais;
 
     @FXML
-    public Button btnMudarTipoCliente;
+    public Button btnMudarPlano;
 
     @FXML
-    public Button btnCompCredito;
+    public Button btnCompra;
 
+    @FXML
+    public BorderPane pnMain;
 
+    @FXML
+    public Label lblEmail;
+
+    @FXML
+    public Pane pnAvatar;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -70,18 +62,17 @@ public class PerfilController implements Initializable {
         try {
             menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
             menuBar.setPrefWidth(800);
-            anchorPerfil.getChildren().add(menuBar);
+            pnMain.setTop(menuBar);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         Cliente cliente = ClienteController.getInstance().getCliente();
 
-        lblNomeUsuario.setText(cliente.getLogin());
+        lblNome.setText(cliente.getNome());
         lblCreditos.setText(String.valueOf(cliente.getCredito()));
-        lblFilmes.setText(String.valueOf(cliente.getQtdFilmes()));
         lblTipoCliente.setText(cliente.getTipoCliente());
-        String msg = null;
+        lblEmail.setText(cliente.getEmail());
 
     }
 
@@ -244,7 +235,7 @@ public class PerfilController implements Initializable {
 
 
 
-    public void altrarLogin(ActionEvent actionEvent) {
+    public void alterarLogin(ActionEvent actionEvent) {
         alterarLogin();
     }
 

@@ -1,6 +1,5 @@
 package br.ip2.easylend.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Cliente extends Pessoa{

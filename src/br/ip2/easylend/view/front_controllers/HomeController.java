@@ -1,25 +1,24 @@
 package br.ip2.easylend.view.front_controllers;
 
 
-import br.ip2.easylend.controller.ClienteController;
-import javafx.application.Platform;
-import javafx.event.*;
+import br.ip2.easylend.view.Main;
+import br.ip2.easylend.view.Scenes;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.scene.web.*;
-
-
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import br.ip2.easylend.view.*;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static br.ip2.easylend.controller.ClienteController.cliente;
 
 public class HomeController implements Initializable{
 

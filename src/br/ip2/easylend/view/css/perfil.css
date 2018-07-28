@@ -5,12 +5,19 @@
 }
 
 .label{
-    -fx-text-fill: #17b2ff;
-    -fx-font-family: "Comic Sans MS";
-    -fx-font-size: 14pt;
-}
-#lblErro{
-    -fx-text-fill: red;
-    -fx-font-family: "Rockwell Extra Bold";
+    -fx-text-fill: #0c4265;
+    -fx-font-family: "Arial Narrow";
     -fx-font-size: 12pt;
+}
+.Label{
+
+    -fx-text-fill: #1e00e2;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-size: 12pt;
+    -fx-padding: 1px 1px 1px 1px;
+}
+#pnAvatar{
+    -fx-background-image: url("../img/avatar.png") no-repeat;
+    -fx-border-image-repeat: none;
+    -fx-background-size: 200px 200px;
 }

@@ -1,12 +1,12 @@
 package br.ip2.easylend.view.front_controllers;
 
 
+import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
-import br.ip2.easylend.view.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ public class MenuController {
     public void toHome(ActionEvent actionEvent) { Main.changeScreen(Scenes.Home); }
     public void toPerfil(ActionEvent actionEvent) {
 
-        AnchorPane perfil = null;
+        BorderPane perfil = null;
         try {
             perfil = FXMLLoader.load(getClass().getResource("../fxml/perfil.fxml"));
         } catch (IOException e) {

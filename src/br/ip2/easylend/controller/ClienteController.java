@@ -1,12 +1,8 @@
 package br.ip2.easylend.controller;
 
 
-
-import br.ip2.easylend.model.*;
-import br.ip2.easylend.repositorio.*;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import br.ip2.easylend.model.Cliente;
+import br.ip2.easylend.repositorio.Repositorio;
 
 import java.util.HashMap;
 
