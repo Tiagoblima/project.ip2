@@ -250,5 +250,11 @@ public class PerfilController implements Initializable {
     public void mudarTipo(ActionEvent actionEvent) {
         alterarTipoUsuario();
     }
+
+    public void toMais(ActionEvent actionEvent) {
+
+        String[] args = new String[]{"tiago"};
+        br.ip2.easylend.view.front_controllers.Application.Main(args);
+    }
 }
 
