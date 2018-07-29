@@ -1,1 +1,0 @@
-{"tiago":{"limiteDeFilmes":100,"credito":0.0,"qtdFilmes":0,"tipoCliente":"Comum","favoritos":{},"nome":"Tiago de Lima","email":"tiago.blima@ufrpe.br","dataAniv":"08/09/1999","login":"tiago","senha":"123"}}

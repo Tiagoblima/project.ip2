@@ -45,13 +45,14 @@ public class IndexController {
             msg = "Um ou mais campos\n não estão preenchidos";
             acess = false;
         }else{
+
+            ClienteController clienteController =  ClienteController.getInstance();
             try{
 
-             ClienteController clienteController =  ClienteController.getInstance();
-
-             clienteController.login(login,senha);
+             clienteController.login(login, senha);
 
             }catch (Exception e){
+                System.out.println(senha);
                 msg = "Login ou senha incorretos";
                 acess = false;
             }

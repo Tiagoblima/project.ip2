@@ -3,6 +3,7 @@ package br.ip2.easylend.controller;
 
 import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.repositorio.Repositorio;
+import com.google.gson.Gson;
 
 import java.util.HashMap;
 
@@ -11,7 +12,7 @@ public class ClienteController {
 
     private static ClienteController controller;
     private final HashMap<String,Cliente> CHashMap = new HashMap<>(); //Cliente HashMap
-    private Repositorio<HashMap<String,Cliente>> repositorio = Repositorio.getInstance();
+    private Repositorio <HashMap> repositorio = Repositorio.getInstance();
 
     public static Cliente cliente;
     public static String name;
@@ -20,9 +21,10 @@ public class ClienteController {
 
     private ClienteController(){
 
-        HashMap<String, Cliente> hashMap;
+        HashMap hashMap;
         try{
-            hashMap = this.repositorio.ler("src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
+            String path = "src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt";
+            hashMap = this.repositorio.ler(path);
         }catch (Exception e){
             hashMap  = new HashMap<>();
         }
@@ -54,24 +56,23 @@ public class ClienteController {
 
         CHashMap.put(cliente.getLogin(), cliente);
         String path = "src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt";
-        this.repositorio.jsonSalve(CHashMap, path);
-        //this.repositorio.salvar(CHashMap, path);
+        this.repositorio.salvar(CHashMap,path);
+     //   this.repositorio.jsonSalve(CHashMap, path);
 
     }
 
    public void login(String login, String senha)throws Exception
    {
 
-        if (!CHashMap.containsKey(login)) {
-            throw new Exception();
-        }
+       if (!CHashMap.containsKey(login)) {
+             throw new Exception();
+       }
 
-        cliente = CHashMap.get(login);
+       cliente = CHashMap.get(login);
 
-
-        if (!(cliente.getSenha().equals(senha))) {
+       if(!cliente.getSenha().equals(senha)){
            throw new Exception();
-        }
+       }
 
    }
 

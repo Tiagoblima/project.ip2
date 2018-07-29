@@ -88,4 +88,76 @@ public class FilmeDataBase {
                 e.printStackTrace();
             }
         }
+
+        public static void drama2(){
+
+            String titulo = "Cavalo de Guerra";
+
+            String sinopse = "A história da amizade entre Albert e seu cavalo Joey." +
+                             "\nDepois de ser vendido para a cavalaria inglesa" +
+                             "\ndurante a Primeira Guerra Mundial, o corcel emociona" +
+                             "\nambos os lados com sua bravura. Albert se alista para " +
+                             "\nrecuperar seu amigo e trazer Joey de volta para casa.";
+
+
+            //width="1382" height="784"
+            String urlM = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXBuSj7EtQjW3iitUzdRx4geUWvrBMogLSRSLE3DvWQKHcAAuNDilnHw";
+            String urlT = "<iframe width=\"450\" height=\"275\" src=\"https://www.youtube.com/embed/T96mgZFAQkQ?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+            String urlF = "<iframe width=\"1382\" height=\"784\" src=\"https://www.youtube.com/embed/T96mgZFAQkQ?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+
+            int ano = 2011;
+            int h = 2;
+            int min = 26;
+            double preco = 250;
+
+            Filme filme = new Filme(titulo,h,min,ano,sinopse, GeneroFilme.DRAMA,preco);
+            filme.setUrlFilme(urlF);
+            filme.setUrlMiniatura(urlM);
+            filme.setUrlTrailler(urlT);
+
+            FilmeController controller = FilmeController.getInstance();
+
+            try {
+           //   controller.removerFilme(controller.procurarFilme(titulo));
+                controller.cadastrarFilme(filme);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    public static void drama3(){
+
+        String titulo = "Uma Mente Brilhante";
+
+        String sinopse = "John Forbes Nash Jr. é reconhecido como gênio da matemática" +
+                         "\naos 21 anos. Cedo, casa-se com uma bela mulher, mas logo " +
+                         "\ncomeça a dar sinais de esquizofrenia. Após anos de luta " +
+                          "\ncontra a doença, ele acaba ganhando o prêmio Nobel.";
+
+
+        //width="1382" height="784"
+        String urlM = "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b1/UmaMenteBrilhante.jpg/225px-UmaMenteBrilhante.jpg";
+        String urlT = "<iframe width=\"450\" height=\"275\" src=\"https://www.youtube.com/embed/NHFjCMwd3Pk?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+        String urlF = "<iframe width=\"1382\" height=\"784\" src=\"https://www.youtube.com/embed/NHFjCMwd3Pk?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
+
+        int ano = 2001;
+        int h = 2;
+        int min = 20;
+        double preco = 225;
+
+        Filme filme = new Filme(titulo,h,min,ano,sinopse, GeneroFilme.DRAMA,preco);
+        filme.setUrlFilme(urlF);
+        filme.setUrlMiniatura(urlM);
+        filme.setUrlTrailler(urlT);
+
+        FilmeController controller = FilmeController.getInstance();
+
+        try {
+        //    controller.removerFilme(controller.procurarFilme(titulo));
+            controller.cadastrarFilme(filme);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

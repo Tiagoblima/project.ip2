@@ -221,7 +221,7 @@ public class GaleriaController implements Initializable {
             setupButtons(filme, layoutX, layoutY);
 
 
-            if(++i < 3){
+            if(++i < 2){
                 layoutX += 250;
             }else {
                 layoutY += 400;

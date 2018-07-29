@@ -43,7 +43,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Index);
+        primaryStage.setScene(Home);
         primaryStage.show();
 
         System.out.println("Width: " + primaryStage.getWidth());
@@ -53,7 +53,10 @@ public class Main extends Application {
 
       //  FilmeDataBase.aventura1();
 
-
+//       FilmeDataBase.drama2();
+//        FilmeDataBase.drama3();
+//        FilmeDataBase.aventura1();
+//        FilmeDataBase.drama1();
     }
 
 
