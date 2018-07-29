@@ -70,6 +70,7 @@ public class CatalogoController {
         ArrayList<Filme> arrayComedia = new ArrayList<>();
         ArrayList<Filme> arrayRomance = new ArrayList<>();
         ArrayList<Filme> arrayAventura = new ArrayList<>();
+
         for (Filme filme: filmes) {
 
             switch (filme.getGenero()){
@@ -89,7 +90,6 @@ public class CatalogoController {
             }
 
         }
-
         this.catalogo.put(DRAMA,arrayDrama);
         this.catalogo.put(ACAO,arrayAcao);
         this.catalogo.put(FAMILIA,arrayFamilia);

@@ -11,7 +11,7 @@
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="350.0" />
      </content>
    </ScrollPane>
-   <Label layoutX="440.0" layoutY="171.0" style="-fx-text-fill: white;" text="Para vocẽ hoje" />
+   <Label layoutX="440.0" layoutY="171.0" style="-fx-text-fill: white;" text="Para você hoje" />
 
 
 </AnchorPane>

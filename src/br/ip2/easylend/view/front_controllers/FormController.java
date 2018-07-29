@@ -10,7 +10,11 @@ import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class FormController {
 
@@ -60,7 +64,7 @@ public class FormController {
                      this.cliente = new ClienteComum(nome,email,dataAniv,login,senha,this.endereco);
 
                  }catch (Exception e){
-                     msg = "Uma ou mais informações estão ausentes.";
+                     msg = "Uma ou mais informações\n estão ausentes.";
                      exception = false;
                  }
 
@@ -71,7 +75,7 @@ public class FormController {
                      clienteController.cadastrarCliente(this.cliente);
 
 
-                     msg = "Cliente cadastrado com sucesso";
+                     msg = "Cliente cadastrado\n com sucesso";
 
                  }catch (Exception e){
 
@@ -81,10 +85,31 @@ public class FormController {
                  }
 
              }else {
-                 msg = "Você deve concordar com os nossos termos";
+                 msg = "Você deve concordar\n com os nossos termos";
              }
 
-             lblMsg.setText(msg);
+             Stage stage = new Stage();
+             AnchorPane pnMsg = new AnchorPane();
+
+             pnMsg.setPrefWidth(100);
+             pnMsg.setPrefHeight(50);
+
+
+
+             Label label = new Label(msg);
+
+             label.setLayoutX(0);
+             label.setLayoutY(0);
+             pnMsg.getChildren().add(label);
+
+             Button btnOk = new Button("OK");
+             btnOk.setOnAction(event -> stage.close());
+             btnOk.setLayoutX(90);
+             btnOk.setLayoutY(50);
+             pnMsg.getChildren().add(btnOk);
+             stage.setScene(new Scene(pnMsg));
+
+             stage.show();
 
         }else{
 

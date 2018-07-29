@@ -101,7 +101,7 @@ public class FilmeDataBase {
 
 
             //width="1382" height="784"
-            String urlM = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXBuSj7EtQjW3iitUzdRx4geUWvrBMogLSRSLE3DvWQKHcAAuNDilnHw";
+            String urlM = "https://upload.wikimedia.org/wikipedia/pt/thumb/7/73/War_Horse_P%C3%B4ster.jpg/220px-War_Horse_P%C3%B4ster.jpg";
             String urlT = "<iframe width=\"450\" height=\"275\" src=\"https://www.youtube.com/embed/T96mgZFAQkQ?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
             String urlF = "<iframe width=\"1382\" height=\"784\" src=\"https://www.youtube.com/embed/T96mgZFAQkQ?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>";
 
@@ -118,7 +118,7 @@ public class FilmeDataBase {
             FilmeController controller = FilmeController.getInstance();
 
             try {
-           //   controller.removerFilme(controller.procurarFilme(titulo));
+              controller.removerFilme(filme);
                 controller.cadastrarFilme(filme);
             } catch (Exception e) {
                 e.printStackTrace();

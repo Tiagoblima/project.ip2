@@ -43,34 +43,37 @@ public class Main extends Application {
 
         primaryStage.setTitle("EasyFilms");
 
-        primaryStage.setScene(Home);
+        primaryStage.setScene(Index);
         primaryStage.show();
 
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
-
+        stage.setResizable(false);
 //        FilmeDataBase.drama1();
 
       //  FilmeDataBase.aventura1();
-
-//       FilmeDataBase.drama2();
+//        FilmeDataBase.drama1();
 //        FilmeDataBase.drama3();
 //        FilmeDataBase.aventura1();
-//        FilmeDataBase.drama1();
+     //   FilmeDataBase.drama2();
     }
 
 
     public  static void changeScreen(Scenes name){
 
 
-        stage.setResizable(false);
+
         stage.setHeight(600);
         stage.setWidth(800);
         switch (name){
             case Index:
+                stage.setHeight(400);
+                stage.setWidth(600);
                 stage.setScene(Index);
                 break;
             case Form:
+                stage.setHeight(400);
+                stage.setWidth(600);
                 stage.setScene(Form);
                 break;
             case Home:

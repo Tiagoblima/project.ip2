@@ -11,9 +11,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.DragEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -32,7 +32,7 @@ public class GaleriaController implements Initializable {
     public Pane drama;
 
     @FXML
-    public AnchorPane telaCatalogo;
+    private Pane telaCatalogo;
 
     @FXML
     public BorderPane pnMain;
@@ -65,11 +65,16 @@ public class GaleriaController implements Initializable {
 
     @FXML
     public Button btnTrailler;
+    @FXML
+    public Pane nacionais;
 
+    @FXML
+    public AnchorPane anchorCatalogo;
 
     @FXML
     private Stage stage;
 
+    private ArrayList<WebView> webViewArrayList = new ArrayList <>();
 
 
     @Override
@@ -101,7 +106,7 @@ public class GaleriaController implements Initializable {
         webView.setLayoutY(layoutY);
         webView.toFront();
         webView.setId(String.valueOf(filme.hashCode()));
-
+        webViewArrayList.add(webView);
         boolean add = this.telaCatalogo.getChildren().add(webView);
 
     }
@@ -152,17 +157,6 @@ public class GaleriaController implements Initializable {
 
         btnDetalhe.setOnAction(event -> {
 
-            WebView webView = new WebView();
-            WebEngine engine = webView.getEngine();
-
-            engine.load(filme.getUrlImdb());
-
-            webView.setLayoutX(0);
-            webView.setLayoutY(40);
-            webView.setPrefWidth(280);
-            webView.setPrefHeight(560);
-
-           // pnDetalhes.getChildren().add(webView);
             setupDetalhes(filme);
 
         });
@@ -205,22 +199,22 @@ public class GaleriaController implements Initializable {
     private void showCatalogo(GeneroFilme generoFilme){
 
 
-
+        this.anchorCatalogo.getChildren().remove(this.telaCatalogo);
+        this.telaCatalogo = new Pane();
         CatalogoController Catalogocontroller = CatalogoController.getInstance();
         lblMsg.setVisible(false);
+
         ArrayList<Filme> arrayFilme = Catalogocontroller.getArrayFilmes(generoFilme);
 
         double layoutX = 50;
-        double layoutY = 200;
+        double layoutY = 100;
 
         int i = 0;
         for (Filme filme: arrayFilme) {
-
-
+            
             setupWebview(filme, layoutX, layoutY);
             setupButtons(filme, layoutX, layoutY);
-
-
+            
             if(++i < 2){
                 layoutX += 250;
             }else {
@@ -229,7 +223,8 @@ public class GaleriaController implements Initializable {
             }
 
         }
-
+        this.telaCatalogo.setLayoutY(100);
+        this.anchorCatalogo.getChildren().add(this.telaCatalogo);
     }
     public void toDrama(){ showCatalogo(DRAMA); }
     public void toAcao(){
