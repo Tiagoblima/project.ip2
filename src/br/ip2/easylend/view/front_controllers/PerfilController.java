@@ -253,7 +253,7 @@ public class PerfilController implements Initializable {
 
     public void toMais(ActionEvent actionEvent) {
 
-        String[] args = new String[]{"tiago"};
+        String[] args = new String[]{ClienteController.getInstance().getCliente().getLogin()};
         br.ip2.easylend.view.front_controllers.Application.Main(args);
     }
 }
