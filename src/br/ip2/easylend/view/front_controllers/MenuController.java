@@ -31,6 +31,7 @@ public class MenuController {
             Stage stage = new Stage();
             stage.setScene(new Scene(label));
             stage.show();
+            e.printStackTrace();
         }
 
     }

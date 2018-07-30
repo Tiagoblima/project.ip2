@@ -1,5 +1,6 @@
 package br.ip2.easylend.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Cliente extends Pessoa{
@@ -7,7 +8,7 @@ public abstract class Cliente extends Pessoa{
     protected double credito;
     protected int qtdFilmes; //LIMITADOR DE FILMES
     protected String tipoCliente;
-    protected HashMap<Integer, Filme> favoritos = new HashMap<>();
+    protected HashMap<Integer, Filme> filmes = new HashMap<>();
 
     public Cliente(String nome,String email ,String dataAniv, String login, String senha, Endereco endereco)throws Exception {
 
@@ -59,14 +60,18 @@ public abstract class Cliente extends Pessoa{
         return this.senha;
     }
     public String getDataNasc() { return this.getDataAniv(); }
+    public ArrayList<Filme> getArrayFilmesCliente(){
+        return (ArrayList <Filme>) filmes.values(); }
+    public void adicionarFilme(Filme filme) throws Exception {
 
-    public void adicionarFavorito(Filme filme) throws Exception {
-
-        if(favoritos.containsKey(filme.hashCode())){
+        if(filmes.containsKey(filme.hashCode())){
             throw new Exception();
         }
+        if(this.credito < filme.getPreco()) {
+            throw new Exception("Sem crédito suficiente");
+        }
 
-        favoritos.put(filme.hashCode(), filme);
+        filmes.put(filme.hashCode(), filme);
 
     }
 

@@ -1,7 +1,10 @@
 package br.ip2.easylend.view.front_controllers;
 
+import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.model.Cliente;
+import br.ip2.easylend.model.Filme;
+import br.ip2.easylend.model.GeneroFilme;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
@@ -19,6 +22,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PerfilController implements Initializable {
@@ -54,6 +58,11 @@ public class PerfilController implements Initializable {
     @FXML
     public Pane pnAvatar;
 
+    @FXML
+    public AnchorPane pnClienteFilmes;
+
+    private Pane telaFilmes;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -74,9 +83,58 @@ public class PerfilController implements Initializable {
         lblTipoCliente.setText(cliente.getTipoCliente());
         lblEmail.setText(cliente.getEmail());
 
+       // showCatalogo();
+
+    }
+    private void setupWebview(Filme filme, double layoutX, double layoutY){
+
+
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+        webEngine.load(filme.getUrlMiniatura());
+        webView.setPrefWidth(100);
+        webView.setPrefHeight(200);
+
+        webView.setLayoutX(layoutX);
+        webView.setLayoutY(layoutY);
+        webView.toFront();
+        webView.setId(String.valueOf(filme.hashCode()));
+
+        boolean add = this.telaFilmes.getChildren().add(webView);
+
     }
 
+    private void showCatalogo(){
 
+
+        this.pnClienteFilmes.getChildren().remove(this.telaFilmes);
+        this.telaFilmes = new Pane();
+        CatalogoController Catalogocontroller = CatalogoController.getInstance();
+
+        Cliente cliente = ClienteController.getInstance().getCliente();
+        ArrayList<Filme> arrayFilme = cliente.getArrayFilmesCliente();
+
+        double layoutX = 50;
+        double layoutY = 100;
+
+        int i = 0;
+        System.out.println(arrayFilme.toString());
+        for (Filme filme: arrayFilme) {
+
+            setupWebview(filme, layoutX, layoutY);
+
+            if(++i < 2){
+                layoutX += 250;
+            }else {
+                layoutY += 400;
+                layoutX = 50;
+            }
+
+        }
+        this.telaFilmes.setLayoutY(0);
+        this.pnClienteFilmes.getChildren().add(this.telaFilmes);
+
+    }
     private void criarStage(String msg){
 
         Stage stage = new Stage();
@@ -122,8 +180,10 @@ public class PerfilController implements Initializable {
         String msg = null;
         if(tipoCliente.equals("Premium")) {
             msg = "Você deixou o plano premium";
+            lblTipoCliente.setText("Comum");
         }else{
             msg = "Agora você é premium";
+            lblTipoCliente.setText("Premium");
         }
         ClienteController.getInstance().getCliente().mudarTipoCliente();
 

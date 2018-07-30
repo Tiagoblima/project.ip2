@@ -8,10 +8,11 @@ public class ClientePremium extends Cliente {
         super(nome, email, dataAniv, login, senha, endereco);
         super.tipoCliente = "Premium";
         super.qtdFilmes = 0;
+        super.credito = 100;
     }
 
     @Override
-    public void mudarTipoCliente() { super.tipoCliente = "Comum"; this.credito = 100;}
+    public void mudarTipoCliente() { super.tipoCliente = "Comum"; this.credito = 100; }
 
 
     //TODO Pensar nas vantagens de ser um Cliente Premium

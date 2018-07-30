@@ -1,8 +1,11 @@
 package br.ip2.easylend.view.front_controllers;
 
 import br.ip2.easylend.controller.CatalogoController;
+import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +13,9 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.DragEvent;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -129,18 +131,107 @@ public class GaleriaController implements Initializable {
             WebView webView = new WebView();
             WebEngine webEngine = webView.getEngine();
 
-            stage = new Stage();
+           Stage stTrailler = new Stage();
 
             webView.setPrefWidth(450);
             webView.setPrefHeight(275);
             webEngine.loadContent(filme.getUrlTrailler());
-            stage.setScene(new Scene(webView));
+            stTrailler.setScene(new Scene(webView));
 
-            stage.show();
+            stTrailler.show();
 
         });
 
+        btnAdquirir.setOnAction(event -> {
 
+            Stage comprar = new Stage();
+
+
+            AnchorPane anchorPane = new AnchorPane();
+
+            Cliente cliente = ClienteController.getInstance().getCliente();
+
+            String msg = "Você possui " + cliente.getCredito() + "\n"
+                         + "Confirmar compra? ";
+
+            anchorPane.getChildren().add(new Label(msg));
+
+            ButtonBar btnBar = new ButtonBar();
+
+            btnBar.setLayoutX(50);
+            btnBar.setLayoutY(100);
+            Button btnCancelar = new Button("Cancelar");
+            btnCancelar.setCancelButton(true);
+
+            btnCancelar.setOnAction(new EventHandler <ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                      comprar.close();
+                }
+            });
+
+            Button btnConfirmar = new Button("Confirmar");
+
+
+
+            btnConfirmar.setOnAction(new EventHandler <ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+
+
+                    Stage confirmado = new Stage();
+
+                    String msg = "Compra confirmada";
+
+                    try {
+                        cliente.setCredito(10000);
+                        cliente.adicionarFilme(filme);
+
+                    } catch (Exception e) {
+                        msg = "Você já possui esse filme\n" +
+                                "ou não possui crédito suficiente";
+
+                    }
+
+                    AnchorPane pnMsg = new AnchorPane();
+
+                    pnMsg.setPrefWidth(100);
+                    pnMsg.setPrefHeight(50);
+
+                    Label label = new Label(msg);
+
+                    label.setLayoutX(0);
+                    label.setLayoutY(0);
+                    pnMsg.getChildren().add(label);
+
+                    Button btnOk = new Button("OK");
+                    btnOk.setOnAction(new EventHandler <ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            confirmado.close();
+                        }
+                    });
+
+                    btnOk.setLayoutX(90);
+                    btnOk.setLayoutY(50);
+                    pnMsg.getChildren().add(btnOk);
+                    confirmado.setScene(new Scene(pnMsg));
+
+                    confirmado.show();
+                }
+            });
+
+
+            btnBar.getButtons().add(btnCancelar);
+            btnBar.getButtons().add(btnConfirmar);
+            anchorPane.getChildren().add(btnBar);
+            Scene scene = new Scene(anchorPane);
+            comprar.setScene(scene);
+
+            comprar.show();
+
+
+        });
 
         pnDetalhes.setVisible(true);
 
@@ -155,11 +246,7 @@ public class GaleriaController implements Initializable {
         btnDetalhe.setAlignment(Pos.CENTER);
 
 
-        btnDetalhe.setOnAction(event -> {
-
-            setupDetalhes(filme);
-
-        });
+        btnDetalhe.setOnAction(event -> { setupDetalhes(filme); });
 
         Button btnAssistir = new Button();
 
@@ -179,7 +266,6 @@ public class GaleriaController implements Initializable {
             webView.setPrefHeight(784.0);
             webEngine.loadContent(filme.getUrlFilme());
             stage.setScene(new Scene(webView));
-
 
             stage.setFullScreen(true);
             stage.show();

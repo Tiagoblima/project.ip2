@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import br.ip2.easylend.controller.ClienteController;
 
 @RestController
-public class UserRESTController {
+public class ClientRESTController {
 
 @RequestMapping("/Details")
 public Cliente greeting(@RequestParam(value="name", defaultValue="World") String name) {
 
     ClienteController clienteController  = ClienteController.getInstance();
-    Cliente cliente = clienteController.getCliente();
-    cliente.setNome(name);
-    return cliente;
+    return clienteController.getCliente();
 }
 
 }
