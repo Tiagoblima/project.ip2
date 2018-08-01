@@ -2,6 +2,7 @@ package br.ip2.easylend.view.front_controllers;
 
 import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.controller.KnnController;
 import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
@@ -95,6 +96,7 @@ public class GaleriaController implements Initializable {
 
     }
 
+
     private void setupWebview(Filme filme, double layoutX, double layoutY){
 
 
@@ -184,7 +186,7 @@ public class GaleriaController implements Initializable {
                     String msg = "Compra confirmada";
 
                     try {
-                        cliente.setCredito(10000);
+
                         cliente.adicionarFilme(filme);
 
                     } catch (Exception e) {
@@ -248,31 +250,9 @@ public class GaleriaController implements Initializable {
 
         btnDetalhe.setOnAction(event -> { setupDetalhes(filme); });
 
-        Button btnAssistir = new Button();
-
-        btnAssistir.setText("Assistir");
-        btnAssistir.setId(String.valueOf(filme.hashCode()));
-        btnAssistir.setAlignment(Pos.CENTER);
-
-
-        btnAssistir.setOnAction(event -> {
-
-            WebView webView = new WebView();
-            WebEngine webEngine = webView.getEngine();
-
-            stage = new Stage();
-
-            webView.setPrefWidth(1382.0);
-            webView.setPrefHeight(784.0);
-            webEngine.loadContent(filme.getUrlFilme());
-            stage.setScene(new Scene(webView));
-
-            stage.setFullScreen(true);
-            stage.show();
-        });
 
         buttonBar.getButtons().add(btnDetalhe);
-        buttonBar.getButtons().add(btnAssistir);
+
 
         buttonBar.setLayoutX(layoutX);
         buttonBar.setLayoutY(layoutY + 300);
@@ -307,7 +287,6 @@ public class GaleriaController implements Initializable {
                 layoutY += 400;
                 layoutX = 50;
             }
-
         }
         this.telaCatalogo.setLayoutY(100);
         this.anchorCatalogo.getChildren().add(this.telaCatalogo);

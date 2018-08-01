@@ -1,23 +1,27 @@
 package br.ip2.easylend.view.front_controllers;
 
 
+import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.ScrollPane;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable{
@@ -25,14 +29,12 @@ public class HomeController implements Initializable{
 
     @FXML
     public AnchorPane feedNoticias;
-    public ScrollPane scroll;
-    public Button refresh;
-    @FXML
-    public Pane pnPost;
-    @FXML
-    public Label lblpost;
+
     public AnchorPane anchorHome;
 
+    public AnchorPane anSugestoes;
+
+    private Pane telaFilmes;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -54,12 +56,63 @@ public class HomeController implements Initializable{
         webview.setZoom(0.65);
         feedNoticias.getChildren().add(webview);
 
+      //  showCatalogo();
+    }
+
+
+
+    private void setupWebview(Filme filme, double layoutX, double layoutY){
+
+
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+        webEngine.load(filme.getUrlMiniatura());
+        webView.setPrefWidth(100);
+        webView.setPrefHeight(150);
+
+        webView.setLayoutX(layoutX);
+        webView.setLayoutY(layoutY);
+        webView.toFront();
+        webView.setId(String.valueOf(filme.hashCode()));
+
+        boolean add = this.telaFilmes.getChildren().add(webView);
+
+    }
+
+    private void showCatalogo(){
+
+
+        this.anSugestoes.getChildren().remove(this.telaFilmes);
+        this.telaFilmes = new Pane();
+
+        ClienteController clienteController = ClienteController.getInstance();
+        ArrayList<Filme> arrayFilme = clienteController.getPreferencias();
+
+
+        double layoutX = 0;
+        double layoutY = 0;
+
+        int i = 0;
+
+        for (Filme filme: arrayFilme) {
+
+            setupWebview(filme, layoutX, layoutY);
+
+            if(++i < 3){
+                layoutX += 150;
+            }else {
+                layoutY += 250;
+                layoutX = 50;
+            }
+
+        }
+        this.telaFilmes.setLayoutY(0);
+        this.anSugestoes.getChildren().add(this.telaFilmes);
+
     }
 
     public void toPerfil(ActionEvent actionEvent) {
         Main.changeScreen(Scenes.Perfil);
-
-
     }
 
 

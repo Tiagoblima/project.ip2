@@ -1,6 +1,7 @@
 package br.ip2.easylend.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public abstract class Cliente extends Pessoa{
@@ -25,6 +26,8 @@ public abstract class Cliente extends Pessoa{
         this.senha = senha;
         this.email = email;
         this.endereco = endereco;
+
+
 
     }
 
@@ -60,8 +63,8 @@ public abstract class Cliente extends Pessoa{
         return this.senha;
     }
     public String getDataNasc() { return this.getDataAniv(); }
-    public ArrayList<Filme> getArrayFilmesCliente(){
-        return (ArrayList <Filme>) filmes.values(); }
+    public HashMap<Integer, Filme> getfilmesCliente(){ return filmes; }
+
     public void adicionarFilme(Filme filme) throws Exception {
 
         if(filmes.containsKey(filme.hashCode())){
@@ -74,5 +77,6 @@ public abstract class Cliente extends Pessoa{
         filmes.put(filme.hashCode(), filme);
 
     }
+    public void removerFilme(Filme filme){ this.filmes.remove(filme.hashCode()); }
 
 }

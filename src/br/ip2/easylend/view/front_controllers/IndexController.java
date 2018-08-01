@@ -7,11 +7,16 @@ import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 public class IndexController {
 
     @FXML
@@ -31,10 +36,41 @@ public class IndexController {
 
 
     }
+
+    private void criarStage(String msg){
+
+        exceptionMsg(msg);
+
+    }
+
+    static void exceptionMsg(String msg) {
+        Stage stage = new Stage();
+        AnchorPane pnMsg = new AnchorPane();
+
+        pnMsg.setPrefWidth(100);
+        pnMsg.setPrefHeight(50);
+
+
+        Label label = new Label(msg);
+
+        label.setLayoutX(0);
+        label.setLayoutY(0);
+        pnMsg.getChildren().add(label);
+
+        Button btnOk = new Button("OK");
+        btnOk.setOnAction(event -> stage.close());
+        btnOk.setLayoutX(90);
+        btnOk.setLayoutY(50);
+        pnMsg.getChildren().add(btnOk);
+        stage.setScene(new Scene(pnMsg));
+
+        stage.show();
+    }
+
     public void toLogin(ActionEvent actionEvent) {
 
 
-        String msg = "Acesso liberado";
+        String msg;
 
         boolean acess = true;
 
@@ -44,6 +80,7 @@ public class IndexController {
         if(login.isEmpty() || senha.isEmpty()){
             msg = "Um ou mais campos\n não estão preenchidos";
             acess = false;
+            criarStage(msg);
         }else{
 
             ClienteController clienteController =  ClienteController.getInstance();
@@ -55,6 +92,7 @@ public class IndexController {
                 System.out.println(senha);
                 msg = "Login ou senha incorretos";
                 acess = false;
+                criarStage(msg);
             }
         }
 
@@ -63,7 +101,7 @@ public class IndexController {
             toHome(actionEvent);
         }
 
-        lblMsg.setText(msg);
+
     }
 
     public void toForm(ActionEvent actionEvent) {

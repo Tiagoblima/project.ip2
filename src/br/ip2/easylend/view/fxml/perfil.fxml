@@ -31,7 +31,7 @@
                   <Button fx:id="btnMudarLogin" mnemonicParsing="false" onAction="#alterarLogin" text="Alterar Login" />
                   <Button fx:id="btnMudarPlano" mnemonicParsing="false" onAction="#mudarTipo" text="Mudar Plano" />
                   <Button fx:id="btnCompra" mnemonicParsing="false" onAction="#compCredito" text="Comprar" />
-                  <Button fx:id="btnMais" mnemonicParsing="false" onAction="#toMais" text="Detalhes" />
+                  <Button fx:id="btnDetalhes" mnemonicParsing="false" onAction="#toMais" text="Detalhes" />
                </buttons>
             </ButtonBar>
             <Label layoutX="110.0" layoutY="266.0" text="Meus Filmes" />

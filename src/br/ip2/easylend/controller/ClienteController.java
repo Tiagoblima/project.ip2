@@ -2,9 +2,13 @@ package br.ip2.easylend.controller;
 
 
 import br.ip2.easylend.model.Cliente;
+import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.repositorio.Repositorio;
 import com.google.gson.Gson;
+import javafx.print.Collation;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class ClienteController {
@@ -13,11 +17,17 @@ public class ClienteController {
     private static ClienteController controller;
     private final HashMap<String,Cliente> CHashMap = new HashMap<>(); //Cliente HashMap
     private Repositorio <HashMap> repositorio = Repositorio.getInstance();
-
+    private CatalogoController catalogoController = CatalogoController.getInstance();
     public static Cliente cliente;
-    public static String name;
+    private ArrayList<Filme> preferencias;
 
+    public ArrayList <Filme> getPreferencias() {
+        return preferencias;
+    }
 
+    public void setPreferencias(ArrayList <Filme> preferencias) {
+        this.preferencias = preferencias;
+    }
 
     private ClienteController(){
 
@@ -59,6 +69,17 @@ public class ClienteController {
         this.repositorio.salvar(CHashMap,path);
      //   this.repositorio.jsonSalve(CHashMap, path);
 
+        ArrayList<Filme> filmeArray = new ArrayList <>();
+        Collection<Filme> filmes = cliente.getfilmesCliente().values();
+        filmeArray.addAll(filmes);
+        KnnController instance = KnnController.getInstance();
+
+        CatalogoController catalogoController = CatalogoController.getInstance();
+        Collection <Filme> filmes1 = catalogoController.getFullHashMap().values();
+        ArrayList<Filme> fullFilmeArray = new ArrayList <>();
+        fullFilmeArray.addAll(filmes1);
+        instance.setArraies(fullFilmeArray,filmeArray);
+        this.preferencias = instance.knnRun();
     }
 
    public void login(String login, String senha)throws Exception
@@ -81,14 +102,22 @@ public class ClienteController {
         if(CHashMap.containsKey(login)){
             throw new Exception();
         }
-       CHashMap.remove(cliente.getLogin(),cliente);
         cliente.setLogin(login);
-        CHashMap.put(login,cliente);
-       this.repositorio.salvar(CHashMap,"src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
-        alterarCliente();
+        updateCliente();
    }
-   private void alterarCliente(){
+
+   public HashMap<String, Cliente> getCHashMap(){
+        return this.CHashMap;
+   }
+   public ArrayList<Filme> getFilmesClienteArray(){
+
+       Collection<Filme> filmes = cliente.getfilmesCliente().values();
+       return new ArrayList <>(filmes);
+   }
+   public void updateCliente(){
+
         CHashMap.replace(cliente.getLogin(),cliente);
+       this.repositorio.salvar(CHashMap,"src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
    }
 
 

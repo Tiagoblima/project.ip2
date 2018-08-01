@@ -1,6 +1,7 @@
 package br.ip2.easylend.view.front_controllers;
 
 
+import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
@@ -37,6 +38,8 @@ public class MenuController {
     }
     public void toGaleria(ActionEvent actionEvent){ Main.changeScreen(Scenes.Galeria);}
     public void sair(ActionEvent actionEvent) {
+        ClienteController controller = ClienteController.getInstance();
+        controller.updateCliente();
         System.exit(0);
     }
 

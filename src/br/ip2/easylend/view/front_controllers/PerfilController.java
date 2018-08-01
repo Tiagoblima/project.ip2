@@ -7,10 +7,12 @@ import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -61,7 +63,10 @@ public class PerfilController implements Initializable {
     @FXML
     public AnchorPane pnClienteFilmes;
 
+    public Button btnDetalhes;
+
     private Pane telaFilmes;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -83,9 +88,60 @@ public class PerfilController implements Initializable {
         lblTipoCliente.setText(cliente.getTipoCliente());
         lblEmail.setText(cliente.getEmail());
 
-       // showCatalogo();
+        showCatalogo();
 
     }
+
+    private void setupButtons(Filme filme, double layoutX, double layoutY){
+
+        ButtonBar buttonBar = new ButtonBar();
+
+
+        Button btnAssistir = new Button();
+
+        btnAssistir.setText("Assistir");
+        btnAssistir.setId(String.valueOf(filme.hashCode()));
+        btnAssistir.setAlignment(Pos.CENTER);
+
+        Stage assistir = new Stage();
+
+        btnAssistir.setOnAction(event -> {
+
+            WebView webView = new WebView();
+            WebEngine webEngine = webView.getEngine();
+
+
+
+            webView.setPrefWidth(1382.0);
+            webView.setPrefHeight(784.0);
+            webEngine.loadContent(filme.getUrlFilme());
+
+
+            assistir.setScene(new Scene(webView));
+
+            assistir.setFullScreen(true);
+            assistir.show();
+
+
+        });
+
+        assistir.setOnCloseRequest(event1 -> {
+            assistir.close();
+            Platform.exit();
+        });
+
+        btnAssistir.setAlignment(Pos.BASELINE_CENTER);
+
+        buttonBar.getButtons().add(btnAssistir);
+
+        buttonBar.setLayoutX(layoutX);
+        buttonBar.setLayoutY(layoutY + 150);
+
+        buttonBar.toFront();
+        this.telaFilmes.getChildren().add(buttonBar);
+
+    }
+
     private void setupWebview(Filme filme, double layoutX, double layoutY){
 
 
@@ -93,7 +149,7 @@ public class PerfilController implements Initializable {
         WebEngine webEngine = webView.getEngine();
         webEngine.load(filme.getUrlMiniatura());
         webView.setPrefWidth(100);
-        webView.setPrefHeight(200);
+        webView.setPrefHeight(150);
 
         webView.setLayoutX(layoutX);
         webView.setLayoutY(layoutY);
@@ -109,24 +165,24 @@ public class PerfilController implements Initializable {
 
         this.pnClienteFilmes.getChildren().remove(this.telaFilmes);
         this.telaFilmes = new Pane();
-        CatalogoController Catalogocontroller = CatalogoController.getInstance();
 
-        Cliente cliente = ClienteController.getInstance().getCliente();
-        ArrayList<Filme> arrayFilme = cliente.getArrayFilmesCliente();
+       ClienteController  clienteController = ClienteController.getInstance();
+        ArrayList<Filme> arrayFilme = clienteController.getFilmesClienteArray();
 
-        double layoutX = 50;
-        double layoutY = 100;
+
+        double layoutX = 100;
+        double layoutY = 50;
 
         int i = 0;
-        System.out.println(arrayFilme.toString());
+
         for (Filme filme: arrayFilme) {
 
             setupWebview(filme, layoutX, layoutY);
-
-            if(++i < 2){
-                layoutX += 250;
+            setupButtons(filme,layoutX,layoutY);
+            if(++i < 3){
+                layoutX += 150;
             }else {
-                layoutY += 400;
+                layoutY += 250;
                 layoutX = 50;
             }
 
@@ -137,28 +193,7 @@ public class PerfilController implements Initializable {
     }
     private void criarStage(String msg){
 
-        Stage stage = new Stage();
-        AnchorPane pnMsg = new AnchorPane();
-
-        pnMsg.setPrefWidth(100);
-        pnMsg.setPrefHeight(50);
-
-
-
-        Label label = new Label(msg);
-
-        label.setLayoutX(0);
-        label.setLayoutY(0);
-        pnMsg.getChildren().add(label);
-
-        Button btnOk = new Button("OK");
-        btnOk.setOnAction(event -> stage.close());
-        btnOk.setLayoutX(90);
-        btnOk.setLayoutY(50);
-        pnMsg.getChildren().add(btnOk);
-        stage.setScene(new Scene(pnMsg));
-
-        stage.show();
+        IndexController.exceptionMsg(msg);
 
     }
     private void login(String newLogin){
@@ -177,7 +212,7 @@ public class PerfilController implements Initializable {
     }
     private void confirmaNovoTipo(){
         String tipoCliente = ClienteController.getInstance().getCliente().getTipoCliente();
-        String msg = null;
+        String msg;
         if(tipoCliente.equals("Premium")) {
             msg = "Você deixou o plano premium";
             lblTipoCliente.setText("Comum");
@@ -235,17 +270,7 @@ public class PerfilController implements Initializable {
     private void paypal(){
 
 
-        Stage stage = new Stage();
-
-        WebView webView = new WebView();
-        WebEngine engine = webView.getEngine();
-        engine.load("https://www.paypal.com/us/home");
-        webView.setPrefWidth(400);
-        webView.setPrefHeight(400);
-
-        stage.setScene(new Scene(webView));
-
-        stage.show();
+        criarWebStage("https://www.paypal.com/us/home");
 
 
     }
@@ -294,6 +319,21 @@ public class PerfilController implements Initializable {
     }
 
 
+    private void criarWebStage(String url) {
+        Stage webStage = new Stage();
+
+
+        WebView webView = new WebView();
+        WebEngine engine = webView.getEngine();
+        engine.load(url);
+        webView.setPrefWidth(400);
+        webView.setPrefHeight(400);
+
+        webStage.setScene(new Scene(webView));
+
+        webStage.show();
+
+    }
 
     public void alterarLogin(ActionEvent actionEvent) {
         alterarLogin();
@@ -315,6 +355,7 @@ public class PerfilController implements Initializable {
 
         String[] args = new String[]{ClienteController.getInstance().getCliente().getLogin()};
         br.ip2.easylend.view.front_controllers.Application.Main(args);
+        criarWebStage(" http://localhost:8080/Details");
     }
 }
 
