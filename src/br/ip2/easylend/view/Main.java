@@ -1,5 +1,6 @@
 package br.ip2.easylend.view;
 
+import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -48,14 +49,14 @@ public class Main extends Application {
 
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
-        stage.setResizable(false);
-//        FilmeDataBase.drama1();
 
-      //  FilmeDataBase.aventura1();
-//        FilmeDataBase.drama1();
-//        FilmeDataBase.drama3();
-//        FilmeDataBase.aventura1();
-     //   FilmeDataBase.drama2();
+
+
+        String[] args = new String[]{"application"};
+        br.ip2.easylend.view.front_controllers.Application.Main(args);
+
+        stage.setResizable(false);
+
     }
 
 

@@ -353,9 +353,8 @@ public class PerfilController implements Initializable {
 
     public void toMais(ActionEvent actionEvent) {
 
-        String[] args = new String[]{ClienteController.getInstance().getCliente().getLogin()};
-        br.ip2.easylend.view.front_controllers.Application.Main(args);
-        criarWebStage(" http://localhost:8080/Details");
+
+        criarWebStage("http://localhost:8080/Details");
     }
 }
 
