@@ -1,6 +1,7 @@
 package br.ip2.easylend.view;
 
 import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.controller.KnnController;
 import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -50,13 +51,17 @@ public class Main extends Application {
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
 
-
-
         String[] args = new String[]{"application"};
         br.ip2.easylend.view.front_controllers.Application.Main(args);
 
         stage.setResizable(false);
 
+        KnnController knn = KnnController.getInstance();
+       try {
+           knn.data();
+       }catch (Exception e){
+           e.printStackTrace();
+       }
     }
 
 

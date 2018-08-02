@@ -1,74 +1,56 @@
 package br.ip2.easylend.controller;
 
-import br.ip2.easylend.model.Filme;
-import br.ip2.easylend.model.GeneroFilme;
 
-import java.util.ArrayList;
+import weka.classifiers.bayes.NaiveBayes;
+import weka.core.*;
+
+import java.io.FileNotFoundException;
+import java.util.Enumeration;
+
+import static weka.core.converters.ConverterUtils.*;
 
 public class KnnController {
 
     private static KnnController ourInstance = new KnnController();
-
-    private ArrayList<Filme> filmes;
-    private ArrayList<Filme> clienteFilmes;
-    private ArrayList<Features> featuresArrayList;
-    private ArrayList<Filme> selectedFilmes;
-
     public static KnnController getInstance() {
         return ourInstance;
     }
+
 
     private KnnController() {
 
     }
 
+    public void data() throws Exception{
 
-    public void setArraies(ArrayList<Filme> filmes, ArrayList<Filme> clienteFilmes){
-        this.filmes = filmes;
-        this.clienteFilmes = clienteFilmes;
+        String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";
+
+        DataSource dataScource = new DataSource(path);
+        Instances dataSet = dataScource.getDataSet();
+
+        dataSet.setClassIndex(1);
+        NaiveBayes naiveBayes = new NaiveBayes();
+        naiveBayes.buildClassifier(dataSet);
+        DenseInstance instances = new DenseInstance(2);
+
+        instances.setDataset(dataSet);
+
+        instances.setValue(0, "true");
+
+        Attribute attribute = new Attribute("duracao",2);
+
+        instances.setValue(attribute, 1);
+        double[] probabilidade = naiveBayes.distributionForInstance(instances);
+
+        System.out.println("genero: " + probabilidade[1]);
+
     }
 
 
-    public ArrayList<Filme> knnRun() {
 
-        this.featuresArrayList = new ArrayList <>();
 
-        boolean preferencia = false;
 
-        for (Filme cFilme : this.clienteFilmes) {
 
-            GeneroFilme genero = cFilme.getGenero();
-
-            for (Filme filme : this.filmes) {
-
-                if(genero.equals(filme.getGenero()) && ! filme.equals(cFilme)){ preferencia = true; }
-
-                this.featuresArrayList.add(new Features(filme,genero,preferencia));
-
-            }
-
-        }
-        selectFilme();
-        return selectedFilmes;
-    }
-
-    public ArrayList <Filme> getSelectedFilmes() {
-        return selectedFilmes;
-    }
-
-    public void setSelectedFilmes(ArrayList <Filme> selectedFilmes) {
-        this.selectedFilmes = selectedFilmes;
-    }
-
-    public void selectFilme(){
-
-        for (Features features: this.featuresArrayList) {
-            if(features.isPreferencia()){ this.selectedFilmes.add(features.getFilme());}
-        }
-    }
-    public ArrayList <Features> getFeaturesArrayList() {
-        return featuresArrayList;
-    }
 }
 
 
