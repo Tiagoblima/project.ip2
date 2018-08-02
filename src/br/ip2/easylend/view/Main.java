@@ -1,7 +1,10 @@
 package br.ip2.easylend.view;
 
+import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.controller.KnnController;
+import br.ip2.easylend.model.Catalogo;
+import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
 import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
@@ -18,7 +21,6 @@ public class Main extends Application {
 
 
         public static Stage stage;
-        public static Stage popUp;
 
         private static Scene Index;
         private static Scene Form;
@@ -58,57 +60,9 @@ public class Main extends Application {
         br.ip2.easylend.view.front_controllers.Application.Main(args);
 
         stage.setResizable(false);
-
-        predict();
     }
 
 
-    private void predict(){
-
-        ArrayList<GeneroFilme> generos = new ArrayList <>();
-
-        generos.add(GeneroFilme.DRAMA);
-        generos.add(GeneroFilme.AVENTURA);
-        generos.add(GeneroFilme.ACAO);
-        generos.add(GeneroFilme.COMEDIA);
-        generos.add(GeneroFilme.FAMILIA);
-        generos.add(GeneroFilme.ROMANCE);
-        generos.add(GeneroFilme.FAMILIA);
-
-
-
-        KnnController pred = KnnController.getInstance();
-        try {
-            double[][] knn = new double[7][];
-
-            int i = 0;
-            for (GeneroFilme genero: generos) {
-               knn[i++] = pred.knn(genero);
-            }
-
-            double maior = -1;
-
-            i = 0;
-            int index = 0;
-
-            for (double k[]: knn) {
-
-                if(k[1] > maior){
-                    maior = k[1];
-                    index  = i;
-                }
-
-                i++;
-            }
-
-            System.out.println("Maior probabilidade: " + maior);
-            System.out.println("Gênero: " + generos.get(index));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-    }
 
     public  static void changeScreen(Scenes name){
 

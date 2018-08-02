@@ -1,8 +1,11 @@
 package br.ip2.easylend.view.front_controllers;
 
 
+import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.controller.KnnController;
 import br.ip2.easylend.model.Filme;
+import br.ip2.easylend.model.GeneroFilme;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.application.Platform;
@@ -56,7 +59,7 @@ public class HomeController implements Initializable{
         webview.setZoom(0.65);
         feedNoticias.getChildren().add(webview);
 
-      //  showCatalogo();
+        showCatalogo();
     }
 
 
@@ -64,6 +67,11 @@ public class HomeController implements Initializable{
     private void setupWebview(Filme filme, double layoutX, double layoutY){
 
 
+        stageCreator(filme , layoutX , layoutY , this.telaFilmes);
+
+    }
+
+    static void stageCreator(Filme filme , double layoutX , double layoutY , Pane telaFilmes) {
         WebView webView = new WebView();
         WebEngine webEngine = webView.getEngine();
         webEngine.load(filme.getUrlMiniatura());
@@ -75,8 +83,7 @@ public class HomeController implements Initializable{
         webView.toFront();
         webView.setId(String.valueOf(filme.hashCode()));
 
-        boolean add = this.telaFilmes.getChildren().add(webView);
-
+        boolean add = telaFilmes.getChildren().add(webView);
     }
 
     private void showCatalogo(){
@@ -85,20 +92,22 @@ public class HomeController implements Initializable{
         this.anSugestoes.getChildren().remove(this.telaFilmes);
         this.telaFilmes = new Pane();
 
-        ClienteController clienteController = ClienteController.getInstance();
-        ArrayList<Filme> arrayFilme = clienteController.getPreferencias();
 
+       GeneroFilme predGenero = KnnController.getInstance().getpredGenero();
 
-        double layoutX = 0;
-        double layoutY = 0;
+        System.out.println(predGenero);
+       ArrayList<Filme> arrayFilmes = CatalogoController.getInstance().getArrayFilmes(predGenero);
+
+        double layoutX = 50;
+        double layoutY = 50;
 
         int i = 0;
 
-        for (Filme filme: arrayFilme) {
+        for (Filme filme: arrayFilmes) {
 
             setupWebview(filme, layoutX, layoutY);
 
-            if(++i < 3){
+            if(++i < 2){
                 layoutX += 150;
             }else {
                 layoutY += 250;

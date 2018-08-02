@@ -37,12 +37,7 @@ public class KnnController {
 
         String data = "\n@data";
 
-
         String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";
-
-
-
-       // features = new ArrayList <>();
 
         ArrayList<GeneroFilme> generos = new ArrayList <>();
 
@@ -52,7 +47,7 @@ public class KnnController {
         generos.add(GeneroFilme.COMEDIA);
         generos.add(GeneroFilme.FAMILIA);
         generos.add(GeneroFilme.ROMANCE);
-        generos.add(GeneroFilme.FAMILIA);
+        generos.add(GeneroFilme.NACIONAIS);
 
 
         boolean[] b = new boolean[]{true, false};
@@ -81,12 +76,58 @@ public class KnnController {
 
         }
 
-
-
     }
+
+    public GeneroFilme getpredGenero(){
+
+        ArrayList<GeneroFilme> generos = new ArrayList <>();
+
+        generos.add(GeneroFilme.DRAMA);
+        generos.add(GeneroFilme.AVENTURA);
+        generos.add(GeneroFilme.ACAO);
+        generos.add(GeneroFilme.COMEDIA);
+        generos.add(GeneroFilme.FAMILIA);
+        generos.add(GeneroFilme.ROMANCE);
+        generos.add(GeneroFilme.FAMILIA);
+
+
+        int predIndex = 0;
+
+        KnnController pred = KnnController.getInstance();
+        try {
+            double[][] knn = new double[7][];
+
+            int i = 0;
+            for (GeneroFilme genero: generos) {
+                knn[i++] = pred.knn(genero);
+            }
+
+            double maior = -1;
+
+            i = 0;
+
+
+            for (double k[]: knn) {
+
+                if(k[1] > maior){
+                    maior = k[1];
+                    predIndex  = i;
+                }
+
+                i++;
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return generos.get(predIndex);
+    }
+
     public double[] knn(GeneroFilme predGenero) throws Exception{
 
-        gerarDataSet(new ArrayList <>());
+     //   gerarDataSet(new ArrayList <>());
         String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";
 
         DataSource dataScource = new DataSource(path);

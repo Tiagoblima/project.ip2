@@ -145,18 +145,7 @@ public class PerfilController implements Initializable {
     private void setupWebview(Filme filme, double layoutX, double layoutY){
 
 
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
-        webEngine.load(filme.getUrlMiniatura());
-        webView.setPrefWidth(100);
-        webView.setPrefHeight(150);
-
-        webView.setLayoutX(layoutX);
-        webView.setLayoutY(layoutY);
-        webView.toFront();
-        webView.setId(String.valueOf(filme.hashCode()));
-
-        boolean add = this.telaFilmes.getChildren().add(webView);
+        HomeController.stageCreator(filme , layoutX , layoutY , this.telaFilmes);
 
     }
 
