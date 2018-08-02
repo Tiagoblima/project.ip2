@@ -127,7 +127,7 @@ public class KnnController {
 
     public double[] knn(GeneroFilme predGenero) throws Exception{
 
-     //   gerarDataSet(new ArrayList <>());
+        gerarDataSet(new ArrayList <>());
         String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";
 
         DataSource dataScource = new DataSource(path);
