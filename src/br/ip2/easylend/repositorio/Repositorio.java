@@ -56,28 +56,7 @@ public class Repositorio <T> {
     }
 
 
-    public void jsonSalve(T object, String filePath){
 
-        GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting().serializeNulls();
-        Gson gson = builder.create();
-        System.out.println();
-        System.out.println("JSON: " + gson.toJson(object));
-
-        try{
-            File file = new File(filePath);
-            boolean b = file.createNewFile();
-            boolean b1 = file.setWritable(true);
-            FileWriter fileWriter = new FileWriter(file);
-            fileWriter.write(gson.toJson(object));
-        }catch (Exception e){
-
-            System.out.println("Arquivo não encontrado\nCriando novo arquivo em " + filePath);
-            exceptionHandle(filePath);
-
-        }
-
-    }
 
     public T jsonRead(Class<T> tClass, String filePath){
 

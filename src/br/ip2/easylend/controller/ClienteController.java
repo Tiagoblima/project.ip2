@@ -3,6 +3,7 @@ package br.ip2.easylend.controller;
 
 import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
+import br.ip2.easylend.repositorio.JsonController;
 import br.ip2.easylend.repositorio.Repositorio;
 import com.google.gson.Gson;
 import javafx.print.Collation;
@@ -65,9 +66,7 @@ public class ClienteController {
         cliente = novoCliente;
 
         CHashMap.put(cliente.getLogin(), cliente);
-        String path = "src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt";
-        this.repositorio.salvar(CHashMap,path);
-     //   this.repositorio.jsonSalve(CHashMap, path);
+
 
 
     }
@@ -81,9 +80,12 @@ public class ClienteController {
 
        cliente = CHashMap.get(login);
 
+
+
        if(!cliente.getSenha().equals(senha)){
            throw new Exception();
        }
+
 
    }
 

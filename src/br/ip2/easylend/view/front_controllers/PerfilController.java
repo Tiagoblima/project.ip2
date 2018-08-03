@@ -5,6 +5,7 @@ import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
+import br.ip2.easylend.repositorio.JsonController;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.application.Platform;
@@ -87,6 +88,9 @@ public class PerfilController implements Initializable {
         lblCreditos.setText(String.valueOf(cliente.getCredito()));
         lblTipoCliente.setText(cliente.getTipoCliente());
         lblEmail.setText(cliente.getEmail());
+
+
+
 
         showCatalogo();
 

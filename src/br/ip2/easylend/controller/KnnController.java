@@ -99,7 +99,7 @@ public class KnnController {
 
             int i = 0;
             for (GeneroFilme genero: generos) {
-                knn[i++] = pred.knn(genero);
+                knn[i++] = pred.predictGenero(genero);
             }
 
             double maior = -1;
@@ -125,7 +125,7 @@ public class KnnController {
         return generos.get(predIndex);
     }
 
-    public double[] knn(GeneroFilme predGenero) throws Exception{
+    public double[] predictGenero(GeneroFilme predGenero) throws Exception{
 
         gerarDataSet(new ArrayList <>());
         String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";

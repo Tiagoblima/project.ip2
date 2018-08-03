@@ -4,8 +4,10 @@ package br.ip2.easylend.view.front_controllers;
 import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.controller.KnnController;
+import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
+import br.ip2.easylend.repositorio.JsonController;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.application.Platform;
@@ -97,6 +99,9 @@ public class HomeController implements Initializable{
 
         System.out.println(predGenero);
        ArrayList<Filme> arrayFilmes = CatalogoController.getInstance().getArrayFilmes(predGenero);
+
+
+
 
         double layoutX = 50;
         double layoutY = 50;
