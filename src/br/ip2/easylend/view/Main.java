@@ -1,6 +1,11 @@
 package br.ip2.easylend.view;
 
+import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
+import br.ip2.easylend.controller.KnnController;
+import br.ip2.easylend.model.Catalogo;
+import br.ip2.easylend.model.Filme;
+import br.ip2.easylend.model.GeneroFilme;
 import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,12 +14,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class Main extends Application {
 
 
 
         public static Stage stage;
-        public static Stage popUp;
 
         private static Scene Index;
         private static Scene Form;
@@ -50,14 +56,12 @@ public class Main extends Application {
         System.out.println("Width: " + primaryStage.getWidth());
         System.out.println("Height: " + primaryStage.getHeight());
 
-
-
         String[] args = new String[]{"application"};
         br.ip2.easylend.view.front_controllers.Application.Main(args);
 
         stage.setResizable(false);
-
     }
+
 
 
     public  static void changeScreen(Scenes name){

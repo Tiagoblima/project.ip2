@@ -69,17 +69,7 @@ public class ClienteController {
         this.repositorio.salvar(CHashMap,path);
      //   this.repositorio.jsonSalve(CHashMap, path);
 
-        ArrayList<Filme> filmeArray = new ArrayList <>();
-        Collection<Filme> filmes = cliente.getfilmesCliente().values();
-        filmeArray.addAll(filmes);
-        KnnController instance = KnnController.getInstance();
 
-        CatalogoController catalogoController = CatalogoController.getInstance();
-        Collection <Filme> filmes1 = catalogoController.getFullHashMap().values();
-        ArrayList<Filme> fullFilmeArray = new ArrayList <>();
-        fullFilmeArray.addAll(filmes1);
-        instance.setArraies(fullFilmeArray,filmeArray);
-        this.preferencias = instance.knnRun();
     }
 
    public void login(String login, String senha)throws Exception
