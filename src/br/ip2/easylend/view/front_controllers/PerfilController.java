@@ -347,7 +347,7 @@ public class PerfilController implements Initializable {
     public void toMais(ActionEvent actionEvent) {
 
 
-        criarWebStage("http://localhost:8080/Details");
+        criarWebStage("http://localhost:8080/details");
     }
 }
 

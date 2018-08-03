@@ -60,6 +60,15 @@ public class Main extends Application {
         br.ip2.easylend.view.front_controllers.Application.Main(args);
 
         stage.setResizable(false);
+//
+//        FilmeDataBase.drama1();
+//        FilmeDataBase.drama2();
+//        FilmeDataBase.drama3();
+//        FilmeDataBase.aventura1();
+//        FilmeDataBase.aventura2();
+//        FilmeDataBase.acao1();
+//        FilmeDataBase.acao2();
+//        FilmeDataBase.acao3();
     }
 
 

@@ -115,7 +115,7 @@ public class HomeController implements Initializable{
             if(++i < 2){
                 layoutX += 150;
             }else {
-                layoutY += 250;
+                layoutY += 225;
                 layoutX = 50;
             }
 
