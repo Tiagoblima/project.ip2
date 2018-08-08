@@ -109,7 +109,7 @@ public class ClienteController {
    public void updateCliente(){
 
         CHashMap.replace(cliente.getLogin(),cliente);
-       this.repositorio.salvar(CHashMap,"src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt");
+       this.repositorio.salvar(CHashMap,"src\\main\\resources\\files\\hashMapCliente.txt");
    }
 
 

@@ -20,7 +20,7 @@ public class MenuController {
         BorderPane perfil;
 
         try{
-            perfil = FXMLLoader.load(getClass().getResource("../../../../../../resources/fxml/perfil.fxml"));
+            perfil = FXMLLoader.load(getClass().getResource("/fxml/perfil.fxml"));
             Main.stage.setScene(new Scene(perfil));
         }catch (Exception e){
 

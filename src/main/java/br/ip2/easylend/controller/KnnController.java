@@ -86,15 +86,14 @@ public class KnnController {
         generos.add(GeneroFilme.ACAO);
         generos.add(GeneroFilme.COMEDIA);
         generos.add(GeneroFilme.FAMILIA);
-        generos.add(GeneroFilme.ROMANCE);
-        generos.add(GeneroFilme.FAMILIA);
+        generos.add(GeneroFilme.NACIONAIS);
 
 
         int predIndex = 0;
 
         KnnController pred = KnnController.getInstance();
         try {
-            double[][] knn = new double[7][];
+            double[][] knn = new double[6][];
 
             int i = 0;
             for (GeneroFilme genero: generos) {
