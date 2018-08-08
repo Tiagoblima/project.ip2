@@ -34,7 +34,7 @@ public class ClienteController {
 
         HashMap hashMap;
         try{
-            String path = "src\\br\\ip2\\easylend\\repositorio\\files\\hashMapCliente.txt";
+            String path = "src\\main\\resources\\files\\hashMapCliente.txt";
             hashMap = this.repositorio.ler(path);
         }catch (Exception e){
             hashMap  = new HashMap<>();

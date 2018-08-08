@@ -1,20 +1,11 @@
 package br.ip2.easylend.view;
 
-import br.ip2.easylend.controller.CatalogoController;
-import br.ip2.easylend.controller.ClienteController;
-import br.ip2.easylend.controller.KnnController;
-import br.ip2.easylend.model.Catalogo;
-import br.ip2.easylend.model.Filme;
-import br.ip2.easylend.model.GeneroFilme;
-import br.ip2.easylend.view.front_controllers.FilmeDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -35,17 +26,17 @@ public class Main extends Application {
 
         stage = primaryStage;
 
-        AnchorPane index = FXMLLoader.load(getClass().getResource("fxml/index.fxml"));
+        AnchorPane index = FXMLLoader.load(getClass().getResource("/fxml/index.fxml"));
         Index = new Scene(index);
 
-        AnchorPane home = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
+        AnchorPane home = FXMLLoader.load(getClass().getResource("/fxml/home.fxml"));
         Home = new Scene(home);
 
-        AnchorPane form = FXMLLoader.load(getClass().getResource("fxml/form.fxml"));
+        AnchorPane form = FXMLLoader.load(getClass().getResource("/fxml/form.fxml"));
         Form = new Scene(form);
 
 
-        BorderPane galeria = FXMLLoader.load(getClass().getResource("fxml/galeria.fxml"));
+        BorderPane galeria = FXMLLoader.load(getClass().getResource("/fxml/galeria.fxml"));
         Galeria = new Scene(galeria);
 
         primaryStage.setTitle("EasyFilms");
@@ -53,8 +44,6 @@ public class Main extends Application {
         primaryStage.setScene(Index);
         primaryStage.show();
 
-        System.out.println("Width: " + primaryStage.getWidth());
-        System.out.println("Height: " + primaryStage.getHeight());
 
         String[] args = new String[]{"application"};
         br.ip2.easylend.view.front_controllers.Application.Main(args);
@@ -69,6 +58,7 @@ public class Main extends Application {
 //        FilmeDataBase.acao1();
 //        FilmeDataBase.acao2();
 //        FilmeDataBase.acao3();
+
     }
 
 

@@ -1,11 +1,8 @@
 package br.ip2.easylend.view.front_controllers;
 
-import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
-import br.ip2.easylend.model.GeneroFilme;
-import br.ip2.easylend.repositorio.JsonController;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.application.Platform;
@@ -75,7 +72,7 @@ public class PerfilController implements Initializable {
 
         MenuBar menuBar = null;
         try {
-            menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
+            menuBar = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
             menuBar.setPrefWidth(800);
             pnMain.setTop(menuBar);
         } catch (IOException e) {

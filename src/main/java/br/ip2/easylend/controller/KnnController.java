@@ -37,7 +37,7 @@ public class KnnController {
 
         String data = "\n@data";
 
-        String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";
+        String path = "src\\main\\resources\\files\\easylend.arff";
 
         ArrayList<GeneroFilme> generos = new ArrayList <>();
 
@@ -46,7 +46,6 @@ public class KnnController {
         generos.add(GeneroFilme.ACAO);
         generos.add(GeneroFilme.COMEDIA);
         generos.add(GeneroFilme.FAMILIA);
-        generos.add(GeneroFilme.ROMANCE);
         generos.add(GeneroFilme.NACIONAIS);
 
 
@@ -128,7 +127,7 @@ public class KnnController {
     public double[] predictGenero(GeneroFilme predGenero) throws Exception{
 
         gerarDataSet(new ArrayList <>());
-        String path = "src\\br\\ip2\\easylend\\repositorio\\files\\easylend.arff";
+        String path = "src\\main\\resources\\files\\easylend.arff";
 
         DataSource dataScource = new DataSource(path);
         Instances dataSet = dataScource.getDataSet();
@@ -144,7 +143,6 @@ public class KnnController {
 
         instances.setValue(1, genero);
         double[] probabilidade = iBk.distributionForInstance(instances);
-        System.out.println("Probabilidades: " + probabilidade[1]);
 
         return  probabilidade;
     }

@@ -2,7 +2,6 @@ package br.ip2.easylend.view.front_controllers;
 
 import br.ip2.easylend.controller.CatalogoController;
 import br.ip2.easylend.controller.ClienteController;
-import br.ip2.easylend.controller.KnnController;
 import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
@@ -85,7 +84,7 @@ public class GaleriaController implements Initializable {
 
         MenuBar menuBar = null;
         try {
-            menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
+            menuBar = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
             pnMain.setTop(menuBar);
         } catch (IOException e) {
             e.printStackTrace();

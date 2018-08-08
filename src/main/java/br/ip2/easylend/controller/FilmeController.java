@@ -20,7 +20,7 @@ public class FilmeController {
 
         HashMap<Integer, Filme> hashMap;
         try{
-            hashMap = this.repositorio.ler("src\\br\\ip2\\easylend\\repositorio\\files\\hashMapFilmes.txt");
+            hashMap = this.repositorio.ler("src\\main\\resources\\files\\hashMapFilmes.txt");
         }catch (Exception e){
             hashMap = new HashMap<>();
         }

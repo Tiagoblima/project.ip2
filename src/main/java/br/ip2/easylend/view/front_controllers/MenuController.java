@@ -6,14 +6,10 @@ import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class MenuController {
 
@@ -24,7 +20,7 @@ public class MenuController {
         BorderPane perfil;
 
         try{
-            perfil = FXMLLoader.load(getClass().getResource("../fxml/perfil.fxml"));
+            perfil = FXMLLoader.load(getClass().getResource("../../../../../../resources/fxml/perfil.fxml"));
             Main.stage.setScene(new Scene(perfil));
         }catch (Exception e){
 

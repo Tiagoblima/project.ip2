@@ -2,27 +2,20 @@ package br.ip2.easylend.view.front_controllers;
 
 
 import br.ip2.easylend.controller.CatalogoController;
-import br.ip2.easylend.controller.ClienteController;
 import br.ip2.easylend.controller.KnnController;
-import br.ip2.easylend.model.Cliente;
 import br.ip2.easylend.model.Filme;
 import br.ip2.easylend.model.GeneroFilme;
-import br.ip2.easylend.repositorio.JsonController;
 import br.ip2.easylend.view.Main;
 import br.ip2.easylend.view.Scenes;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -46,7 +39,7 @@ public class HomeController implements Initializable{
         Pane pane = new Pane();
         MenuBar menuBar = null;
         try {
-            menuBar = FXMLLoader.load(getClass().getResource("../fxml/menu.fxml"));
+            menuBar = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
             anchorHome.getChildren().add(menuBar);
         } catch (IOException e) {
             e.printStackTrace();
